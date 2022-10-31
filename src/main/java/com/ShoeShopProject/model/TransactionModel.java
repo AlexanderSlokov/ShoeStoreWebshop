@@ -5,7 +5,6 @@ import java.security.Timestamp;
 public class TransactionModel {
 	private Integer transId;
 	private Integer orderId;
-	private Integer status;
 	private Integer userId;
 	private String userName;
 	private String userPhone;
@@ -15,6 +14,14 @@ public class TransactionModel {
 	private String paymentInfo;
 	private String message;
 	private Timestamp created;
+	private Integer totalBill;
+	
+	public Integer getTotalBill() {
+		return totalBill;
+	}
+	public void setTotalBill(Integer totalBill) {
+		this.totalBill = totalBill;
+	}
 	public Integer getTransId() {
 		return transId;
 	}
@@ -26,12 +33,6 @@ public class TransactionModel {
 	}
 	public void setOrderId(Integer orderId) {
 		this.orderId = orderId;
-	}
-	public Integer getStatus() {
-		return status;
-	}
-	public void setStatus(Integer status) {
-		this.status = status;
 	}
 	public Integer getUserId() {
 		return userId;

@@ -1,17 +1,25 @@
 package com.ShoeShopProject.model;
 
 public class OrdersModel {
-	private Integer oderId;
+	private Integer orderId;
+	private Integer userId;
 	private Integer productId;
 	private Integer qty;
 	private Integer amount;
 	private String note;
 	private Integer status;
-	public Integer getOderId() {
-		return oderId;
+	
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setOderId(Integer oderId) {
-		this.oderId = oderId;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+	public Integer getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(Integer orderId) {
+		this.orderId = orderId;
 	}
 	public Integer getProductId() {
 		return productId;

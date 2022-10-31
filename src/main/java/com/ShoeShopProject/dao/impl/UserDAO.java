@@ -1,6 +1,5 @@
 package com.ShoeShopProject.dao.impl;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import com.ShoeShopProject.dao.iUserDAO;
