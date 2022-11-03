@@ -14,6 +14,14 @@ public class ProductsModel {
 	private String madeIn;
 	private String desciption;
 	private String gender;
+	private Integer[] ids;
+	
+	public Integer[] getIds() {
+		return ids;
+	}
+	public void setIds(Integer[] ids) {
+		this.ids = ids;
+	}
 	public Integer getProductId() {
 		return productId;
 	}

@@ -8,4 +8,6 @@ public interface iProductsDAO extends GenericDAO<ProductsModel>{
 	List<ProductsModel> findProductById(Integer id); 
 	ProductsModel findOne(Integer id);
 	Integer insert(ProductsModel product);
+	void update(ProductsModel product);
+	void delete(Integer id);
 }

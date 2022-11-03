@@ -1,3 +1,4 @@
+ <%@ include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,7 +57,7 @@
                                 <i class="fa fa-bars" style="color:yelow"></i>
                                 <div class="header__qr menu_dasboard">
                                     <ul>
-                                        <li><a href="login.html">login</a></li>
+                                        <li><a href="login.jsp">login</a></li>
                                         <li><a href="shop.html">shop</a></li>
                                         <li><a href="cart.html">cart</a></li>
                                         <li><a href="">about</a></li>
@@ -87,9 +88,8 @@
                     <div id="for-login">                        
                         <div class="loginform__right-header text_left"><a>LOGIN</a></div>                        
                         <div class="loginform__right-body">
-                            <input class="inputlogin" placeholder="Email/Phone number" name="uname" required>
-                            <input class="inputlogin" placeholder="Password" name="pass" required>
-    
+                            <input class="inputlogin" placeholder="Email/Phone number" name="uname" id="uname" required>
+                            <input class="inputlogin" placeholder="Password" name="pass" id="pass"required>
                             <button class="inputlogin" onclick="hamtam()" > Login</button>
                             <button class="inputlogin" style="color:red; " onclick="registerfun()"> Register</button>
                             <a class="textfoget" href="">Forget Password</a>

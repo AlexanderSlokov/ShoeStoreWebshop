@@ -1,6 +1,5 @@
 package com.ShoeShopProject.dao.impl;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -73,11 +72,10 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 					statement.setString(index, (String) parameter);
 				} else if (parameter instanceof Integer) {
 					statement.setInt(index, (Integer) parameter);
-				}else if (parameter instanceof Timestamp) {
-					statement.setTimestamp(index, (Timestamp)parameter);
-				} else if (parameter==null)
-					statement.setNull(index, Types.NULL);		
+				} else if (parameter instanceof Timestamp) {
+					statement.setTimestamp(index, (Timestamp) parameter);
 				}
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -90,7 +88,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		try {
 			conn = getConnection();
 			conn.setAutoCommit(false);
-			statement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			statement = conn.prepareStatement(sql);
 			setParameter(statement, parameters);
 			statement.executeUpdate();
 			conn.commit();
@@ -124,11 +122,11 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		Connection conn = null;
 		PreparedStatement statement = null;
 		try {
-			Integer id =  null;
+			Integer id = null;
 			conn = getConnection();
 			conn.setAutoCommit(false);
-			statement = conn.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS );
-			setParameter(statement, parameters);	
+			statement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			setParameter(statement, parameters);
 			statement.executeUpdate();
 			rs = statement.getGeneratedKeys();
 			if (rs.next()) {
@@ -141,7 +139,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 				conn.rollback();
 			} catch (SQLException e1) {
 				e1.printStackTrace();
-			}	
+			}
 		} finally {
 			try {
 				if (conn != null) {
@@ -165,5 +163,5 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 }

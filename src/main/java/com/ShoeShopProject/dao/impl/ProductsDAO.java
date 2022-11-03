@@ -27,7 +27,26 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 				+ "discount, image_pd, created, name, price, madein, description, gender)"
 				+ " values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		return insert(sql.toString() ,product.getManufacturer(), product.getView(), product.getDiscount(),
-				product.getProductImage(), product.getCreated(), product.getProductName(), product.getPrice(),
+				product.getProductImage(), product.getCreated() ,product.getProductName(), product.getPrice(),
 				product.getMadeIn(), product.getDesciption(), product.getGender());
+	}
+
+	@Override
+	public void update(ProductsModel product) {
+		String sql = "Update products set manufacturer=?, vieww=?, "
+				+ "discount=?, image_pd=?, created=?, name=?, price=?"
+				+ ", madein=?, description=?, gender=? where idProducts=?";
+		update(sql, product.getManufacturer(), product.getView(), product.getDiscount(),
+				product.getProductImage(), product.getCreated(), product.getProductName(), product.getPrice(),
+				product.getMadeIn(), product.getDesciption(), product.getGender(), product.getProductId());
+		
+		
+	}
+
+	@Override
+	public void delete(Integer id) {
+		String sql="Delete from products where idProducts=?";
+		update(sql, id);
+		
 	}
 }
