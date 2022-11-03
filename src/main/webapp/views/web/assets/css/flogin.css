@@ -79,18 +79,6 @@ nav ul li a:hover {
     width: 270px;
 }
 
-.dental {
-    width: 100%;
-    height: 600px;
-    display: flex;
-    justify-content: center;
-}
-
-.content-dental {
-    width: 80%;
-    background: #f2f2f4;
-}
-
 
 /*great*/
 
@@ -99,146 +87,142 @@ nav ul li a:hover {
     font-family: 'Fasthand', cursive;
 }
 
-.menu_top-pro {
+
+/*login form*/
+
+.text_left {
+    font-family: 'Fasthand', cursive;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.main_logiform {
     margin-top: 55px;
-    width: 100%;
-    background: #88bbb5;
-    /*background: linear-gradient(360deg, rgba(0, 0, 0, 0), rgba(250, 255, 255, 255));*/
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    border-top: 10px solid #88bbb5;
+    background-image: url(https://top10tphcm.com/wp-content/uploads/2021/08/shop-giay-dep-nu-dep-o-quan-6.jpg);
 }
 
-
-/**/
-
-.container-con {
-    margin-top: 65px;
-    width: 100%;
-    padding: 0 5%;
+.loginform {
     display: flex;
+    width: 1040px;
+    height: 600px;
+    background-color: #ffff;
 }
 
-.con-left {
-    padding: 16px 0px;
-    width: 60%;
-    background: whitesmoke;
-    height: 500px;
+.loginform .loginform__left {
+    width: 640px;
+    height: 482px;
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loginform .loginform__left h2 {
     position: relative;
-    overflow: hidden;
+    left: 40%;
 }
 
-.con-left img {
-    width:100%;
-    height: 450px;
-    position: absolute;
+.loginform .loginform__left h3 {
+    position: relative;
+    left: 25%;
 }
 
-.content-img a:nth-child(2) img {
-    transform: translateX(100%);
+.loginform__left img {
+    width: 88%;
+    position: relative;
+    bottom: -58px;
+    left: 33px;
+    padding: auto;
 }
 
-.content-img a:nth-child(3) img {
-    transform: translateX(200%);
-}
-
-.content-img a:nth-child(4) img {
-    transform: translateX(300%);
-}
-
-.content-img {
-    width: 650px;
+.loginform .loginform__right {
+    width: 400px;
+    height: 482px;
     display: flex;
-    position: absolute;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    line-height: 25px;
 }
 
-.slider-content-btn i {
-    position: absolute;
+.loginform .loginform__right .loginform__right-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.slider-content-btn i:first-child {
-    left: 80px;
-    bottom: 350px;
+.loginform__right-header {
+    position: relative;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
 }
 
-.slider-content-btn i:last-child {
-    left: 780px;
-    bottom: 350px;
+.inputlogin {
+    height: 40px;
+    font-weight: bold;
 }
 
-.slider-content-btn i:hover {
-    cursor: pointer;
-    opacity: 0.8;
+.inputlogin+.inputlogin {
+    margin-top: 20px;
 }
 
-.con-right {
-    width: 40%;
-    height: 500px;
-    padding: 20px 50px;
-    line-height: 30px;
-    white-space: 0.1;
+.textfoget {
+    position: relative;
+    left: 60%;
+    font-size: 15px;
+    top: 5px;
+    bottom: 5px;
+    color: red;
+}
+
+.loginform__right-body p {
+    position: relative;
+    left: 46%;
+    font-size: 20px;
+}
+
+.login3 {
     font-size: 17px;
 }
 
-.quality {
+.login3 ul {
+    list-style: none;
     display: flex;
-    margin-bottom: 20px;
-    padding: 10px;
+    justify-content: space-around;
 }
 
-.quality input {
-    width: 35px;
-    padding-left: 3px;
+.login3 ul li {
+    display: inline-block;
 }
 
-.container_product-content-right_button button {
-    width: 150px;
-    height: 40px;
-    display: block;
-    margin: 20px 0 12px;
-    transition: all .5s ease;
-}
-
-.container_product-content-right_button button:first-child {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #ffffff;
-    border: 2px solid #333;
-    cursor: pointer;
-}
-
-.container_product-content-right_button button:first-child:hover {
-    background: black;
-    color: #ffffff;
-}
-
-.container_product-content-right_button button:last-child {
-    border: 2px solid #BF8A49;
-    color: #BF8A49;
-    background-color: #ffffff;
-    cursor: pointer;
-}
-
-.container_product-content-right_icon {
-    display: flex;
-}
-
-.container_product-content-right_icon a {
+.login3 ul li a {
     text-decoration: none;
-    color: black;
+    color: #333;
+    display: inline-block;
+    padding: 20px 23px;
+    text-transform: uppercase;
 }
 
-.container_product-content-right_icon-item {
-    display: flex;
-    margin-right: 20px;
-    justify-content: center;
-    align-items: center;
+.login3 ul li a:hover {
+    cursor: pointer;
+    animation: fadeIn ease-in .3s;
+    opacity: 0.7;
 }
 
-.container_product-content-right_icon-item i {
-    font-size: 12px;
-    margin-right: 6px;
+#for-register {
+    display: none;
+}
+
+.inputregis {
+    height: 30px;
+    font-weight: bold;
+}
+
+.inputregis+.inputregis {
+    margin-top: 20px;
 }
 
 

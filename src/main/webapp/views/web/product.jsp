@@ -7,171 +7,119 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./assets/css/base.css">
-        <link rel="stylesheet" href="./assets/css/main.css">
-        <link rel="stylesheet" href="./assets/css/shop.css">
+        <link rel="stylesheet" href="./assets/css/product.css">
         <!--font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Fasthand&display=swap" rel="stylesheet">
         <!--icon-->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="" async defer></script>
     </head>
     <body>
-        <head id="header" class="header">
-            <div class="container">
-                <div class="header__logo">
-                    <img src="./assets/img/logo.png" alt="logoweb">
+        <head class="header">
+            <div class="menu_top">
+                <div class="menu_top-baner">
+                    <p>SHOES</p>
+                    <nav>
+                        <ul>
+                            <li><a href="main.html" title="" style="text-decoration: underline;">Home</a></li>
+                            <li><a href="" title="">About</a></li>
+                            <li><a href="intro.html" title="">shop</a></li>
+                            <li><a href="" title="">ADIDAS</a></li>
+                            <li><a href="" title="">NIKE</a></li>
+                            <li><a href="" title="">Sale</a></li>
+                            <li class="hover_icon" >
+                                <a>
+                                    <i class="fa fa-search" style="color:yelow"></i>
+                                        <div class="header__qr hover-search">
+                                            <i class="fa fa-search" style="color:yelow"></i>
+                                            <input  placeholder="search" >
+                                        </div>   
+                                </a>
+                            </li>
+                            <li class="hover_icon" >
+                                <a href="cart.html" title="">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                </a>
+                                <div class="header__qr cart_dasboard">
+                                    <ul>
+                                        <li>no product</li>
+                                        <li><i class="fa fa-frown-o" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div> 
+                            </li>
+                            <li class="hover_icon">
+                                <i class="fa fa-bars" style="color:yelow"></i>
+                                <div class="header__qr menu_dasboard">
+                                    <ul>
+                                        <li><a href="login.html">login</a></li>
+                                        <li><a href="shop.html">shop</a></li>
+                                        <li><a href="cart.html">cart</a></li>
+                                        <li><a href="">about</a></li>
+                                        <li><a href="intro.html">contact</a></li>
+                                    </ul>
+                                </div> 
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="header__icon">
-                    <!--icon-->
-                </div>
+
             </div>
         </head>
         <!--header-->
-        <div class="container__ul">
-            <p>SOUNDS</p>
-            <nav>
-                <ul>
-                    <li><a href="index.jsp" title="" >Home</a></li>
-                    <li><a href="" title="">New</a></li>
-                    <li><a href="intro.jsp" title="">Intro</a></li>
-                    <li><a href="" title="">ADIDAS</a></li>
-                    <li><a href="" title="">NIKE</a></li>
-                    <li><a href="" title="">Sale</a></li>
-                    <li class="hover_icon" >
-                        <a>
-                            <i class="fa fa-search" style="color:yelow"></i>
-                                <div class="header__qr hover-search">
-                                    <i class="fa fa-search" style="color:yelow"></i>
-                                    <input  placeholder="search" >
-                                </div>   
-                        </a>
-                    </li>
-                    <li class="hover_icon" >
-                        <a href="cart.html" title="">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        </a>
-                        <div class="header__qr cart_dasboard">
-                            <ul>
-                                <li>no product</li>
-                                <li><i class="fa fa-frown-o" aria-hidden="true"></i></li>
-                            </ul>
-                        </div> 
-                    </li>
-                    <li class="hover_icon">
-                        <i class="fa fa-bars" style="color:yelow"></i>
-                        <div class="header__qr menu_dasboard">
-                            <ul>
-                                <li><a href="login.jsp">login</a></li>
-                                <li><a href="">shop</a></li>
-                                <li><a href="cart.jsp">cart</a></li>
-                                <li><a href="">about</a></li>
-                                <li><a href="intro.jsp">contact</a></li>
-                            </ul>
-                        </div> 
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <!--nav-->
-  <section class="product-page">
-    <div class="container_product">
-        <div class="container_product-top">
-            <p>Shoe Shop</p> <span>&#10230;</span><p>Product</p> <span>&#10230;</span><p>Shoes super cool</p>
-        </div>
-        <div class="container_product-top">
-            <div class="container_product-content-left">
-                <div class="container_product-content-left-bigimg">
-                    <img src="./assets/img/anya3.jpg"alt="">
+        <main class="container"> 
+            <div class="container-con">
+                <div class="con-left">
+                    <div class="content-img">
+                        <a href=""> <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/cf1f177875c54676a45cadc800f9af16_9366/Reebok_Nano_X2_Men's_Training_Shoes_Black_GW5146_01_standard.jpg"></a>
+                        <a href=""> <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/e3142927a70442d98c20acc5017ec9a5_9366/Nano_X1_Men's_Training_Shoes_Grey_H02830_01_standard.jpg"></a>
+                        <a href=""> <img src="https://images.meesho.com/images/products/44009963/kxwus_512.jpg"></a>
+                        <a href=""> <img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1640850395.31014951.jpg"></a>
+                    </div>                
                 </div>
-                <div class="container_product-content-left-smallimg">
-                    <img src="./assets/img/anya3.jpg"alt="">
-                    <img src="./assets/img/anya2.webp"alt="">
-                    <img src="./assets/img/anya1.jpg"alt="">
-                    <img src="./assets/img/anya4.jpg"alt="">
+                <div class="slider-content-btn ">
+                    <i class="fa fa-chevron-left" style="font-size:36px"></i>
+                    <i class="fa fa-chevron-right" style="font-size:36px"></i>
                 </div>
-            </div>
-            <div class="container_product-content-right">
-                <div class="container_product-content-right_pname">
-                    <h1>Anay style 1</h1>
-                    <p> MSP:99999999</p>
-                </div>
-                <div class="container_product-content-right_price">
-                    <p>$ 65.00</p>
-                </div>
-                <div class="container_product-content-right_color">
-                    <p><span style="font-weight:bold;">Color:</span> happy <span style="color: red;">*</span></p> 
-
-                </div>
-                <div class="container_product-content-right_psize">
-                    <p style="font-weight:bold;">Size</p>
-                    <div class="size">
-                        <span>S</span>
-                        <span>M</span>
-                        <span>L</span>
-                        <span>XL</span>
-                        <span>XXL</span>
-                        <span>XXX</span>
-                    </div>
+                
+                <div class="con-right">
+                    <h2>shoes from Tam Cam</h2>
+                    <h3>code product: 19999999</h3>
+                    <span>$15.000</span>
+                    <p>made in Earch</p>
                     <div class="quality">
-                        <p style="font-weight:bold;">Quantity</p>
-                        <input class="w-25 pl-1" value="1" type="number" style="width:50px">
-                        
-                    </div>
-                    <div>
-                        <p style="color:red;">Please choose your size </p>
+                        <p style="font-weight:bold; padding-right:20px;">Quantity</p>
+                        <input class="w-25 pl-1" value="1" type="number" style="width:50px">                        
                     </div>
                     <div class="container_product-content-right_button">
                         <button> <i class="fa fa-shopping-cart"></i><p>Buy product</p>
                             <button><p>Find product at shop</p>
                     </div>
                     <div class="container_product-content-right_icon">
-                        <div class="container_product-content-right_icon-item">
+                        <a href="" class="container_product-content-right_icon-item">
                             <i class="fa fa-phone"></i><p>Hotline</p>
-                        </div>
-                        <div class="container_product-content-right_icon-item">
+                        </a>
+                        <a href="" class="container_product-content-right_icon-item">
                             <i class="fa fa-comments"></i><p>Chat</p>
-                        </div>
-                        <div class="container_product-content-right_icon-item">
+                        </a>
+                        <a href="" class="container_product-content-right_icon-item">
                             <i class="fa fa-envelope"></i><p>Mail</p>
-                        </div>
-                    </div>
-                    <div class="container_product-content-right_bottom">
-                        <div class="container_product-content-right_bottom-top">
-                            &#8744;
-                        </div>
-                        <!--<div class="container_product-content-right_bottom-header">
-                            <a>
-                                <p>Denta</p>  
-                                <div class="hiden_dentai">
-                                    <p>made in Viet Nam</p>
-                                </div>
-                            </a>
-                            <a>
-                                <p>Note</p>
-                            </a>
-                        </div>-->
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="container__bottom">
-        <div class="barrie">
-        </div>
-        <div class="denta_bottom">
-            <div class="denta_bottom-top text-barrie">
-                <p>Information</p>
-                <p>Image</p>
-            </div> 
-            <div class="denta_bottom-bet">
-                
-            </div> 
-        </div>
-    </div>
-  </section>
+            <div style=" margin:20px;">
+                <span style="color:red; text-decoration:underline; font-size:20px; padding: 0 100px; margin-top:20px;">Dental</span>
+            </div>
+            <div class="dental">
+                <div class="content-dental">
+                    <p>noi dung dien vao</p>
+                </div>
+            </div>
+            
+            <script src="./assets/func/product.js"></script>
+        </main>
         <!--main-->
         <footer class="footer">
             <div class="footer-container">
