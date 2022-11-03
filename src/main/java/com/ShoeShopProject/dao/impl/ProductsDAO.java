@@ -23,10 +23,10 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 
 	@Override
 	public Integer insert(ProductsModel product) {
-		String sql="Insert into products(manufacturer, vieww, "
+		StringBuilder sql=new StringBuilder("Insert into products(manufacturer, vieww, "
 				+ "discount, image_pd, created, name, price, madein, description, gender)"
-				+ " values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		return insert(sql, product.getManufacturer(), product.getView(), product.getDiscount(),
+				+ " values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		return insert(sql.toString() ,product.getManufacturer(), product.getView(), product.getDiscount(),
 				product.getProductImage(), product.getCreated(), product.getProductName(), product.getPrice(),
 				product.getMadeIn(), product.getDesciption(), product.getGender());
 	}

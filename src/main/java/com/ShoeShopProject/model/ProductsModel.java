@@ -11,30 +11,9 @@ public class ProductsModel {
 	private Timestamp created;
 	private String productName;
 	private Integer price;
-	private Integer catalogId;
 	private String madeIn;
 	private String desciption;
 	private String gender;
-	
-	public String getProductName() {
-		return productName;
-	}
-	public void setProductName(String productName) {
-		this.productName = productName;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public void setDiscount(Integer discount) {
-		this.discount = discount;
-	}
-	public Integer getDiscount() {
-		return discount;
-	}
-
 	public Integer getProductId() {
 		return productId;
 	}
@@ -47,18 +26,17 @@ public class ProductsModel {
 	public void setManufacturer(String manufacturer) {
 		this.manufacturer = manufacturer;
 	}
-	public Integer getCatalogId() {
-		return catalogId;
-	}
-	public void setCatalogId(Integer catalogId) {
-		this.catalogId = catalogId;
-	}
-	
 	public Integer getView() {
 		return view;
 	}
 	public void setView(Integer view) {
 		this.view = view;
+	}
+	public Integer getDiscount() {
+		return discount;
+	}
+	public void setDiscount(Integer discount) {
+		this.discount = discount;
 	}
 	public String getProductImage() {
 		return productImage;
@@ -66,18 +44,17 @@ public class ProductsModel {
 	public void setProductImage(String productImage) {
 		this.productImage = productImage;
 	}
-
-	public String getDesciption() {
-		return desciption;
+	public Timestamp getCreated() {
+		return created;
 	}
-	public void setDesciption(String desciption) {
-		this.desciption = desciption;
+	public void setCreated(Timestamp created) {
+		this.created = created;
 	}
-	public String getMadeIn() {
-		return madeIn;
+	public String getProductName() {
+		return productName;
 	}
-	public void setMadeIn(String madeIn) {
-		this.madeIn = madeIn;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 	public Integer getPrice() {
 		return price;
@@ -85,10 +62,24 @@ public class ProductsModel {
 	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public Timestamp getCreated() {
-		return created;
+	public String getMadeIn() {
+		return madeIn;
 	}
-	public void setCreated(Timestamp created) {
-		this.created = created;
+	public void setMadeIn(String madeIn) {
+		this.madeIn = madeIn;
 	}
+	public String getDesciption() {
+		return desciption;
+	}
+	public void setDesciption(String desciption) {
+		this.desciption = desciption;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	
+	
 }

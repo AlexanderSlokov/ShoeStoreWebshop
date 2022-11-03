@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.service.iProductsService;
-import com.ShoeShopProject.utils.HttpUtils;
+import com.ShoeShopProject.utils.HttpUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+
 @WebServlet(urlPatterns={"/api-admin-product"})
 public class ProductAPI extends HttpServlet{
 
@@ -27,7 +29,7 @@ public class ProductAPI extends HttpServlet{
 		ObjectMapper mapper=new ObjectMapper();
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
-		ProductsModel productsModel= HttpUtils.of(request.getReader()).toModel(ProductsModel.class);
+		ProductsModel productsModel= HttpUtil.of(request.getReader()).toModel(ProductsModel.class);
 		productsModel=productsService.Insert(productsModel);
 		mapper.writeValue(response.getOutputStream(), productsModel);
 	}

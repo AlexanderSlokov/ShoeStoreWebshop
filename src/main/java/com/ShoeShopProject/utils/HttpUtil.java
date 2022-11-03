@@ -5,9 +5,9 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class HttpUtils {
+public class HttpUtil {
 	private String value;
-	public HttpUtils(String value)
+	public HttpUtil(String value)
 	{
 		this.value=value;
 		
@@ -22,7 +22,7 @@ public class HttpUtils {
 		return null;
 	}
 	
-	public static HttpUtils of(BufferedReader reader) {
+	public static HttpUtil of(BufferedReader reader) {
 		StringBuilder sb = new StringBuilder();
 		try {
 			String line;
@@ -32,6 +32,6 @@ public class HttpUtils {
 		} catch (IOException e) {
 				System.out.print(e.getMessage());
 		}
-		return new HttpUtils(sb.toString());
+		return new HttpUtil(sb.toString());
 	}
 }
