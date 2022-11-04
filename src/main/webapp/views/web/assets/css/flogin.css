@@ -101,6 +101,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     border-top: 10px solid #88bbb5;
+    background-repeat:none;
     background-image: url(https://top10tphcm.com/wp-content/uploads/2021/08/shop-giay-dep-nu-dep-o-quan-6.jpg);
 }
 
@@ -225,7 +226,12 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-
+/**/
+.noti{
+  position: relative;
+  left: -863px;
+  top: 97px;
+}
 /*footer*/
 
 .footer {

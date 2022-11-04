@@ -9,7 +9,7 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="<c:url value="./views/web/assets/css/base.css"/>">
-<link rel="stylesheet" href="<c:url value="./views/web/assets/css/flogin.css"/>"/>
+<link rel="stylesheet" href="<c:url value="./views/web/assets/css/flogin.css"/>">
 <!--font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +22,10 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="" async defer></script>
+ <!-- bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -77,8 +81,8 @@
 
 
 <!--baner-->
-<main class="main_logiform">
-	<div class="loginform">
+<main class="main_logiform" >
+	<div class="loginform" style="margin-top:50px;">
 		<div class="loginform__left ">
 			<img
 				src="https://images.meesho.com/images/products/89867327/hh4s5_512.jpg"
@@ -87,14 +91,15 @@
 		</div>
 		<div class="loginform__right">
 			<div id="for-login">
+			<div id="noti1" class="noti" style="position: relative;left: -863px;top: 97px; display:none;">
 				<div class="alert alert-success">
-					<strong>Success!</strong> This alert box could indicate a
-					successful or positive action.
+					<strong>Success!</strong> This alert box could indicate a successful or positive action.
 				</div>
 				<div class="alert alert-danger">
-					<strong>Danger!</strong> This alert box could indicate a dangerous
-					or potentially negative action.
+					<strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
 				</div>
+			</div>
+				
 				<div class="loginform__right-header text_left">
 					<a>LOGIN</a>
 				</div>
@@ -144,6 +149,7 @@
 				function registerfun() {
 					document.getElementById("for-login").style.display = 'none';
 					document.getElementById("for-register").style.display = 'block';
+					document.getElementById("noti1").style.display = 'block';
 				}
 				function registerfun1() {
 					document.getElementById("for-login").style.display = 'block';
