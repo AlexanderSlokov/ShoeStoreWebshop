@@ -38,7 +38,7 @@
             <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-list"></i>
                 <span class="menu-text"></span>
-                Product Management
+                Product List
                 <b class="arrow fa fa-angle-down"></b>
             </a>
             <b class="arrow"></b>

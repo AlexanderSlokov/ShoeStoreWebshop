@@ -16,7 +16,7 @@ import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.service.iUserService;
 import com.ShoeShopProject.utils.SessionUtil;
 
-@WebServlet(urlPatterns={"/home", "/login"})
+@WebServlet(urlPatterns={"/home", "/login", "/logout"})
 public class HomeController extends HttpServlet{
 
 	/**

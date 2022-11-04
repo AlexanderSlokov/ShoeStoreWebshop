@@ -19,7 +19,7 @@
                         Hello, ${USERMODEL.fullName}
                     </a>
                     <li class="light-blue dropdown-modal">
-                        <a href='<c:url value="/thoat?action=logout"/>'>
+                        <a href='<c:url value="/logout?action=logout"/>'>
                             <i class="ace-icon fa fa-power-off"></i>
                             Logout
                         </a>
