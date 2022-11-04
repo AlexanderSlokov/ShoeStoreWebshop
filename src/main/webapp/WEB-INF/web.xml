@@ -10,16 +10,14 @@
 		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
 	</listener>
 	
-	
 	<servlet>
-		<servlet-name>LoginController</servlet-name>
-		<servlet-class>com.ShoeShopProject.controller.web.LoginController</servlet-class>
+		<servlet-name>LoginForm</servlet-name>
+		<servlet-class>com.ShoeShopProject.controller.web.HomeController</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>LoginController</servlet-name>
-		<url-pattern>/views/web/log</url-pattern>
-
+		<servlet-name>LoginForm</servlet-name>
+		<url-pattern>/views/web/log</url-pattern> 
 	</servlet-mapping>
 	<filter>
 		<filter-name>sitemesh</filter-name>

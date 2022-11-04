@@ -9,9 +9,10 @@ import com.ShoeShopProject.model.UserModel;
 public class UserDAO extends AbstractDAO<UserModel> implements iUserDAO {
 
 	@Override
-	public List<UserModel> findUserByPass(String user, String pass) {
+	public UserModel findUserByPass(String user, String pass) {
 		String sql="Select * from users where (email=? and password=?) or (phone=? and password=?)";
-		return query(sql, new UserMapper(), user, pass, user, pass);
+		List<UserModel> list= query(sql, new UserMapper(), user, pass, user, pass);
+		return list.isEmpty()? null : list.get(0);
 	}
 
 	@Override

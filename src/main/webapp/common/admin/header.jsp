@@ -8,7 +8,7 @@
             <a href="#" class="navbar-brand">
                 <small>
                     <i class="fa fa-leaf"></i>
-                    Trang quản trị
+                    Admin Form
                 </small>
             </a>
         </div>
@@ -16,12 +16,12 @@
             <ul class="nav ace-nav">
                 <li class="light-blue dropdown-modal">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        Xin chào, ${USERMODEL.fullName}
+                        Hello, ${USERMODEL.fullName}
                     </a>
                     <li class="light-blue dropdown-modal">
                         <a href='<c:url value="/thoat?action=logout"/>'>
                             <i class="ace-icon fa fa-power-off"></i>
-                            Thoát
+                            Logout
                         </a>
                     </li>
                 </li>

@@ -54,7 +54,7 @@
                                 <i class="fa fa-bars" style="color:yelow"></i>
                                 <div class="header__qr menu_dasboard">
                                     <ul>
-                                        <li><a href="login.html">login</a></li>
+                                        <li><a href="<c:url value='/login?action=login'/>">login</a></li>
                                         <li><a href="shop.html">shop</a></li>
                                         <li><a href="cart.html">cart</a></li>
                                         <li><a href="">about</a></li>
