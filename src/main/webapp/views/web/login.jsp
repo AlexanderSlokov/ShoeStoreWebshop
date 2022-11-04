@@ -91,15 +91,13 @@
 		</div>
 		<div class="loginform__right">
 			<div id="for-login">
-			<div id="noti1" class="noti" style="position: relative;left: -863px;top: 97px; display:none;">
-				<div class="alert alert-success">
-					<strong>Success!</strong> This alert box could indicate a successful or positive action.
-				</div>
-				<div class="alert alert-danger">
-					<strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+			<c:if test="${not empty message}">
+			<div id="noti1" class="noti" style="position: relative;left: -863px;top: 97px;">
+				<div class="alert alert-${alert}">
+					${message}
 				</div>
 			</div>
-				
+			</c:if>	
 				<div class="loginform__right-header text_left">
 					<a>LOGIN</a>
 				</div>

@@ -1,6 +1,7 @@
 package com.ShoeShopProject.controller.web;
 
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -26,17 +27,24 @@ public class HomeController extends HttpServlet{
 	@Inject
 	private iUserService userService;
 	private static final long serialVersionUID = 1L;
+	ResourceBundle resourceBundle = ResourceBundle.getBundle("message");
 	protected void doGet(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException 
 	{   
 		String action=request.getParameter("action");
 		if (action!=null && action.equals("login"))
-		{
+		{	String message=request.getParameter("message");
+			String alert=request.getParameter("alert");
+			if (message != null && alert != null) {
+				request.setAttribute("message", resourceBundle.getString(message));
+				request.setAttribute("alert", alert);
+			}
 			RequestDispatcher rd=request.getRequestDispatcher("/views/web/login.jsp");
 			rd.forward(request, response);
 		}
 		else if (action !=null && action.equals("logout"))
 		{
-			
+			SessionUtil.getInstance().removeValue(request, "USERMODEL");
+			response.sendRedirect(request.getContextPath()+"/home");
 		}
 		else {
 			//request.setAttribute("sp1",productsService.findProductById(1));
@@ -56,7 +64,7 @@ public class HomeController extends HttpServlet{
 			if (model != null) {
 				SessionUtil.getInstance().putValue(request, "USERMODEL", model);
 				if (model.getRole().equals(0)) {
-					response.sendRedirect(request.getContextPath()+"/views/web/home");
+					response.sendRedirect(request.getContextPath()+"/home");
 				} else if (model.getRole().equals(1)) {
 					response.sendRedirect(request.getContextPath()+"/admin-home");
 				}
