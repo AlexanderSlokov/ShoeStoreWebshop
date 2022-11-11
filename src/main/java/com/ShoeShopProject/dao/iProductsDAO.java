@@ -3,6 +3,7 @@ package com.ShoeShopProject.dao;
 import java.util.List;
 
 import com.ShoeShopProject.model.ProductsModel;
+import com.ShoeShopProject.paging.Pageble;
 
 public interface iProductsDAO extends GenericDAO<ProductsModel>{
 	List<ProductsModel> findProductById(Integer id); 
@@ -10,4 +11,6 @@ public interface iProductsDAO extends GenericDAO<ProductsModel>{
 	Integer insert(ProductsModel product);
 	void update(ProductsModel product);
 	void delete(Integer id);
+	List<ProductsModel>findAll(Pageble pageable);
+	Integer getTotalItem();
 }

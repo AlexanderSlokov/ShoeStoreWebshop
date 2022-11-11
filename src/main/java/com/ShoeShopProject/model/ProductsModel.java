@@ -1,8 +1,9 @@
 package com.ShoeShopProject.model;
 
 import java.sql.Timestamp;
+import java.util.List;
 
-public class ProductsModel {
+public class ProductsModel extends AbstractModel<ProductsModel> {
 	private Integer productId;
 	private String manufacturer;
 	private Integer view;
@@ -14,14 +15,8 @@ public class ProductsModel {
 	private String madeIn;
 	private String desciption;
 	private String gender;
-	private Integer[] ids;
 	
-	public Integer[] getIds() {
-		return ids;
-	}
-	public void setIds(Integer[] ids) {
-		this.ids = ids;
-	}
+	
 	public Integer getProductId() {
 		return productId;
 	}

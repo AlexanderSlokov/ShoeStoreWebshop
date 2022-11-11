@@ -6,7 +6,9 @@ import java.util.List;
 import javax.inject.Inject;
 
 import com.ShoeShopProject.dao.iProductsDAO;
+import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
+import com.ShoeShopProject.paging.Pageble;
 import com.ShoeShopProject.service.iProductsService;
 
 public class ProductsService implements iProductsService{
@@ -41,7 +43,15 @@ public class ProductsService implements iProductsService{
 		}
 		
 	}
-	
-	
+
+	@Override
+	public List<ProductsModel> findAll(Pageble pageble) {
+		return productsDAO.findAll(pageble);
+	}
+
+	@Override
+	public Integer getTotalItem() {
+		return productsDAO.getTotalItem();
+	}
 
 }

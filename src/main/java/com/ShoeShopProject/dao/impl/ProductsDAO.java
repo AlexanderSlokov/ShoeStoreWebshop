@@ -2,9 +2,13 @@ package com.ShoeShopProject.dao.impl;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
+
 import com.ShoeShopProject.dao.iProductsDAO;
 import com.ShoeShopProject.mapper.ProductsMapper;
 import com.ShoeShopProject.model.ProductsModel;
+import com.ShoeShopProject.paging.Pageble;
+
 
 public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProductsDAO {
 
@@ -49,4 +53,27 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 		update(sql, id);
 		
 	}
+
+	@Override
+	public List<ProductsModel> findAll(Pageble pageble) {
+		String sql="Select b.idProducts, b.name, b.vieww, b.price, b.description,  b.Manufacturer, count(*) as SL, "
+				+ "b.discount, b.image_pd, b.created, b.madein, b.gender "
+				+ "from product a inner join products b "
+				+ "where a.idProducts = b.idProducts "
+				+ "group by b.idProducts";
+		if (pageble.getSorter() != null && StringUtils.isNotBlank(pageble.getSorter().getSortName()) && StringUtils.isNotBlank(pageble.getSorter().getSortBy())) {
+			sql+= " ORDER BY "+pageble.getSorter().getSortName()+" "+pageble.getSorter().getSortBy()+"";
+		}
+		if (pageble.getOffset() != null && pageble.getLimit() != null) {
+			sql+=" LIMIT "+pageble.getOffset()+", "+pageble.getLimit()+"";
+		}
+		return query(sql.toString(), new ProductsMapper());
+	}
+
+	@Override
+	public Integer getTotalItem() {
+		String sql="Select count(*) from products";
+		return count(sql);
+	}
+	
 }
