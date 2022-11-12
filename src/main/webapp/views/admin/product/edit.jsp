@@ -37,28 +37,29 @@
 								<div class="col-sm-9">
 									<select class="form-control" id="manufacturer"
 										name="manufacturer">
-										<option value="">Choose Shoe's Type</option>
-										<option value="Nike">Nike</option>
-										<option value="Adidas">Adidas</option>
-
-										<c:if test="${not empty model.categoryCode}">
-											<option value="">Chọn loại bài viết</option>
-											<c:forEach var="item" items="${categories}">
-												<option value="${item.code}"
-													<c:if test="${item.code == model.categoryCode}">selected="selected"</c:if>>
-													${item.name}</option>
-											</c:forEach>
+										 <c:if test="${empty model.manufacturer}">
+                                            <option value="">Choose Shoe's Type</option>
+                                           <option value="Nike">Nike</option>
+                                           <option value="Adidas">Adidas</option>
+                                        </c:if>
+                                        <c:if test="${not empty model.manufacturer}">
+											 <c:forEach var="item" items="${manufacturers}">
+                                                <option value="${item}" 
+                                                <c:if test="${item == model.manufacturer}">selected="selected"
+                                                </c:if>>
+                                                        ${item}
+                                                </option>
+                                            </c:forEach>
 										</c:if>
 									</select>
 								</div>
 							</div>
 							<br /> <br />
 							<div class="form-group">
-								<label class="col-sm-3 control-label no-padding-right">Product
-									Name</label>
+								<label class="col-sm-3 control-label no-padding-right">Product Name</label>
 								<div class="col-sm-9">
 									<input type="text" class="form-control" id="productName"
-										name="productName" value="${model.title}" />
+										name="productName" value="${model.productName}" />
 								</div>
 							</div>
 							<br /> <br />
@@ -66,7 +67,7 @@
 								<label class="col-sm-3 control-label no-padding-right">Image</label>
 								<div class="col-sm-9">
 									<input type="text" class="form-control" id="productImage"
-										name="productImage" value="${model.thumbnail}" />
+										name="productImage" value="${model.productImage}" />
 								</div>
 							</div>
 							<br /> <br />
@@ -74,13 +75,14 @@
 								<label class="col-sm-3 control-label no-padding-right">Description</label>
 								<div class="col-sm-9">
 									<input type="text" class="form-control" id="desciption"
-										name="desciption" value="${model.shortDescription}" />
+										name="desciption" value="${model.desciption}" />
 								</div>
 							</div>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Made in</label>
 							<div class="col-sm-9">
 								<select class="form-control" id="madeIn" name="madeIn">
+								<c:if test="${empty model.madeIn}">
 									<option value="">Choose a country</option>
 									<option value="VietNam">Viet Nam</option>
 									<option value="Japan">Japan</option>
@@ -88,15 +90,36 @@
 									<option value="Indonesia">Indonesia</option>
 									<option value="India">India</option>
 									<option value="Korea">Korea</option>
+								</c:if>
+								 <c:if test="${not empty model.madeIn}">
+									<c:forEach var="item" items="${countries}">
+                                         <option value="${item}" 
+                                            <c:if test="${item == model.madeIn}">selected="selected"
+                                              </c:if>>
+                                                  ${item}
+                                              </option>
+                                    </c:forEach>
+								</c:if>
 								</select>
 							</div>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Gender</label>
 							<div class="col-sm-9">
 								<select class="form-control" id="gender" name="gender">
+								<c:if test="${empty model.gender}">
 									<option value="">Choose gender</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
+									<option value="Male">Male</option>
+									<option value="Female">Female</option>
+								</c:if>
+								 <c:if test="${not empty model.gender}">
+									<c:forEach var="item" items="${genders}">
+                                         <option value="${item}" 
+                                            <c:if test="${item == model.gender}">selected="selected"
+                                              </c:if>>
+                                                  ${item}
+                                              </option>
+                                    </c:forEach>
+										</c:if>
 								</select>
 							</div>
 							<br /> <br /> <label
@@ -111,94 +134,71 @@
 								<input type="text" class="form-control" id="discount" name="discount"
 									value="${model.discount}" />
 							</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<c:if test="${not empty model.productId}">
+								<input type="button" class="btn btn-white btn-warning btn-bold"
+									value="Edit Product" id="btnAddOrUpdateProduct" />
+							</c:if>
+								<c:if test="${empty model.productId}">
+									<input type="button" class="btn btn-white btn-warning btn-bold"
+									value="Add New Product" id="btnAddOrUpdateProduct" />
+							</c:if>
+						</div>
 					</div>
-				</div>
-
-				<div class="form-group">
-					<div class="col-sm-12">
-						<c:if test="${not empty model.id}">
-							<input type="button" class="btn btn-white btn-warning btn-bold"
-								value="Edit product" id="btnAddOrUpdateNew" />
-						</c:if>
-						<c:if test="${empty model.id}">
-							<input type="button" class="btn btn-white btn-warning btn-bold"
-								value="Add New Product" id="btnAddOrUpdateNew" />
-						</c:if>
-					</div>
-				</div>
-				<input type="hidden" value="${model.id}" id="id" name="id" />
-				</form>
+					<input type="hidden" value="${model.productId}" id="productId" name="productId" />	
+			</form>			
 			</div>
 		</div>
 	</div>
-	</div>
-	</div>
+</div>
+</div>
 	<script>
-		var editor = '';
-		$(document).ready(function() {
-			editor = CKEDITOR.replace('content');
-		});
-
-		$('#btnAddOrUpdateNew').click(function(e) {
+		
+		$('#btnAddOrUpdateProduct').click(function(e) {
 			e.preventDefault();
 			var data = {};
 			var formData = $('#formSubmit').serializeArray();
 			$.each(formData, function(i, v) {
 				data["" + v.name + ""] = v.value;
 			});
-			data["content"] = editor.getData();
-			var id = $('#id').val();
+			
+			var id = $('#productId').val();
 			if (id == "") {
-				addNew(data);
+				addProduct(data);
 			} else {
-				updateNew(data);
+				updateProduct(data);
 			}
 		});
-		function addNew(data) {
-			$
-					.ajax({
+		function addProduct(data) {
+			$.ajax({
 						url : '${APIurl}',
 						type : 'POST',
 						contentType : 'application/json',
 						data : JSON.stringify(data),
 						dataType : 'json',
 						success : function(result) {
-							window.location.href = "${NewURL}?type=edit&id="
-									+ result.id + "&message=insert_success";
+							console.log(result);
 						},
 						error : function(error) {
-							window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
+							console.log(error);
 						}
 					});
 		}
-		function updateNew(data) {
-			$
-					.ajax({
+		function updateProduct(data) {
+			$.ajax({
 						url : '${APIurl}',
 						type : 'PUT',
 						contentType : 'application/json',
 						data : JSON.stringify(data),
 						dataType : 'json',
 						success : function(result) {
-							window.location.href = "${NewURL}?type=edit&id="
-									+ result.id + "&message=update_success";
+							console.log(result);
 						},
 						error : function(error) {
-							window.location.href = "${NewURL}?type=list&maxPageItem=2&page=1&message=error_system";
+							console.log(error);
 						}
 					});
-		}
-		function KeyPadWrite(add) {
-			if (add == "-1") {
-				document.getElementById('ShortCode').value = document
-						.getElementById('ShortCode').value.slice(0, -1);
-			}
-			// Max Length
-			else if (document.getElementById('ShortCode').value.length < 6) {
-				document.getElementById('ShortCode').value = document
-						.getElementById('ShortCode').value
-						+ add;
-			}
 		}
 	</script>
 </body>

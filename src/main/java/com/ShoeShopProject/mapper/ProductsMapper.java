@@ -11,15 +11,15 @@ public class ProductsMapper implements  RowMapper<ProductsModel>{
 	public ProductsModel mapRow(ResultSet rs) {
 		try {
 		    ProductsModel product = new ProductsModel();
-			product.setProductId(rs.getInt("b.idProducts"));
-			product.setProductName(rs.getString("b.name"));
-			product.setProductImage(rs.getString("b.image_pd"));
-			product.setPrice(rs.getInt("b.price"));
-			product.setDesciption(rs.getString("b.description"));
-			product.setMadeIn(rs.getString("b.madein"));
-			product.setCreated(rs.getTimestamp("b.created"));
-			product.setManufacturer(rs.getString("b.manufacturer"));
-			product.setView(rs.getInt("b.vieww"));
+			product.setProductId(rs.getInt("idProducts"));
+			product.setProductName(rs.getString("name"));
+			product.setProductImage(rs.getString("image_pd"));
+			product.setPrice(rs.getInt("price"));
+			product.setDesciption(rs.getString("description"));
+			product.setMadeIn(rs.getString("madein"));
+			product.setCreated(rs.getTimestamp("created"));
+			product.setManufacturer(rs.getString("manufacturer"));
+			product.setView(rs.getInt("vieww"));
 			return product;
 			}
 			catch (SQLException e)

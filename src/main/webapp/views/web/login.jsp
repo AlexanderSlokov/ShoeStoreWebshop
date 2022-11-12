@@ -106,7 +106,7 @@
 						<input class="inputlogin" placeholder="Email/Phone number"
 							name="uname" id="uname" required> <input
 							class="inputlogin" placeholder="Password" name="pass" id="pass"
-							required>
+							required type="password">
 						<button class="inputlogin" onclick="hamtam()">Login</button>
 						<button class="inputlogin" style="color: red;"
 							onclick="registerfun()">Register</button>

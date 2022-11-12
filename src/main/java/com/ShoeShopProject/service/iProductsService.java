@@ -14,4 +14,5 @@ public interface iProductsService {
 	void delete(Integer[] ids);
 	List<ProductsModel> findAll(Pageble pageble);
 	Integer getTotalItem();
+	ProductsModel findOne(Integer id);
 }

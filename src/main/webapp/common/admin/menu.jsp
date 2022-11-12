@@ -44,17 +44,9 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href='<c:url value="/admin-product?page=1&maxPageItem=6&sortName=price&sortBy=desc"/>'>
+                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                         List of products
-                    </a>
-                    <b class="arrow"></b>
-                </li>
-                
-                 <li>
-                    <a href='<c:url value="/admin-product-edit"/>'>
-                        <i class="menu-icon fa fa-caret-right"></i>
-                        Edit product
                     </a>
                     <b class="arrow"></b>
                 </li>

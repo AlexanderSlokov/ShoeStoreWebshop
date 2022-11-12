@@ -23,14 +23,16 @@ public class ProductsService implements iProductsService{
 	@Override
 	public ProductsModel Insert(ProductsModel product) {
 		product.setCreated(new Timestamp(System.currentTimeMillis()));
+		product.setView(0);
 		Integer productId=productsDAO.insert(product);
 		return productsDAO.findOne(productId);
 	}
 
 	@Override
 	public ProductsModel update(ProductsModel product) {
-		ProductsModel oldproduct=new ProductsModel();
+		ProductsModel oldproduct=productsDAO.findOne(product.getProductId());
 		product.setCreated(oldproduct.getCreated());
+		product.setView(oldproduct.getView());
 		productsDAO.update(product);
 		return productsDAO.findOne(product.getProductId());
 	}
@@ -52,6 +54,11 @@ public class ProductsService implements iProductsService{
 	@Override
 	public Integer getTotalItem() {
 		return productsDAO.getTotalItem();
+	}
+
+	@Override
+	public ProductsModel findOne(Integer id) {
+		return productsDAO.findOne(id);
 	}
 
 }

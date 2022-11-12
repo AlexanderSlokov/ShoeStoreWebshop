@@ -15,8 +15,28 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	private String madeIn;
 	private String desciption;
 	private String gender;
+	private String genders[]={"Male", "Female"};
+	private String manufacturers[]= {"Nike", "Adidas"};
+	private String countries[]= {"Viet Nam", "Japan", "China", "Indonesia", "India", "Korea"};
 	
-	
+	public String[] getCountries() {
+		return countries;
+	}
+	public void setCountries(String[] countries) {
+		this.countries = countries;
+	}
+	public String[] getGenders() {
+		return genders;
+	}
+	public void setGenders(String[] genders) {
+		this.genders = genders;
+	}
+	public String[] getManufacturers() {
+		return manufacturers;
+	}
+	public void setManufacturers(String[] manufacturers) {
+		this.manufacturers = manufacturers;
+	}
 	public Integer getProductId() {
 		return productId;
 	}
