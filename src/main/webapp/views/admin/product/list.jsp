@@ -27,8 +27,7 @@
 												<th>Product Name</th>
 												<th>Price</th>
 												<th>Description</th>
-												<th>Amount<th>
-												
+												<th>Manipulation</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -40,7 +39,15 @@
 													<td>${item.productName}</td>
 													<td>${item.price}</td>
 													<td>${item.desciption}</td>
-													<td>${item.count}</td>
+													<td>
+																<c:url var="editURL" value="/admin-product">
+																	<c:param name="type" value="edit"/>
+																	<c:param name="id" value="${item.productId}"/>
+																</c:url>
+																<a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
+																   title="Edit products" href='${editURL}'><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+																</a>
+															</td>
 												</tr>
 											</c:forEach>
 										</tbody>

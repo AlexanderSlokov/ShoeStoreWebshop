@@ -56,11 +56,9 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 
 	@Override
 	public List<ProductsModel> findAll(Pageble pageble) {
-		String sql="Select b.idProducts, b.name, b.vieww, b.price, b.description,  b.Manufacturer, count(*) as SL, "
+		String sql="Select b.idProducts, b.name, b.vieww, b.price, b.description,  b.Manufacturer, "
 				+ "b.discount, b.image_pd, b.created, b.madein, b.gender "
-				+ "from product a inner join products b "
-				+ "where a.idProducts = b.idProducts "
-				+ "group by b.idProducts";
+				+ "from products b ";
 		if (pageble.getSorter() != null && StringUtils.isNotBlank(pageble.getSorter().getSortName()) && StringUtils.isNotBlank(pageble.getSorter().getSortBy())) {
 			sql+= " ORDER BY "+pageble.getSorter().getSortName()+" "+pageble.getSorter().getSortBy()+"";
 		}

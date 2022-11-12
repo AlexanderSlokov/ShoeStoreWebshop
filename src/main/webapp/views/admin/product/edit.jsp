@@ -99,67 +99,38 @@
 									<option value="female">Female</option>
 								</select>
 							</div>
-							<br /> <br /> <label> class="col-sm-3 control-label
-								no-padding-right">Price</label>
+							<br /> <br /> <label
+								class="col-sm-3 control-label no-padding-right">Price</label>
 							<div class="col-sm-9">
-								<div class="container" style="background-color: white;">
-									<div
-										class="btn-group-vertical ml-10 mt-10 col-md-4 offset-md-4 p-3"
-										role="group">
-										<input class="form-control" id="ShortCode">
-										<div class="btn-group">
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(1)">1</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(2)">2</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(3)">3</button>
-										</div>
-										<div class="btn-group">
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(4)">4</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(5)">5</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(6)">6</button>
-										</div>
-										<div class="btn-group">
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(7)">7</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(8)">8</button>
-											<button type="button" class="btn btn-outline-secondary py-4"
-												onclick="KeyPadWrite(9)">9</button>
-										</div>
-										<div class="btn-group">
-											<button type="button" class="btn btn-outline-danger py-6"
-												onclick="KeyPadWrite(-1)">&lt; Remove</button>
-											<button type="button" class="btn btn-outline-secondary py-6"
-												onclick="KeyPadWrite(0)">0</button>
-										</div>
-										<button type="submit" class="btn btn-outline-success">Okey</button>
-									</div>
-								</div>
+								<input type="text" class="form-control" id="price" name="price"
+									value="${model.price}" />
+							</div>
+							<br /> <br /> <label
+								class="col-sm-3 control-label no-padding-right">Discount</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" id="discount" name="discount"
+									value="${model.discount}" />
 							</div>
 					</div>
-
-					<div class="form-group">
-						<div class="col-sm-12">
-							<c:if test="${not empty model.id}">
-								<input type="button" class="btn btn-white btn-warning btn-bold"
-									value="Edit product" id="btnAddOrUpdateNew" />
-							</c:if>
-							<c:if test="${empty model.id}">
-								<input type="button" class="btn btn-white btn-warning btn-bold"
-									value="Add product" id="btnAddOrUpdateNew" />
-							</c:if>
-						</div>
-					</div>
-					<input type="hidden" value="${model.id}" id="id" name="id" />
-					</form>
 				</div>
+
+				<div class="form-group">
+					<div class="col-sm-12">
+						<c:if test="${not empty model.id}">
+							<input type="button" class="btn btn-white btn-warning btn-bold"
+								value="Edit product" id="btnAddOrUpdateNew" />
+						</c:if>
+						<c:if test="${empty model.id}">
+							<input type="button" class="btn btn-white btn-warning btn-bold"
+								value="Add New Product" id="btnAddOrUpdateNew" />
+						</c:if>
+					</div>
+				</div>
+				<input type="hidden" value="${model.id}" id="id" name="id" />
+				</form>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<script>

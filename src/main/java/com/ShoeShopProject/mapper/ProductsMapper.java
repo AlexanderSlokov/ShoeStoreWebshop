@@ -20,7 +20,6 @@ public class ProductsMapper implements  RowMapper<ProductsModel>{
 			product.setCreated(rs.getTimestamp("b.created"));
 			product.setManufacturer(rs.getString("b.manufacturer"));
 			product.setView(rs.getInt("b.vieww"));
-			product.setCount(rs.getInt("SL"));
 			return product;
 			}
 			catch (SQLException e)
