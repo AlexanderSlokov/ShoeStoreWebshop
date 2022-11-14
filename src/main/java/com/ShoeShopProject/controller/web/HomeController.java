@@ -11,9 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.model.UserModel;
+import com.ShoeShopProject.paging.PageRequest;
+import com.ShoeShopProject.paging.Pageble;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.service.iUserService;
+import com.ShoeShopProject.sort.Sorter;
 import com.ShoeShopProject.utils.SessionUtil;
 
 @WebServlet(urlPatterns={"/home", "/login", "/logout"})
@@ -47,7 +51,12 @@ public class HomeController extends HttpServlet{
 			response.sendRedirect(request.getContextPath()+"/home");
 		}
 		else {
-			//request.setAttribute("sp1",productsService.findProductById(1));
+			ProductsModel model = new ProductsModel();
+			Pageble pageble = new PageRequest(model.getPage(),6,null);
+			model.setList(productsService.findAll(pageble));	
+			
+			request.setAttribute("spList",model.getList());
+			
 			RequestDispatcher rd=request.getRequestDispatcher("/views/web/home.jsp");
 			rd.forward(request, response);
 		}

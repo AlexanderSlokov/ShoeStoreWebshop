@@ -143,48 +143,15 @@
 			</div>
 			<div class="spct">
 				<ul class="spct-sp-li">
+				<c:forEach var="item" items="${spList}">
 					<li>
 						<div>
 							<img
-								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn2y_h319eCM_jIOK1O4XwttsOk6tjqom5Vw&usqp=CAU">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
+								src="<c:url value="${item.productImage}"/>">
+							<a>${item.productName}</a> <a style="color: red;">${item.price}</a>
 						</div>
 					</li>
-					<li>
-						<div>
-							<img
-								src="https://cdn.elly.vn/uploads/2021/04/16154143/tong-quan-thuong-hieu-giay-nike.2.jpg">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
-						</div>
-					</li>
-					<li>
-						<div>
-							<img
-								src="https://cdn.elly.vn/uploads/2021/04/16154143/tong-quan-thuong-hieu-giay-nike.2.jpg">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
-						</div>
-					</li>
-					<li>
-						<div>
-							<img
-								src="https://cdn.elly.vn/uploads/2021/04/16154143/tong-quan-thuong-hieu-giay-nike.2.jpg">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
-						</div>
-					</li>
-					<li>
-						<div>
-							<img
-								src="https://cdn.elly.vn/uploads/2021/04/16154143/tong-quan-thuong-hieu-giay-nike.2.jpg">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
-						</div>
-					</li>
-					<li>
-						<div>
-							<img
-								src="https://static.nike.com/a/images/q_auto:eco/t_product_v1/f_auto/dpr_3.0/w_300,c_limit/d7277d5b-77b6-4932-92b5-d5fe740f0b69/air-force-1-07-se-shoes-QVPN01.png">
-							<a>Shoes Addidas</a> <a style="color: red;">2000$</a>
-						</div>
-					</li>
+				</c:forEach>
 				</ul>
 			</div>
 			<div class="slider-content-btn">
@@ -193,7 +160,7 @@
 			</div>
 
 		</div>
-		<script src="./assets/func/script.js"></script>
+		<script src="<c:url value="./views/web/assets/func/script.js"/>"></script>
 	</div>
 
 </main>
