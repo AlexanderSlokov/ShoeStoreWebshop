@@ -91,7 +91,7 @@ nav ul li a:hover {
 /*login form*/
 
 .text_left {
-    font-family: 'Fasthand', cursive;
+    font-family: 'Roboto', cursive;
     font-size: 40px;
     line-height: 60px;
 }
@@ -102,7 +102,7 @@ nav ul li a:hover {
     justify-content: center;
     border-top: 10px solid #88bbb5;
     background-repeat:none;
-    background-image: url(https://top10tphcm.com/wp-content/uploads/2021/08/shop-giay-dep-nu-dep-o-quan-6.jpg);
+    
 }
 
 .loginform {
@@ -156,7 +156,7 @@ nav ul li a:hover {
 
 .loginform__right-header {
     position: relative;
-    bottom: 10%;
+    bottom: 4%;
     display: flex;
     justify-content: center;
 }
@@ -164,6 +164,7 @@ nav ul li a:hover {
 .inputlogin {
     height: 40px;
     font-weight: bold;
+    border-radius: 10px;
 }
 
 .inputlogin+.inputlogin {
@@ -171,10 +172,9 @@ nav ul li a:hover {
 }
 
 .textfoget {
-    position: relative;
-    left: 60%;
+    
     font-size: 15px;
-    top: 5px;
+    margin-top:10px;
     bottom: 5px;
     color: red;
 }

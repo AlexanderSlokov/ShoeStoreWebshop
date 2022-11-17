@@ -6,17 +6,20 @@ console.log(intnumber.length)
 let index = 0
 rightbtn.addEventListener("click", function() {
     index = index + 1
-    if (index > intnumber.length - 5) {
-        index = 0
+    if (index > intnumber.length) {
+        index = 5
     }
-    document.querySelector('.spct-sp-li').style.right = index * 100 + "%"
+    if (index * 20 < 100) {
+        index = intnumber.length
+    }
+    document.querySelector('.spct-sp-li').style.right = index * 20 + "%"
 })
 leftbtn.addEventListener("click", function() {
     index = index - 1
-    if (index <= 1) {
+    if (index <= 4) {
         index = intnumber.length
     }
-    document.querySelector('.spct-sp-li').style.right = index * 100 + "%"
+    document.querySelector('.spct-sp-li').style.right = index * 20 + "%"
 })
 
 //show product

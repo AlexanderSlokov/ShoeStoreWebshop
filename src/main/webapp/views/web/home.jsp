@@ -143,14 +143,16 @@
 			</div>
 			<div class="spct">
 				<ul class="spct-sp-li">
-				<c:forEach var="item" items="${spList}">
+				<c:forEach var="item" items="${spList}">				
 					<li>
-						<div>
-							<img
-								src="<c:url value="${item.productImage}"/>">
-							<a>${item.productName}</a> <a style="color: red;">${item.price}</a>
-						</div>
-					</li>
+                        <div>
+                             <a href="#">
+                             	<img
+									src="<c:url value="${item.productImage}"/>">
+								<p>${item.productName}</p> <p style="color: red;">${item.price}</p>
+                             </a>
+                        </div>                               
+                    </li> 
 				</c:forEach>
 				</ul>
 			</div>
