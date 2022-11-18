@@ -7,8 +7,8 @@
         <title>Shop Shoe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/css/base.css">
-        <link rel="stylesheet" href="./assets/css/product.css">
+        <link rel="stylesheet" href="<c:url value="./views/web/assets/css/base.css"/>">
+        <link rel="stylesheet" href="<c:url value="./views/web/assets/css/product.css"/>">
         <!--font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,8 +85,8 @@
                 </div>
                 
                 <div class="con-right">
-                    <h2>shoes from Tam Cam</h2>
-                    <h3>code product: 19999999</h3>
+                    <h2>${model.productName}</h2>
+                    <h3>Code product: ${model.productId}</h3>
                     <span>$15.000</span>
                     <p>made in Earch</p>
                     <div class="quality">
@@ -94,8 +94,8 @@
                         <input class="w-25 pl-1" value="1" type="number" style="width:50px">                        
                     </div>
                     <div class="container_product-content-right_button">
-                        <button> <i class="fa fa-shopping-cart"></i><p>Buy product</p>
-                            <button><p>Find product at shop</p>
+                        <button> <i class="fa fa-shopping-cart"></i><p>Buy product</p></button>
+                            <button><p>Find product at shop</p></button>
                     </div>
                     <div class="container_product-content-right_icon">
                         <a href="" class="container_product-content-right_icon-item">
@@ -115,7 +115,7 @@
             </div>
             <div class="dental">
                 <div class="content-dental">
-                    <p>noi dung dien vao</p>
+                    <p>${model.desciption}</p>
                 </div>
             </div>
             

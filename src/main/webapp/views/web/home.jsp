@@ -146,10 +146,14 @@
 				<c:forEach var="item" items="${spList}">				
 					<li>
                         <div>
-                             <a href="#">
+                        <c:url var="detailURL" value="/product">
+							<c:param name="productId" value="${item.productId}" />
+						</c:url> ">
+                             <a href="${detailURL}">
                              	<img
 									src="<c:url value="${item.productImage}"/>">
-								<p>${item.productName}</p> <p style="color: red;">${item.price}</p>
+								<p>${item.productName}</p> 
+								<p style="color: red;">${item.price}</p>
                              </a>
                         </div>                               
                     </li> 

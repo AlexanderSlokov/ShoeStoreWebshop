@@ -27,7 +27,6 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
 </head>
 <body>
 <head class="header">
@@ -36,7 +35,7 @@
 		<p>SHOES</p>
 		<nav>
 			<ul>
-				<li><a href="main.html" title=""
+				<li><a href="<c:url value="./views/web/about.jsp"/>"> title=""
 					style="text-decoration: underline;">Home</a></li>
 				<li><a href="" title="">About</a></li>
 				<li><a href="intro.html" title="">shop</a></li>
