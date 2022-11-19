@@ -32,7 +32,7 @@
 		<nav>
 			<ul>
 				<li><a href="main.html" title=""
-					style="text-decoration: underline;">Home</a></li>
+					>Home</a></li>
 				<li><a href="" title="">About</a></li>
 				<li><a href="intro.html" title="">shop</a></li>
 				<li><a href="" title="">ADIDAS</a></li>

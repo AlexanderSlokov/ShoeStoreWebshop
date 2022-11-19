@@ -87,8 +87,8 @@
                 <div class="con-right">
                     <h2>${model.productName}</h2>
                     <h3>Code product: ${model.productId}</h3>
-                    <span>$15.000</span>
-                    <p>made in Earch</p>
+                    <span>${model.price} VND</span>
+                    <p>Made in ${model.madeIn}</p>
                     <div class="quality">
                         <p style="font-weight:bold; padding-right:20px;">Quantity</p>
                         <input class="w-25 pl-1" value="1" type="number" style="width:50px">                        
