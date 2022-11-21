@@ -4,15 +4,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Shop Shoe</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="<c:url value="./assets/css/base.css"/>">
+<link rel="stylesheet" href="<c:url value="./assets/css/home.css"/>">
+<!--font-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Fasthand&display=swap"
+	rel="stylesheet">
+<!--icon-->
+<link rel="stylesheet" type="text/css"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
 <head class="header">
 <div class="menu_top">
 	<div class="menu_top-baner">
 		<p>SHOES</p>
 		<nav>
 			<ul>
-				<li><a href="main.html" title=""
+				<li><a href="<c:url value="./views/web/home.jsp"/>" title=""
 					>Home</a></li>
-				<li><a href="" title="">About</a></li>
+				<li><a href="<c:url value="./views/web/about.jsp"/>" title="">About</a></li>
 				<li><a href="intro.html" title="">shop</a></li>
 				<li><a href="" title="">ADIDAS</a></li>
 				<li><a href="" title="">NIKE</a></li>
@@ -50,7 +70,7 @@
 							<li><a href="shop.html">shop</a></li>
 							<li><a href="cart.html">cart</a></li>
 							<li><a href="">about</a></li>
-							<li><a href="intro.html">contact</a></li>
+							<li><a href="<c:url value="./views/web/contact.jsp"/>">contact</a></li>
 						</ul>
 					</div></li>
 			</ul>
@@ -60,7 +80,6 @@
 
 </div>
 </head>
-<!--header-->
-</head>
+</body>
 
 </html>

@@ -1,4 +1,4 @@
-
+<%@ include file="header.jsp" %>  
 <%@ include file="/common/taglib.jsp"%>
 <!DOCTYPE html>
 <html>
@@ -25,61 +25,12 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<head class="header">
-<div class="menu_top">
-	<div class="menu_top-baner">
-		<p>SHOES</p>
-		<nav>
-			<ul>
-				<li><a href="main.html" title=""
-					>Home</a></li>
-				<li><a href="" title="">About</a></li>
-				<li><a href="intro.html" title="">shop</a></li>
-				<li><a href="" title="">ADIDAS</a></li>
-				<li><a href="" title="">NIKE</a></li>
-				<li><a href="" title="">Sale</a></li>
-				<li class="hover_icon"><a> <i class="fa fa-search"
-						style="color: yelow"></i>
-						<div class="header__qr hover-search">
-							<i class="fa fa-search" style="color: yelow"></i> <input
-								placeholder="search">
-						</div>
-				</a></li>
-				<li class="hover_icon"><a href="cart.html" title=""> <i
-						class="fa fa-shopping-cart" aria-hidden="true"></i>
-				</a>
-					<div class="header__qr cart_dasboard">
-						<ul>
-							<li>no product</li>
-							<li><i class="fa fa-frown-o" aria-hidden="true"></i></li>
-						</ul>
-					</div>
-				
-				<li><c:if test="${not empty USERMODEL}">
-					<li class="nav-item">
-						<a class="nav-link" href='#'>Welcome, ${USERMODEL.fullName}</a></li>
-					<li class="nav-item">
-						<a class="nav-link" href='<c:url value="/logout?action=logout"/>'>Logout</a></li>
-					</c:if>
-					<c:if test="${empty USERMODEL}"> 
-						<li><a href="<c:url value='/login?action=login'/>">Login</a></li>
-					</c:if>
-				<li class="hover_icon"><i class="fa fa-bars"
-					style="color: yelow"></i>
-					<div class="header__qr menu_dasboard">
-						<ul>
-							<li><a href="shop.html">shop</a></li>
-							<li><a href="cart.html">cart</a></li>
-							<li><a href="">about</a></li>
-							<li><a href="intro.html">contact</a></li>
-						</ul>
-					</div></li>
-			</ul>
-		</nav>
-	</div>
 
+<<<<<<< HEAD
 </div>
 </head>
+=======
+>>>>>>> ca0d565d518f4b6332dc3e893dc6953c7c978967
 <!--header-->
 <main class="container">
 	<div class="con-header">
@@ -148,11 +99,20 @@
                         <c:url var="detailURL" value="/product">
 							<c:param name="productId" value="${item.productId}" />
 						</c:url> 
+<<<<<<< HEAD
                         <a href="${detailURL}">
                            <img src="<c:url value="${item.productImage}"/>">
 						   <p>${item.productName}</p> 
 						   <p style="color: red">${item.price}</p>
                         </a>
+=======
+                             <a href="${detailURL}">
+                             	<img
+									src="<c:url value="${item.productImage}"/>" >
+								<p>${item.productName}</p> 
+								<p style="color: red;">${item.price}</p>
+                             </a>
+>>>>>>> ca0d565d518f4b6332dc3e893dc6953c7c978967
                         </div>                               
                     </li> 
 				</c:forEach>
@@ -168,48 +128,6 @@
 	</div>
 
 </main>
-
-<!--main-->
-<footer class="footer">
-	<div class="footer-container">
-		<div class="footer-col">
-			<h4>company</h4>
-			<ul>
-				<li><a href="#">about us</a></li>
-				<li><a href="#">our services</a></li>
-				<li><a href="#">privacy policy</a></li>
-				<li><a href="#">affiliate program</a></li>
-			</ul>
-		</div>
-		<div class="footer-col">
-			<h4>get help</h4>
-			<ul>
-				<li><a href="#">FAQ</a></li>
-				<li><a href="#">shipping</a></li>
-				<li><a href="#">returns</a></li>
-				<li><a href="#">order status</a></li>
-				<li><a href="#">payment options</a></li>
-			</ul>
-		</div>
-		<div class="footer-col">
-			<h4>online shop</h4>
-			<ul>
-				<li><a href="#">watch</a></li>
-				<li><a href="#">bag</a></li>
-				<li><a href="#">shoes</a></li>
-				<li><a href="#">dress</a></li>
-			</ul>
-		</div>
-		<div class="footer-col">
-			<h4>follow us</h4>
-			<div class="social-links">
-				<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
-					class="fab fa-twitter"></i></a> <a href="#"><i
-					class="fab fa-instagram"></i></a> <a href="#"><i
-					class="fab fa-linkedin-in"></i></a>
-			</div>
-		</div>
-	</div>
-</footer>
 </body>
+<%@ include file="footer.jsp" %>  
 </html>
