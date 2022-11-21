@@ -9,13 +9,12 @@
 <title>Shop Shoe</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value="./assets/css/base.css"/>">
-<link rel="stylesheet" href="<c:url value="./assets/css/home.css"/>">
+<link rel="stylesheet" href="<c:url value="./views/web/assets/css/base.css"/>">
+<link rel="stylesheet" href="<c:url value="./views/web/assets/css/home.css"/>">
 <!--font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Fasthand&display=swap"
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Fasthand&display=swap"
 	rel="stylesheet">
 <!--icon-->
 <link rel="stylesheet" type="text/css"
@@ -30,10 +29,10 @@
 		<p>SHOES</p>
 		<nav>
 			<ul>
-				<li><a href="<c:url value="./views/web/home.jsp"/>" title=""
+				<li><a href="<c:url value="/home"/>" title=""
 					>Home</a></li>
 				<li><a href="<c:url value="./views/web/about.jsp"/>" title="">About</a></li>
-				<li><a href="intro.html" title="">shop</a></li>
+				<li><a href="<c:url value="./views/web/intro.jsp"/>" title="">shop</a></li>
 				<li><a href="" title="">ADIDAS</a></li>
 				<li><a href="" title="">NIKE</a></li>
 				<li><a href="" title="">Sale</a></li>

@@ -25,12 +25,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
-<<<<<<< HEAD
 </div>
 </head>
-=======
->>>>>>> ca0d565d518f4b6332dc3e893dc6953c7c978967
+
 <!--header-->
 <main class="container">
 	<div class="con-header">
@@ -99,20 +96,11 @@
                         <c:url var="detailURL" value="/product">
 							<c:param name="productId" value="${item.productId}" />
 						</c:url> 
-<<<<<<< HEAD
                         <a href="${detailURL}">
                            <img src="<c:url value="${item.productImage}"/>">
 						   <p>${item.productName}</p> 
 						   <p style="color: red">${item.price}</p>
                         </a>
-=======
-                             <a href="${detailURL}">
-                             	<img
-									src="<c:url value="${item.productImage}"/>" >
-								<p>${item.productName}</p> 
-								<p style="color: red;">${item.price}</p>
-                             </a>
->>>>>>> ca0d565d518f4b6332dc3e893dc6953c7c978967
                         </div>                               
                     </li> 
 				</c:forEach>

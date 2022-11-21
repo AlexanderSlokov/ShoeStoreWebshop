@@ -1,6 +1,4 @@
-  <%@ include file="header.jsp" %>  
- <%@ include file="/common/taglib.jsp" %>
- 
+<%@ include file="/common/taglib.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,9 +16,10 @@
         <!--icon-->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
     </head>
     <body>
-
+<%@ include file="header.jsp" %>  
         <main class="container"> 
             <div class="container-con">
                 <div class="con-left">
@@ -69,7 +68,7 @@
                 </div>
             </div>
             
-            <script src="./assets/func/product.js"></script>
+            <script src="<c:url value="./views/web/assets/func/product.js"/>"> </script>
         </main>
         <!--main-->
      
