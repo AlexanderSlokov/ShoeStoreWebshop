@@ -27,8 +27,8 @@ public class ProductController extends HttpServlet {
 	private iProductsService productsService;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-			ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
-			model=productsService.findOne(model.getProductId());
+		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
+		model=productsService.findOne(model.getProductId());
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher("/views/web/product.jsp");
 		rd.forward(request, response);

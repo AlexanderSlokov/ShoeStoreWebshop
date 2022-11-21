@@ -52,7 +52,7 @@ public class HomeController extends HttpServlet{
 		}
 		else {
 			ProductsModel model = new ProductsModel();
-			Pageble pageble = new PageRequest(model.getPage(),6,null);
+			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(), null);
 			model.setList(productsService.findAll(pageble));	
 			
 			request.setAttribute("spList",model.getList());

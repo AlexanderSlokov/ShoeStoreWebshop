@@ -73,10 +73,8 @@
             <div class="container-con">
                 <div class="con-left">
                     <div class="content-img">
-                        <a href=""> <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/cf1f177875c54676a45cadc800f9af16_9366/Reebok_Nano_X2_Men's_Training_Shoes_Black_GW5146_01_standard.jpg"></a>
-                        <a href=""> <img src="https://assets.reebok.com/images/w_600,f_auto,q_auto/e3142927a70442d98c20acc5017ec9a5_9366/Nano_X1_Men's_Training_Shoes_Grey_H02830_01_standard.jpg"></a>
-                        <a href=""> <img src="https://images.meesho.com/images/products/44009963/kxwus_512.jpg"></a>
-                        <a href=""> <img src="https://i01.appmifile.com/v1/MI_18455B3E4DA706226CF7535A58E875F0267/pms_1640850395.31014951.jpg"></a>
+                        <a href=""> <img src="<c:url value="${model.productImage}"/>"></a>
+                       
                     </div>                
                 </div>
                 <div class="slider-content-btn ">
