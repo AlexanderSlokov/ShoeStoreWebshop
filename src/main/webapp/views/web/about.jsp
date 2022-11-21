@@ -8,7 +8,7 @@
         <title>Shop Shoe</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="<c:url value="./assets/css/about.css"/>">
+        <link rel="stylesheet" href="<c:url value="/views/web/assets/css/about.css"/>">
         <!--font-->
         
         <!--icon-->
