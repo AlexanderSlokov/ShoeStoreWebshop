@@ -20,6 +20,8 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="row">
+									<p style="font-size:20px">Product Name: ${model.productName}</p>
+									<p style="font-size:20px">Amount: ${itemAmount}</p>
 									<table class="table">
 										<thead>
 											<tr>
@@ -27,7 +29,7 @@
 												<th>ID</th>
 												<th>Size</th>
 												<th>Amount</th>
-												<th>Update amount</th>
+												<th>Update amount<th>
 											</tr>
 										</thead>
 										<tbody>
@@ -39,7 +41,7 @@
 													<td>${item.size}</td>
 													<td>${item.amount}</td>
 													<td><c:url var="editURL" value="/admin-product">
-															<c:param name="type" value="edit" />
+															<c:param name="type" value="import" />
 															<c:param name="productId" value="${item.productId}" />
 														</c:url> <a class="btn btn-sm btn-primary btn-edit"
 														data-toggle="tooltip" title="Edit products"

@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import com.ShoeShopProject.dao.iProductDAO;
 import com.ShoeShopProject.dao.iProductsDAO;
 import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
@@ -15,6 +16,8 @@ public class ProductsService implements iProductsService{
 	@Inject
 	private iProductsDAO productsDAO;
 	
+	@Inject
+	private iProductDAO productDAO;
 	@Override
 	public List<ProductsModel> findProductById(Integer id) {
 		return productsDAO.findProductById(id);
@@ -59,6 +62,11 @@ public class ProductsService implements iProductsService{
 	@Override
 	public ProductsModel findOne(Integer id) {
 		return productsDAO.findOne(id);
+	}
+
+	@Override
+	public Integer countItemEachProduct(Integer id) {
+		return productDAO.countItemEachProduct(id);
 	}
 
 }

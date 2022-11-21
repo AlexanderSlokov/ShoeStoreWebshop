@@ -13,6 +13,10 @@ public class ProductMapper implements  RowMapper<ProductModel> {
 		try {
 		    ProductModel product = new ProductModel();
 			product.setProductId(rs.getInt("idProduct"));
+			product.setSize(rs.getInt("size"));
+			product.setProductsId(rs.getInt("idProducts"));
+			product.setQty(rs.getInt("qty"));
+			product.setCount(rs.getInt("SL"));
 			return product;
 			}
 			catch (SQLException e)

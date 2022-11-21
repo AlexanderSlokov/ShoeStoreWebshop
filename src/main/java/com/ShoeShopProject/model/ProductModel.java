@@ -1,15 +1,15 @@
 package com.ShoeShopProject.model;
 
-public class ProductModel {
+public class ProductModel extends AbstractModel<ProductModel>{
 	private Integer productId;
-	private String productsId;
+	private Integer productsId;
 	private Integer size;
 	private Integer qty;
 	
-	public String getProductsId() {
+	public Integer getProductsId() {
 		return productsId;
 	}
-	public void setProductsId(String productsId) {
+	public void setProductsId(Integer productsId) {
 		this.productsId = productsId;
 	}
 	public Integer getQty() {

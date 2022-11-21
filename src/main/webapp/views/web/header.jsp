@@ -69,7 +69,7 @@
 							<li><a href="shop.html">shop</a></li>
 							<li><a href="cart.html">cart</a></li>
 							<li><a href="">about</a></li>
-							<li><a href="<c:url value="./views/web/contact.jsp"/>">contact</a></li>
+							<li><a href="<c:url value="/views/web/contact.jsp"/>">contact</a></li>
 						</ul>
 					</div></li>
 			</ul>

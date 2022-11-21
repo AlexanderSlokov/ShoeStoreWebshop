@@ -56,6 +56,14 @@ public class ProductController extends HttpServlet {
 			request.setAttribute("genders", genders);
 			view="/views/admin/product/edit.jsp";
 		}
+		else if(model.getType().equals(SystemConstant.IMPORT)) {
+			if (model.getProductId()!=null)
+			{	
+				model=productsService.findOne(model.getProductId());
+				request.setAttribute("itemAmount",productsService.countItemEachProduct(model.getProductId()));
+			}
+			view="/views/admin/product/stock.jsp";
+		}
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);

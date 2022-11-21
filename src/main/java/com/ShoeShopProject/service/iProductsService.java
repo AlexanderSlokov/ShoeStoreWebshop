@@ -15,4 +15,5 @@ public interface iProductsService {
 	List<ProductsModel> findAll(Pageble pageble);
 	Integer getTotalItem();
 	ProductsModel findOne(Integer id);
+	Integer countItemEachProduct(Integer id);
 }
