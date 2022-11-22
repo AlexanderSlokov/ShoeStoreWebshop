@@ -9,9 +9,9 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
-	href="<c:url value="/views/web/assets/css/base.css"/>">
+	href="<c:url value="./views/web/assets/css/base.css"/>">
 <link rel="stylesheet"
-	href="<c:url value="/views/web/assets/css/home.css"/>">
+	href="<c:url value="./views/web/assets/css/home.css"/>">
 <!--font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,8 +25,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-</div>
-</head>
 
 <!--header-->
 <main class="container">
@@ -96,11 +94,12 @@
                         <c:url var="detailURL" value="/product">
 							<c:param name="productId" value="${item.productId}" />
 						</c:url> 
-                        <a href="${detailURL}">
-                           <img src="<c:url value="${item.productImage}"/>">
-						   <p>${item.productName}</p> 
-						   <p style="color: red">${item.price}</p>
-                        </a>
+                             <a href="${detailURL}">
+                             	<img
+									src="<c:url value="${item.productImage}"/>" >
+								<p>${item.productName}</p> 
+								<p style="color: red;">${item.price}</p>
+                             </a>
                         </div>                               
                     </li> 
 				</c:forEach>
