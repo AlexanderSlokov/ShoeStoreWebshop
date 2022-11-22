@@ -1,6 +1,5 @@
- <%@ include file="header.jsp" %>  
  <%@ include file="/common/taglib.jsp" %>
- 
+ <%@ include file="header.jsp" %>  
 <!DOCTYPE html>
 <html>
     <head>

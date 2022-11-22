@@ -9,8 +9,8 @@
 <title>Shop Shoe</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value="views/web/assets/css/base.css"/>">
-<link rel="stylesheet" href="<c:url value="views/web/assets/css/home.css"/>">
+<link rel="stylesheet" href="<c:url value="/views/web/assets/css/base.css"/>">
+<link rel="stylesheet" href="<c:url value="/views/web/assets/css/home.css"/>">
 <!--font-->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
