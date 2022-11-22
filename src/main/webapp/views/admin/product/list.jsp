@@ -10,8 +10,9 @@
 <meta charset="UTF-8">
 <title>List of products</title>
 <style>
-.list__check{
-display: none;}
+.list__check {
+	display: none;
+}
 </style>
 </head>
 <body>
@@ -85,8 +86,9 @@ display: none;}
 															<c:param name="productId" value="${item.productId}" />
 														</c:url>
 
-														<div class="store" >
-															<i class="fa fa-pencil-square-o" aria-hidden="true" style="14px"></i>
+														<div class="store">
+															<i class="fa fa-pencil-square-o" aria-hidden="true"
+																style=""></i>
 															<div class="list__check">
 																<ul>
 																	<li><a href='${editURL}'>Edit</a></li>
@@ -115,8 +117,14 @@ display: none;}
 
 	<!-- /.main-content -->
 	<script>
-		var totalPages = ${model.totalPage};
-		var currentPage = ${model.page};
+		var totalPages = $
+		{
+			model.totalPage
+		};
+		var currentPage = $
+		{
+			model.page
+		};
 		var limit = 6;
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({
