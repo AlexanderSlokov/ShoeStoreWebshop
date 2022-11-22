@@ -115,14 +115,8 @@ display: none;}
 
 	<!-- /.main-content -->
 	<script>
-		var totalPages = $
-		{
-			model.totalPage
-		};
-		var currentPage = $
-		{
-			model.page
-		};
+		var totalPages = ${model.totalPage};
+		var currentPage = ${model.page};
 		var limit = 6;
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({

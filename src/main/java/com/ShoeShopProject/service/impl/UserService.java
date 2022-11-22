@@ -1,5 +1,7 @@
 package com.ShoeShopProject.service.impl;
 
+import java.sql.Timestamp;
+
 import javax.inject.Inject;
 
 import com.ShoeShopProject.dao.iUserDAO;
@@ -15,6 +17,7 @@ public class UserService implements iUserService {
 	}
 	@Override
 	public void insertUser(UserModel user) {
+		user.setCreated(new Timestamp(System.currentTimeMillis()));
 		Integer id= userDAO.insertUser(user);
 		System.out.print(id);
 	}

@@ -71,5 +71,23 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 		String sql="Select count(*) from products";
 		return count(sql);
 	}
+
+	@Override
+	public List<ProductsModel> findProductByCategory(Pageble pageble, String cate) {
+		String sql="Select * from products where manufacturer=? ";
+		if (pageble.getSorter() != null && StringUtils.isNotBlank(pageble.getSorter().getSortName()) && StringUtils.isNotBlank(pageble.getSorter().getSortBy())) {
+			sql+= " ORDER BY "+pageble.getSorter().getSortName()+" "+pageble.getSorter().getSortBy()+"";
+		}
+		if (pageble.getOffset() != null && pageble.getLimit() != null) {
+			sql+=" LIMIT "+pageble.getOffset()+", "+pageble.getLimit()+"";
+		}
+		return query(sql.toString(), new ProductsMapper(), cate);
+	}
+
+	@Override
+	public Integer getTotalItemByCategory(String cate) {
+		String sql="Select count(*) from products where manufacturer=? ";
+		return count(sql, cate);
+	}
 	
 }

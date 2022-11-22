@@ -8,7 +8,8 @@
 <title>Shop Shoe</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="<c:url value="/views/web/assets/css/show_product.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="/views/web/assets/css/show_product.css"/>">
 <!--font-->
 
 <!--icon-->
@@ -16,6 +17,14 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--paging-->
+ 	<script src="<c:url value='/template/admin/assets/js/jquery.2.1.1.min.js' />"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   
+    <script src="<c:url value='/template/paging/jquery.twbsPagination.js' />"></script>
+	<link rel="stylesheet" href="<c:url value='/template/admin/assets/css/bootstrap.min.css' />" />
+    <link rel="stylesheet" href="<c:url value='/template/admin/font-awesome/4.5.0/css/font-awesome.min.css' />" />
+    
 </head>
 <body>
 	<main class="container">
@@ -32,30 +41,38 @@
 						</ul>
 					</div>
 				</div>
-				<div class="show_product">
+				<form action="<c:url value='/product'/>" id="formSubmit" method="get">
+				<div class="show_product">	
 					<ul id="shooo" class="product">
 						<h1 id="output"></h1>
 						<script src="functem.js"></script>
-
-						<c:forEach var="item" begin="1" end="30">
+						<c:forEach var="item" items="${model.list}">
 							<li>
 								<div>
 									<div class="product-top">
 										<a href="product.html" class="product-thumb"> <img
-											src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/6a412738-c878-43a3-af4d-a372c6291563/air-jordan-6-retro-shoes-4m3b9d.png"
+											src="<c:url value="${item.productImage}"/>"
 											alt="sp1">
 										</a>
 										<!--buy now-->
 										<a href="" class="buy-now"> Buy now </a>
 									</div>
-									<a href="" class="product-name">giay so</a>
-									<div class="product-price">$2000</div>
+									<a href="" class="product-name">${item.productName}</a>
+									<div class="product-price">${item.price}</div>
 								</div>
 							</li>
 						</c:forEach>
 
 					</ul>
+					
 				</div>
+				</form>
+				<ul class="pagination" id="pagination"></ul>
+				<input type="hidden" value="" id="page" name="page" /> <input
+					type="hidden" value="" id="maxPageItem" name="maxPageItem" /> <input
+					type="hidden" value="" id="sortName" name="sortName" /> <input
+					type="hidden" value="" id="sortBy" name="sortBy" /> <input
+					type="hidden" value="" id="type" name="type" />
 				<script>
 					function viewproduct() {
 						viewView({
@@ -67,17 +84,30 @@
 				</script>
 			</div>
 		</div>
-		</div>
-		<div class="choose__page">
-			<ul>
-				<li><a href="">&lt;</a></li>
-				<c:forEach var="item" begin="1" end="10">
-					<li><li><a href="#">${item}</a></li>
-				</c:forEach>				
-				<li><a href="">&gt;</a></li>
-			</ul>
-		</div>
 	</main>
+<!-- /.main-content -->
+	<script>
+		var totalPages = ${model.totalPage};
+		var currentPage = ${model.page};
+		var limit = 6;
+		$(function() {
+			window.pagObj = $('#pagination').twbsPagination({
+				totalPages : totalPages,
+				visiblePages : 6,
+				startPage : currentPage,
+				onPageClick : function(event, page) {
+					if (currentPage != page) {
+						$('#maxPageItem').val(limit);
+						$('#page').val(page);
+						$('#sortName').val('price');
+						$('#sortBy').val('desc');
+						$('#type').val('show');
+						$('#formSubmit').submit();
+					}
+				}
+			});
+		});
+		</script>
 </body>
 <%@ include file="footer.jsp"%>
 </html>

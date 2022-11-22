@@ -32,69 +32,78 @@
 
 
 <!--baner-->
-<main class="main_logiform" >
-	<div class="loginform" style="margin-top:50px;">
-		<div class="loginform__left ">
-			<img
-				src="https://images.meesho.com/images/products/89867327/hh4s5_512.jpg"
-				alt="logowed">
+	<main class="main_logiform">
+		<div class="loginform" style="margin-top: 50px;">
+			<div class="loginform__left ">
+				<img
+					src="https://images.meesho.com/images/products/89867327/hh4s5_512.jpg"
+					alt="logowed">
 
-		</div>
-		<div class="loginform__right">
-			<div id="for-login">
-			<c:if test="${not empty message}">
-			<div id="noti1" class="noti" style="position: relative;left: -863px;top: 97px;">
-				<div class="alert alert-${alert}">
-					${message}
-				</div>
 			</div>
-			</c:if>	
-				<div class="loginform__right-header text_left">
-					<a>LOGIN</a>
-				</div>
-				<form action="<c:url value='/login'/>" id="log" method="POST">
-					<div class="loginform__right-body">
-						<input class="inputlogin" placeholder="Email/Phone number"
-							name="uname" id="uname" required> <input
-							class="inputlogin" placeholder="Password" name="pass" id="pass"
-							required type="password">
-						<button class="inputlogin" onclick="hamtam()">Login</button>
-						<button class="inputlogin" style="color: red;"
-							onclick="registerfun()">Register</button>
-						<input type="hidden" value="login" name="action" /> <a
-							class="textfoget" href="">Forget Password</a>
-						<p>OR</p>
-						<div class="login3">
-							<ul>
-								<li><a> <i class='fab fa-facebook-f'
-										style='color: blue'></i> facebook
-								</a></li>
-								<li><a> <i class='fab fa-google-plus-g'
-										style='color: red'></i> google
-								</a></li>
-							</ul>
-						</div>
+			<div class="loginform__right">
+				<div id="for-login">
+					
+					<div class="loginform__right-header text_left">
+						<a>LOGIN</a>
 					</div>
-				</form>
-			</div>
-			<div id="for-register">
-				<div class="loginform__right-header text_left">
-					<a>REGRISTER</a>
+					<form action="<c:url value='/login'/>" id="log" method="POST">
+					<c:if test="${not empty message}">
+						<div id="noti1" class="noti"
+							style="position: relative; left: -863px; top: 97px;">
+							<div class="alert alert-${alert}">${message}</div>
+						</div>
+					</c:if>
+						<div class="loginform__right-body">
+							<input class="inputlogin" placeholder="Email/Phone number"
+								name="uname" id="uname" required> <input
+								class="inputlogin" placeholder="Password" name="pass" id="pass"
+								required type="password">
+							<button class="inputlogin" onclick="hamtam()">Login</button>
+							<button class="inputlogin" style="color: red;"
+								onclick="registerfun()">Register</button>
+							<input type="hidden" value="login" name="action" /> <a
+								class="textfoget" href="">Forget Password</a>
+							<p>OR</p>
+							<div class="login3">
+								<ul>
+									<li><a> <i class='fab fa-facebook-f'
+											style='color: blue'></i> facebook
+									</a></li>
+									<li><a> <i class='fab fa-google-plus-g'
+											style='color: red'></i> google
+									</a></li>
+								</ul>
+							</div>
+						</div>
+					</form>
 				</div>
-				<div class="loginform__right-body">
-					<input class="inputregis" placeholder="Full name" name="uFullname"
-						required> <input class="inputregis" placeholder="Email"
-						name="uEmail" required> <input class="inputregis"
-						placeholder="Phone number" name="uPhone" required> <input
-						class="inputregis" placeholder="Password" name="uPass" required>
-					<input class="inputregis" placeholder="Confirm password"
-						name="uConfpass" required> <input class="inputregis"
-						placeholder="Address" name="uaddress" required>
-					<button class="inputregis" style="color: red;"
-						onclick="registerfun1()">Register</button>
+				<div id="for-register">
+					<div class="loginform__right-header text_left">
+						<a>REGISTER</a>
+					</div>
+					<form action="<c:url value='/register'/>" id="re" method="POST">
+					<c:if test="${not empty message}">
+						<div id="noti1" class="noti"
+							style="position: relative; left: -863px; top: 97px;">
+							<div class="alert alert-${alert}">${message}</div>
+						</div>
+					</c:if>
+						<div class="loginform__right-body">
+							<input class="inputregis" placeholder="Full name" name="fullName"
+								id="fullName" required> <input class="inputregis"
+								placeholder="Email" name="email" id="email" required> <input
+								class="inputregis" placeholder="Phone number" name="phone" id="phone"
+								required> <input class="inputregis"
+								placeholder="Password" name="password" id="password" required>
+							<input class="inputregis" placeholder="Confirm password"
+								name="Confpass" required id="Confpass""> <input class="inputregis"
+								placeholder="Address" name="address" id="address" required>
+							<button class="inputregis" style="color: red;" value="register"
+								name="action">Register</button>
+						</div>
+					</form>
 				</div>
-			</div>
-			<script>
+				<script>
 				function registerfun() {
 					document.getElementById("for-login").style.display = 'none';
 					document.getElementById("for-register").style.display = 'block';
@@ -105,9 +114,9 @@
 					document.getElementById("for-register").style.display = 'none';
 				}
 			</script>
+			</div>
 		</div>
-	</div>
-</main>
+	</main>
 </body>
 <%@ include file="footer.jsp" %>  
 </html>

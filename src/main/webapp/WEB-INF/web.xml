@@ -20,6 +20,16 @@
 		<url-pattern>/views/web/log</url-pattern> 
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>RegisterForm</servlet-name>
+		<servlet-class>com.ShoeShopProject.controller.web.RegisterController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>RegisterForm</servlet-name>
+		<url-pattern>/views/web/re</url-pattern> 
+	</servlet-mapping>
+	
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>

@@ -69,4 +69,14 @@ public class ProductsService implements iProductsService{
 		return productDAO.countItemEachProduct(id);
 	}
 
+	@Override
+	public List<ProductsModel> findProductsByCategory(Pageble pageble, String cate) {
+		return productsDAO.findProductByCategory(pageble, cate);
+	}
+
+	@Override
+	public Integer getTotalItemByCategory(String cate) {
+		return productsDAO.getTotalItemByCategory(cate);
+	}
+
 }
