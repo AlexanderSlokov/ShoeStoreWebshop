@@ -1,3 +1,4 @@
+
 <%@include file="/common/taglib.jsp"%>
 <c:url var="APIurl" value="/api-admin-product" />
 <c:url var="ProductURL" value="/admin-product" />
@@ -8,6 +9,10 @@
 <head>
 <meta charset="UTF-8">
 <title>List of products</title>
+<style>
+.list__check{
+display: none;}
+</style>
 </head>
 <body>
 	<div class="main-content">
@@ -72,20 +77,23 @@
 													<td>${item.productName}</td>
 													<td>${item.price}</td>
 													<td>${item.desciption}</td>
-													<td>		
-														<c:url var="editURL" value="/admin-product">
+													<td><c:url var="editURL" value="/admin-product">
 															<c:param name="type" value="edit" />
 															<c:param name="productId" value="${item.productId}" />
-														</c:url>
-														<c:url var="importURL" value="/admin-product">
+														</c:url> <c:url var="importURL" value="/admin-product">
 															<c:param name="type" value="import" />
 															<c:param name="productId" value="${item.productId}" />
 														</c:url>
-														<ul>
-															<li><a href='${editURL}'>Edit</a></li>
-															<li><a href='${importURL}'>Import</a></li> 
-														</ul>															
-													</td>
+
+														<div class="store" >
+															<i class="fa fa-pencil-square-o" aria-hidden="true" style="14px"></i>
+															<div class="list__check">
+																<ul>
+																	<li><a href='${editURL}'>Edit</a></li>
+																	<li><a href='${importURL}'>Import</a></li>
+																</ul>
+															</div>
+														</div></td>
 												</tr>
 											</c:forEach>
 										</tbody>

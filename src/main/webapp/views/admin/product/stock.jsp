@@ -40,7 +40,7 @@
 													<td>${item.productId}</td>
 													<td>${item.size}</td>
 													<td>${item.amount}</td>
-													<td><c:url var="editURL" value="/admin-product">
+													<td><c:url var="editAmountURL" value="/admin-product">
 															<c:param name="type" value="import" />
 															<c:param name="productId" value="${item.productId}" />
 														</c:url> <a class="btn btn-sm btn-primary btn-edit"
@@ -59,5 +59,11 @@
 			</div>
 		</form>
 	</div>
+<script type="text/javascript">
+		var status = document.getElementById("status").value;
+		if(status == "failed") {
+			swal("Sorry", "Email or Password Invalid", "failed");
+		}
+	</script>
 </body>
 </html>

@@ -15,9 +15,9 @@
 	border-bottom: 2px solid black;
 	position: fixed;
 	top: 0px;
-	background-color:black;
+	background-color: black;
 	z-index: 99999999;
-	font-size:14px;
+	font-size: 14px;
 }
 
 .menu_top p {
@@ -27,7 +27,7 @@
 
 nav ul {
 	list-style: none;
-	background:black;
+	background: black;
 }
 
 nav ul li {
@@ -187,7 +187,16 @@ nav ul li a {
 	margin: 30px 0px;
 }
 
-.dmsp-li img {
+.dmsp-li a {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: black;
+	margin-top: 20px;
+	padding: 10px 0px;
+}
+
+.dmsp-li a img {
 	width: 100%;
 	border-radius: 50%;
 }
