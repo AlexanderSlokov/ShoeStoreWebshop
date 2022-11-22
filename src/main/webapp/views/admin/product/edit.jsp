@@ -74,10 +74,11 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Description</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="desciption"
-										name="desciption" value="${model.desciption}" />
+									<textarea cols="50" placeholder="input description here" rows="6" class="form-control" id="desciption"
+										name="desciption" value="${model.desciption}"></textarea>
 								</div>
 							</div>
+							</br> </br> </br> </br> </br>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Made in</label>
 							<div class="col-sm-9">
@@ -102,6 +103,7 @@
 								</c:if>
 								</select>
 							</div>
+							</br>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Gender</label>
 							<div class="col-sm-9">
@@ -122,18 +124,21 @@
 										</c:if>
 								</select>
 							</div>
+							</br>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Price</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" id="price" name="price"
 									value="${model.price}" />
 							</div>
+							</br>
 							<br /> <br /> <label
 								class="col-sm-3 control-label no-padding-right">Discount</label>
 							<div class="col-sm-9">
 								<input type="text" class="form-control" id="discount" name="discount"
 									value="${model.discount}" />
 							</div>
+							</br>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<c:if test="${not empty model.productId}">

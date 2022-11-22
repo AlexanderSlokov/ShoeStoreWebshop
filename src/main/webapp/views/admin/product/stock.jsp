@@ -20,8 +20,9 @@
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="row">
-									<p style="font-size:20px">Product Name: ${model.productName}</p>
-									<p style="font-size:20px">Amount: ${itemAmount}</p>
+									<p style="font-size: 20px">Product Name:
+										${model.productName}</p>
+									<p style="font-size: 20px">Amount: ${itemAmount}</p>
 									<table class="table">
 										<thead>
 											<tr>
@@ -29,10 +30,29 @@
 												<th>ID</th>
 												<th>Size</th>
 												<th>Amount</th>
-												<th>Update amount<th>
+												<th>Update amount</th>
+												<th>Update<th>
 											</tr>
 										</thead>
 										<tbody>
+
+											<tr>
+												<td><input type="checkbox"
+													id="checkbox_${item.productId}" value="${item.productId}"></td>
+												<td>aaa</td>
+												<td>ssss</td>
+												<td>dddd</td>
+												<td>
+													<input name="Text1" placeholder="input value to update" style="width:50%;"></input>
+												</td>
+												<td><c:url var="editAmountURL" value="/admin-product">
+														<c:param name="type" value="import" />
+														<c:param name="productId" value="${item.productId}" />
+													</c:url> <a class="btn btn-sm btn-primary btn-edit"
+													data-toggle="tooltip" title="Edit products"
+													href='${editURL}'><i class="fa fa-pencil-square-o"
+														aria-hidden="true"></i> </a></td>
+											</tr>
 											<c:forEach var="item" items="${model.list}">
 												<tr>
 													<td><input type="checkbox"
@@ -59,9 +79,9 @@
 			</div>
 		</form>
 	</div>
-<script type="text/javascript">
+	<script type="text/javascript">
 		var status = document.getElementById("status").value;
-		if(status == "failed") {
+		if (status == "failed") {
 			swal("Sorry", "Email or Password Invalid", "failed");
 		}
 	</script>
