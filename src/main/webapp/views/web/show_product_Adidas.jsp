@@ -20,14 +20,16 @@
 <!--paging-->
  	<script src="<c:url value='/template/admin/assets/js/jquery.2.1.1.min.js' />"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-   
     <script src="<c:url value='/template/paging/jquery.twbsPagination.js' />"></script>
 	<link rel="stylesheet" href="<c:url value='/template/admin/assets/css/bootstrap.min.css' />" />
     <link rel="stylesheet" href="<c:url value='/template/admin/font-awesome/4.5.0/css/font-awesome.min.css' />" />
     
+    
+    
 </head>
 <body>
 	<main class="container">
+	<form action="<c:url value='/product'/>" id="formSubmit" method="get">
 		<div class="container__main">
 			<div class="product_view">
 				<div class="show-top">
@@ -41,8 +43,8 @@
 						</ul>
 					</div>
 				</div>
-				<form action="<c:url value='/product'/>" id="formSubmit" method="get">
-				<div class="show_product">	
+				
+				<div class="show_product">
 					<ul id="shooo" class="product">
 						<h1 id="output"></h1>
 						<script src="functem.js"></script>
@@ -62,52 +64,50 @@
 								</div>
 							</li>
 						</c:forEach>
-
-					</ul>
-					
-				</div>
-				</form>
+					</ul>				
+				</div>			
 				<ul class="pagination" id="pagination"></ul>
 				<input type="hidden" value="" id="page" name="page" /> <input
 					type="hidden" value="" id="maxPageItem" name="maxPageItem" /> <input
 					type="hidden" value="" id="sortName" name="sortName" /> <input
 					type="hidden" value="" id="sortBy" name="sortBy" /> <input
 					type="hidden" value="" id="type" name="type" />
-				<script>
-					function viewproduct() {
-						viewView({
-							linkimg : "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/47112d0a-dc23-4b74-876c-b638fecf0af2/air-jordan-1-retro-high-og-shoes-a7Zzxm.png",
-							price_pr : "$2000",
-							product_name : "name_in here"
-						});
-					}
-				</script>
+					<input type="hidden" value="" id="manufacturer" name="manufacturer" />							
 			</div>
 		</div>
+		</form>
 	</main>
-<!-- /.main-content -->
-	<script>
-		var totalPages = ${model.totalPage};
-		var currentPage = ${model.page};
-		var limit = 6;
-		$(function() {
-			window.pagObj = $('#pagination').twbsPagination({
+	
+<script>
+			var totalPages = ${model.totalPage};
+			var currentPage = ${model.page};
+			var limit = 6;		
+			$(function() {
+				window.pagObj = $('#pagination').twbsPagination({
 				totalPages : totalPages,
 				visiblePages : 6,
 				startPage : currentPage,
-				onPageClick : function(event, page) {
-					if (currentPage != page) {
-						$('#maxPageItem').val(limit);
-						$('#page').val(page);
-						$('#sortName').val('price');
-						$('#sortBy').val('desc');
-						$('#type').val('show');
-						$('#formSubmit').submit();
-					}
+			    onPageClick : function(event, page) {
+				if (currentPage != page) {
+					$('#maxPageItem').val(limit);
+					$('#page').val(page);
+					$('#sortName').val('price');
+					$('#sortBy').val('desc');
+					$('#type').val('show');
+					$('#manufacturer').val('Adidas');
+					$('#formSubmit').submit();
 				}
-			});
+			}
 		});
-		</script>
+	});
+			function viewproduct() {
+				viewView({
+					linkimg : "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/47112d0a-dc23-4b74-876c-b638fecf0af2/air-jordan-1-retro-high-og-shoes-a7Zzxm.png",
+					price_pr : "$2000",
+					product_name : "name_in here"
+				});
+			}
+</script>
 </body>
 <%@ include file="footer.jsp"%>
 </html>

@@ -18,7 +18,7 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	private String genders[]={"Male", "Female"};
 	private String manufacturers[]= {"Nike", "Adidas"};
 	private String countries[]= {"Viet Nam", "Japan", "China", "Indonesia", "India", "Korea"};
-	
+
 	public String[] getCountries() {
 		return countries;
 	}

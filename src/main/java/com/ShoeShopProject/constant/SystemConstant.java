@@ -8,4 +8,5 @@ public class SystemConstant {
 	public static final String EDIT = "edit";
 	public static final String IMPORT = "import";
 	public static final String SHOW = "show";
+	public static final String DETAIL = "detail";
 }

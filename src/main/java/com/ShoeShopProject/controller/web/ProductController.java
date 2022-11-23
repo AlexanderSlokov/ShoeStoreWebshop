@@ -29,16 +29,26 @@ public class ProductController extends HttpServlet {
 			throws ServletException, IOException {
 		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
 		String view="";
-		if (model.getType().equals(SystemConstant.SHOW)) {
+		if (model.getType().equals(SystemConstant.SHOW) && model.getManufacturer().equals("Nike")) {
 			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),
 					new Sorter(model.getSortName(), model.getSortBy()));
 			model.setList(productsService.findProductsByCategory(pageble, model.getManufacturer()));
 			model.setTotalItem(productsService.getTotalItemByCategory(model.getManufacturer()));
-			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));
-			
-			view="/views/web/show_product.jsp";
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));	
+			request.setAttribute(SystemConstant.MODEL, model);
+			view="/views/web/show_product_Nike.jsp";
 		}
-		else {
+		else if (model.getType().equals(SystemConstant.SHOW) && model.getManufacturer().equals("Adidas"))
+		{
+			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),
+					new Sorter(model.getSortName(), model.getSortBy()));
+			model.setList(productsService.findProductsByCategory(pageble, model.getManufacturer()));
+			model.setTotalItem(productsService.getTotalItemByCategory(model.getManufacturer()));
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));	
+			request.setAttribute(SystemConstant.MODEL, model);
+			view="/views/web/show_product_Adidas.jsp";
+		}
+		else if (model.getType().equals(SystemConstant.DETAIL)){
 			model=productsService.findOne(model.getProductId());
 			view="/views/web/product.jsp";
 		}

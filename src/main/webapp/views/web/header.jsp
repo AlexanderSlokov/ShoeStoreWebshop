@@ -34,8 +34,8 @@
 					>Home</a></li>
 				<li><a href="<c:url value="/views/web/about.jsp"/>" title="">About</a></li>
 				<li><a href="intro.html" title="">shop</a></li>
-				<li><a href="" title="">ADIDAS</a></li>
-				<li><a href="" title="">NIKE</a></li>
+				<li><a href="<c:url value="/product?type=show&manufacturer=Adidas&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>" title="">ADIDAS</a></li>
+				<li><a href="<c:url value="/product?type=show&manufacturer=Nike&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>" title="">NIKE</a></li>
 				<li><a href="" title="">Sale</a></li>
 				<li class="hover_icon"><a> <i class="fa fa-search"
 						style="color: yelow"></i>
