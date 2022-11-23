@@ -16,4 +16,6 @@ public interface iProductsService {
 	Integer getTotalItem();
 	ProductsModel findOne(Integer id);
 	Integer countItemEachProduct(Integer id);
+	List<ProductsModel> findProductsByCategory(Pageble pageble, String cate);
+	Integer getTotalItemByCategory(String cate);
 }

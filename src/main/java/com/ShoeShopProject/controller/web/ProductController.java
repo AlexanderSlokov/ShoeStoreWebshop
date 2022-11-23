@@ -28,9 +28,32 @@ public class ProductController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
-		model=productsService.findOne(model.getProductId());
+		String view="";
+		if (model.getType().equals(SystemConstant.SHOW) && model.getManufacturer().equals("Nike")) {
+			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),
+					new Sorter(model.getSortName(), model.getSortBy()));
+			model.setList(productsService.findProductsByCategory(pageble, model.getManufacturer()));
+			model.setTotalItem(productsService.getTotalItemByCategory(model.getManufacturer()));
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));	
+			request.setAttribute(SystemConstant.MODEL, model);
+			view="/views/web/show_product_Nike.jsp";
+		}
+		else if (model.getType().equals(SystemConstant.SHOW) && model.getManufacturer().equals("Adidas"))
+		{
+			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),
+					new Sorter(model.getSortName(), model.getSortBy()));
+			model.setList(productsService.findProductsByCategory(pageble, model.getManufacturer()));
+			model.setTotalItem(productsService.getTotalItemByCategory(model.getManufacturer()));
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));	
+			request.setAttribute(SystemConstant.MODEL, model);
+			view="/views/web/show_product_Adidas.jsp";
+		}
+		else if (model.getType().equals(SystemConstant.DETAIL)){
+			model=productsService.findOne(model.getProductId());
+			view="/views/web/product.jsp";
+		}
 		request.setAttribute(SystemConstant.MODEL, model);
-		RequestDispatcher rd = request.getRequestDispatcher("/views/web/product.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}
 

@@ -13,4 +13,6 @@ public interface iProductsDAO extends GenericDAO<ProductsModel>{
 	void delete(Integer id);
 	List<ProductsModel>findAll(Pageble pageable);
 	Integer getTotalItem();
+	List<ProductsModel> findProductByCategory(Pageble pageble, String cate);
+	Integer getTotalItemByCategory(String cate);
 }
