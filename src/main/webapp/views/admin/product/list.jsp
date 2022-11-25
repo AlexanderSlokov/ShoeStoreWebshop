@@ -65,7 +65,7 @@
 												<th>ID</th>
 												<th>Product Name</th>
 												<th>Price</th>
-												<th>Description</th>
+												<th>Photo</th>
 												<th>Manipulation</th>
 											</tr>
 										</thead>
@@ -77,8 +77,34 @@
 													<td>${item.productId}</td>
 													<td>${item.productName}</td>
 													<td>${item.price}</td>
-													<td>${item.desciption}</td>
-													<td><c:url var="editURL" value="/admin-product">
+													<td>
+													<c:url var="uploadURL" value="/admin-product">
+															<c:param name="type" value="upload" />
+															<c:param name="productId" value="${item.productId}" />
+													</c:url>
+													<img id="display-image" style="width: 200px; height: 150px; border: 1px solid black; background-position: center; background-size: cover;"
+														src="<c:url value="${item.productImage}"/>">
+														<script>    
+															const image_input = document.querySelector("#productImage");
+					 										image_input.addEventListener("change", function() {
+					 										const reader = new FileReader();
+					 										console.log(reader);
+					 										reader.addEventListener("load", ()=>{
+					 										const uploaded_image = reader.result;    	      
+					 										document.getElementById("display-image").src = uploaded_image ;			
+																		})
+					 										reader.readAsDataURL(this.files[0]);
+																	});
+														</script>	 
+														<a 
+															class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
+															data-toggle="tooltip" title='Add photo'
+															href='${uploadURL}'> <span>
+														<i class="fa fa-plus-circle bigger-110 purple"></i>			
+														</span>
+														</a>
+													</td>
+													<td><c:url var="editURL" value="/admin-upload">
 															<c:param name="type" value="edit" />
 															<c:param name="productId" value="${item.productId}" />
 														</c:url> <c:url var="importURL" value="/admin-product">
@@ -93,6 +119,7 @@
 																<ul>
 																	<li><a href='${editURL}'>Edit</a></li>
 																	<li><a href='${importURL}'>Import</a></li>
+																	
 																</ul>
 															</div>
 														</div></td>
@@ -117,14 +144,8 @@
 
 	<!-- /.main-content -->
 	<script>
-		var totalPages = $
-		{
-			model.totalPage
-		};
-		var currentPage = $
-		{
-			model.page
-		};
+		var totalPages = ${model.totalPage};
+		var currentPage = ${model.page};
 		var limit = 6;
 		$(function() {
 			window.pagObj = $('#pagination').twbsPagination({

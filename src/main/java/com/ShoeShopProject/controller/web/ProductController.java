@@ -28,6 +28,7 @@ public class ProductController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
+		model.setManufacturer(request.getParameter("manufacturer"));
 		String view="";
 		if (model.getType().equals(SystemConstant.SHOW) && model.getManufacturer().equals("Nike")) {
 			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),

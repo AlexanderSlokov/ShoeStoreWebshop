@@ -72,7 +72,7 @@
 					type="hidden" value="" id="sortName" name="sortName" /> <input
 					type="hidden" value="" id="sortBy" name="sortBy" /> <input
 					type="hidden" value="" id="type" name="type" />
-					<input type="hidden" value="" id="manufacturer" name="manufacturer" />							
+									
 			</div>
 		</div>
 		</form>
@@ -89,6 +89,7 @@
 				startPage : currentPage,
 			    onPageClick : function(event, page) {
 				if (currentPage != page) {
+					document.write(document.referrer);
 					$('#maxPageItem').val(limit);
 					$('#page').val(page);
 					$('#sortName').val('price');

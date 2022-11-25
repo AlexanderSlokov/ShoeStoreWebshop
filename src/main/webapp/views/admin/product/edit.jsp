@@ -9,6 +9,7 @@
 <title>Edit product</title>
 </head>
 <body>
+
 	<div class="main-content">
 		<div class="main-content-inner">
 			<div class="breadcrumbs" id="breadcrumbs">
@@ -31,7 +32,7 @@
 						<c:if test="${not empty messageResponse}">
 							<div class="alert alert-${alert}">${messageResponse}</div>
 						</c:if>
-						<form id="formSubmit">
+						<form  id="formSubmit" >
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Type</label>
 								<div class="col-sm-9">
@@ -62,45 +63,13 @@
 										name="productName" value="${model.productName}" />
 								</div>
 							</div>
-							<br /> <br />
-							<div class="form-group">
-								<label class="col-sm-3 control-label no-padding-right">Image</label>
-								<div class="col-sm-9">
-									<input type="file" id="productImage"
-										accept="image/jpeg, image/png, image/jpg" />
-									<!--  <input
-										type="text" class="form-control" id="productImage"
-										name="productImage" value="${model.productImage}" />-->
-
-									<img id="display-image"
-										style="width: 400px; height: 225px; border: 1px solid black; background-position: center; background-size: cover;"
-										src="https://genk.mediacdn.vn/k:2016/img20160215181652219/mu-rom-xung-danh-bang-hai-tac-con-ong-chau-cha-trong-one-piece.jpg">
-
-									<script>    
-									    const image_input = document.querySelector("#productImage");
-									    image_input.addEventListener("change", function() {
-									    		
-									    	const reader = new FileReader();
-									    	console.log(reader);
-									    	reader.addEventListener("load", ()=>{
-									    		const uploaded_image = reader.result;    	      
-									    	      document.getElementById("display-image").src = uploaded_image ;			
-									    	})
-									    	reader.readAsDataURL(this.files[0]);
-											});
-								    	  
-								    </script>
-								</div>
-							</div>
-							<br /> <br /> </br> </br>
-							</br>
-							</br> </br> </br> </br> </br> </br></br></br> 
+							<br /> <br /> 
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Description</label>
 								<div class="col-sm-9">
 									<textarea cols="50" placeholder="input description here"
 										rows="6" class="form-control" id="desciption"
-										name="desciption" value="${model.desciption}"></textarea>
+										name="desciption" >${model.desciption}</textarea>
 								</div>
 							</div>
 							</br> </br> </br> </br> </br> <br /> <br /> <label
@@ -180,7 +149,7 @@
 			</div>
 		</div>
 	</div>
-	<script>
+<script>
 		$('#btnAddOrUpdateProduct').click(function(e) {
 			e.preventDefault();
 			var data = {};
@@ -227,7 +196,6 @@
 			});
 		}
 	</script>
-
 
 </body>
 </html>
