@@ -103,9 +103,9 @@
    }
    
    ul.product li img {
-       max-width: 100%;
-       height: auto;
-   }
+    max-width: 100%;
+    min-height: 230px;
+}
    
    ul.product li .product-top {
        position: relative;

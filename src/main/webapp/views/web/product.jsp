@@ -40,7 +40,7 @@
                     <p>Made in ${model.madeIn}</p>
                     <div class="quality">
                         <p style="font-weight:bold; padding-right:20px;">Quantity</p>
-                        <input class="w-25 pl-1" value="1" type="number" style="width:50px">                        
+                        <input class="w-25 pl-1" value="1" min ="0"type="number" style="width:50px">                        
                     </div>
                     <div class="container_product-content-right_button">
                         <button> <i class="fa fa-shopping-cart"></i><p>Buy product</p></button>

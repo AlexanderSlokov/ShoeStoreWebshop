@@ -10,6 +10,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="./assets/css/trans.css">
 <!--font-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+	var sum_price = 0;
+	var t_price = 0;
+    var t_number = 0;
+    var t_dis = 0;
+    var code_dis = 0;
+	$(document).ready(function()
+			{
+				$('tr').each(function()
+				{
+					t_price = 0;
+                    t_number =0;
+                    t_dis = 0;
+                    console.log(t_price);
+                    $(this).find('.item_discount').each(function()
+							{
+								var dis= $(this).text();
+								if(dis.length !==0)
+									{                                    	
+										t_dis = parseFloat(dis);
+									}
+							});
+                    $(this).find('.item_number').each(function()
+							{
+								var number= $(this).text();
+								if(number.length !==0)
+									{                                    	
+										t_number = parseFloat(number);
+									}
+							});
+					$(this).find('.item_price').each(function()
+							{
+								var price= $(this).text();
+								if(price.length !==0)
+									{                                    	
+										t_price = t_number * parseFloat(price) - t_dis;
+									}
+							});   
+                    $(this).find('#code_dis').each(function()
+							{
+								var cdis= $(this).text();
+								if(cdis.length !==0)
+									{                                    	
+										code_dis = parseFloat(cdis);
+									}
+							}); 
+                    sum_price += t_price;
+				});
+                sum_price -= code_dis;
+			$(this).find('#total_pay').html('= ' + sum_price+'$');
+			});
+
+</script>
 
 <!--icon-->
 <link rel="stylesheet" type="text/css"
@@ -18,6 +73,7 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<script src="https://www.paypal.com/sdk/js?client-id=AUWfXUeBuIo-uiW1c-nYdbCoT77iWdyx93uB08lv0Xikfx3qANnIZLlTEVRCSscSpLGH6n1jHXBeY46X&currency=USD"></script>
 	<main class="main_payment">
 		<div class="container">
 			<div class="payment-top-wrap">
@@ -65,14 +121,7 @@
 							<input name="method-payment" type="radio"> <label for="">Pay
 								at home</label>
 						</div>
-						<div class="method-payment-left">
-							<input name="method-payment" type="radio"> <label for="">Pay
-								by Momo</label>
-						</div>
-						<div class="row-img-payment">
-							<img
-								src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png">
-						</div>
+						
 						<!--paypal-->
 						<p style="font-weight: bold; text-align: center;">Pay with
 							Paypal</p>
@@ -91,7 +140,7 @@
                                     return actions.order.create({
                                       purchase_units: [{
                                         amount: {
-                                          value: '77.44' // Can also reference a variable or function
+                                          value: '77.44' // Can also reference a variable or function/// in here
                                         }
                                       }]
                                     });
@@ -156,7 +205,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th>Produc</th>
+									<th>Product</th>
 									<th>Discount</th>
 									<th>Number</th>
 									<th>Price</th>
@@ -165,17 +214,37 @@
 							<tbody>
 								<tr>
 									<td>TDD</td>
-									<td>0</td>
-									<td>1</td>
-									<td>200$</td>
+									<td class="item_discount">100</td>
+									<td class="item_number">2</td>
+									<td class="item_price">200</td>
+								</tr>
+								<tr>
+									<td>TDD</td>
+									<td class="item_discount">100</td>
+									<td class="item_number">4</td>
+									<td class="item_price">200</td>
+								</tr>
+								<tr>
+									<td>TDD</td>
+									<td class="item_discount">100</td>
+									<td class="item_number">2</td>
+									<td class="item_price">700</td>
 								</tr>
 							</tbody>
 							<tfoot>
 								<tr>
-									<td>Sum</td>
-									<td>0</td>
-									<td>6</td>
-									<td>200$</td>
+									<td>Discount</td>
+									<td></td>
+									<td></td>
+									<td id="code_dis">300</td>
+									<!---->
+								</tr>
+								<tr>
+									<td>To Pay</td>
+									<td></td>
+									<td></td>
+									<td id="total_pay">0</td>
+									<!-- total pay get it and push in value to pay  -->
 									<!---->
 								</tr>
 							</tfoot>
