@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import com.ShoeShopProject.dao.iProductDAO;
 import com.ShoeShopProject.model.ProductModel;
-import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.service.iProductService;
 
 public class ProductService implements iProductService {
@@ -27,8 +26,8 @@ public class ProductService implements iProductService {
 	}
 
 	@Override
-	public void update(Integer amount) {
-		productDAO.updateAmount(amount);
+	public void update(Integer amount, Integer id) {
+		productDAO.updateAmount(amount, id);
 	}
 
 	@Override
@@ -38,6 +37,11 @@ public class ProductService implements iProductService {
 			productDAO.delete(id);
 		}		
 		
+	}
+
+	@Override
+	public ProductModel findOne(Integer id) {
+		return productDAO.findOne(id);
 	}
 	
 

@@ -8,7 +8,7 @@ public interface iProductDAO extends GenericDAO<ProductModel> {
 	Integer countItemEachProduct(Integer id);
 	List<ProductModel> findProductByProductsId(Integer id);
 	Integer insert(ProductModel product);
-	void updateAmount(Integer amount);
+	void updateAmount(Integer amount, Integer id);
 	void delete(Integer id);
 	ProductModel findOne(Integer id);
 }

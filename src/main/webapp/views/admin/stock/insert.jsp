@@ -26,17 +26,18 @@
 				</ul>
 				<!-- /.breadcrumb -->
 			</div>
+			
 			<div class="page-content">
 				<div class="row">
 					<div class="col-xs-12">
 						<c:if test="${not empty messageResponse}">
 							<div class="alert alert-${alert}">${messageResponse}</div>
 						</c:if>
-						<form  id="formSubmit" >
+						<form  action="<c:url value="/admin-stock?type=insert&productsId=${model.productId}"/>" id="formSubmit"  method="post">
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Size: </label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="size"
+									<input type="number" class="form-control" id="size"
 										name="size" placeholder="New size" />
 								</div>
 							</div>
@@ -44,15 +45,13 @@
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Amount</label>
 								<div class="col-sm-9">
-									<input type="text" class="form-control" id="qty"
+									<input type="number" class="form-control" id="qty"
 										name="qty" placeholder="Product's Amount" />
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">									
-										<input type="button"
-											class="btn btn-white btn-warning btn-bold"
-											value="Add New Size" id="btnAddOrUpdateProduct" />									
+										<button type="submit" class="btn btn-primary">Add new</button>								
 								</div>
 							</div>
 						</form>
@@ -61,53 +60,6 @@
 			</div>
 		</div>
 	</div>
-<script>
-		$('#btnAddOrUpdateProduct').click(function(e) {
-			e.preventDefault();
-			var data = {};
-			var formData = $('#formSubmit').serializeArray();
-			$.each(formData, function(i, v) {
-				data["" + v.name + ""] = v.value;
-			});
-
-			var id = $('#productId').val();
-			if (id == "") {
-				addProduct(data);
-			} else {
-				updateProduct(data);
-			}
-		});
-		function addProduct(data) {
-			$.ajax({
-				url : '${APIurl}',
-				type : 'POST',
-				contentType : 'application/json',
-				data : JSON.stringify(data),
-				dataType : 'json',
-				success : function(result) {
-					console.log(result);
-				},
-				error : function(error) {
-					console.log(error);
-				}
-			});
-		}
-		function updateProduct(data) {
-			$.ajax({
-				url : '${APIurl}',
-				type : 'PUT',
-				contentType : 'application/json',
-				data : JSON.stringify(data),
-				dataType : 'json',
-				success : function(result) {
-					console.log(result);
-				},
-				error : function(error) {
-					console.log(error);
-				}
-			});
-		}
-	</script>
 
 </body>
 </html>

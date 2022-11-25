@@ -21,7 +21,7 @@
 							<div class="col-xs-12">
 								<div class="row">
 									<p style="font-size: 20px">Product Name:
-										${model.productName}</p>
+										${model2.productName}</p>
 									<p style="font-size: 20px">Amount: ${itemAmount}</p>
 									<div class="widget-box table-filter">
 								<div class="table-btn-controls">
@@ -30,7 +30,7 @@
 											<a flag="info"
 												class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
 												data-toggle="tooltip" title='Add new size'
-												href='<c:url value="/admin-stock?type=edit"/>'> <span>
+												href='<c:url value="/admin-stock?type=insert&productId=${model.productId}"/>'> <span>
 													<i class="fa fa-plus-circle bigger-110 purple"></i>
 											</span>
 											</a>
@@ -57,6 +57,7 @@
 											</tr>
 										</thead>
 										<tbody>
+										
 										<c:forEach var="item" items="${list}">
 											<tr>
 												<td><input type="checkbox"
@@ -65,15 +66,17 @@
 												<td>${item.size}</td>
 												<td>${item.qty}</td>
 												<td>
-													<input name="Text1" placeholder="input value to update" style="width:50%;"></input>
+													<input name="amount" id="amount" placeholder="input value to update" style="width:50%;"></input>
 												</td>
 												<td><c:url var="editAmountURL" value="/admin-stock">
 														<c:param name="type" value="edit" />
 														<c:param name="productId" value="${item.productId}" />
+														<c:param name="productsId" value="${model.productId}"/>
 													</c:url> <a class="btn btn-sm btn-primary btn-edit"
 													data-toggle="tooltip" title="Edit product"
 													href='${editAmountURL}'><i class="fa fa-pencil-square-o"
 														aria-hidden="true"></i> </a></td>
+												
 											</tr>
 											</c:forEach>
 											
@@ -87,29 +90,5 @@
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript">
-		$("#btnDelete").click(function() {
-			var data = {};
-			var ids = $('tbody input[type=checkbox]:checked').map(function() {
-				return $(this).val();
-			}).get();
-			data['ids'] = ids;
-			deleteProduct(data);
-		});
-		function deleteProduct(data) {
-			$.ajax({
-						url : '${APIurl}',
-						type : 'DELETE',
-						contentType : 'application/json',
-						data : JSON.stringify(data),
-						success : function(result) {
-							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1";
-						},
-						error : function(error) {
-							console.log(error);
-						}
-					});
-		}
-	</script>
 </body>
 </html>

@@ -17,7 +17,7 @@ public class ProductDAO  extends AbstractDAO<ProductModel> implements iProductDA
 
 	@Override
 	public List<ProductModel> findProductByProductsId(Integer id) {
-		String sql= "Select *, count(*) as SL from product where idProducts=?";
+		String sql= "Select *, count(*) as SL from product where idProducts=? group by idProduct";
 		return query(sql, new ProductMapper(), id);
 	}
 
@@ -36,9 +36,9 @@ public class ProductDAO  extends AbstractDAO<ProductModel> implements iProductDA
 	}
 
 	@Override
-	public void updateAmount(Integer amount) {
-		String sql="Update product set qty=?";
-		update(sql, amount);
+	public void updateAmount(Integer amount, Integer id) {
+		String sql="Update product set qty=? where idProduct=?";
+		update(sql, amount, id);
 		
 	}
 

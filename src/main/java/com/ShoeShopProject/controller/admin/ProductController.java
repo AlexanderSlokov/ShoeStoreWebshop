@@ -61,7 +61,8 @@ public class ProductController extends HttpServlet {
 		else if(model.getType().equals(SystemConstant.IMPORT)) {
 			if (model.getProductId()!=null)
 			{	
-				model=productsService.findOne(model.getProductId());
+				ProductsModel model2=productsService.findOne(model.getProductId());
+				request.setAttribute("model2", model2);
 				request.setAttribute("itemAmount",productsService.countItemEachProduct(model.getProductId()));
 				request.setAttribute(SystemConstant.LIST, productService.findProductByProductsId(model.getProductId()));
 			}

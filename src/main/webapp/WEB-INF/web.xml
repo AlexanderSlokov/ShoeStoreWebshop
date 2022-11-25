@@ -40,6 +40,15 @@
 		<url-pattern>/views/web/re</url-pattern> 
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>InsertForm</servlet-name>
+		<servlet-class>com.ShoeShopProject.controller.admin.StockController</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>InsertForm</servlet-name>
+		<url-pattern>/views/admin/stock/formSubmit</url-pattern> 
+	</servlet-mapping>
 	
 	<filter>
 		<filter-name>sitemesh</filter-name>
