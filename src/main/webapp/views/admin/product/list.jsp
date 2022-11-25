@@ -174,8 +174,7 @@
 			deleteProduct(data);
 		});
 		function deleteProduct(data) {
-			$
-					.ajax({
+			$.ajax({
 						url : '${APIurl}',
 						type : 'DELETE',
 						contentType : 'application/json',

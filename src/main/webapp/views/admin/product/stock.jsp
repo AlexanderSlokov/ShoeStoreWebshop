@@ -23,6 +23,28 @@
 									<p style="font-size: 20px">Product Name:
 										${model.productName}</p>
 									<p style="font-size: 20px">Amount: ${itemAmount}</p>
+									<div class="widget-box table-filter">
+								<div class="table-btn-controls">
+									<div class="pull-right tableTools-container">
+										<div class="dt-buttons btn-overlap btn-group">
+											<a flag="info"
+												class="dt-button buttons-colvis btn btn-white btn-primary btn-bold"
+												data-toggle="tooltip" title='Add new size'
+												href='<c:url value="/admin-stock?type=edit"/>'> <span>
+													<i class="fa fa-plus-circle bigger-110 purple"></i>
+											</span>
+											</a>
+											<button id="btnDelete" type="button"
+												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
+												data-toggle="tooltip" title='Delete product'>
+												<span> <i class="fa fa-trash-o bigger-110 pink"></i>
+												</span>
+											</button>
+
+										</div>
+									</div>
+								</div>
+							</div>
 									<table class="table">
 										<thead>
 											<tr>
@@ -45,12 +67,12 @@
 												<td>
 													<input name="Text1" placeholder="input value to update" style="width:50%;"></input>
 												</td>
-												<td><c:url var="editAmountURL" value="/admin-product">
-														<c:param name="type" value="import" />
+												<td><c:url var="editAmountURL" value="/admin-stock">
+														<c:param name="type" value="edit" />
 														<c:param name="productId" value="${item.productId}" />
 													</c:url> <a class="btn btn-sm btn-primary btn-edit"
-													data-toggle="tooltip" title="Edit products"
-													href='${editURL}'><i class="fa fa-pencil-square-o"
+													data-toggle="tooltip" title="Edit product"
+													href='${editAmountURL}'><i class="fa fa-pencil-square-o"
 														aria-hidden="true"></i> </a></td>
 											</tr>
 											</c:forEach>
@@ -66,9 +88,27 @@
 		</form>
 	</div>
 	<script type="text/javascript">
-		var status = document.getElementById("status").value;
-		if (status == "failed") {
-			swal("Sorry", "Email or Password Invalid", "failed");
+		$("#btnDelete").click(function() {
+			var data = {};
+			var ids = $('tbody input[type=checkbox]:checked').map(function() {
+				return $(this).val();
+			}).get();
+			data['ids'] = ids;
+			deleteProduct(data);
+		});
+		function deleteProduct(data) {
+			$.ajax({
+						url : '${APIurl}',
+						type : 'DELETE',
+						contentType : 'application/json',
+						data : JSON.stringify(data),
+						success : function(result) {
+							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1";
+						},
+						error : function(error) {
+							console.log(error);
+						}
+					});
 		}
 	</script>
 </body>
