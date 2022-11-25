@@ -30,15 +30,7 @@
 		<url-pattern>/views/web/re</url-pattern> 
 	</servlet-mapping>
 	
-	<servlet>
-		<servlet-name>UploadForm</servlet-name>
-		<servlet-class>com.ShoeShopProject.controller.admin.UploadImage</servlet-class>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>UploadForm</servlet-name>
-		<url-pattern>/views/admin/formSubmit</url-pattern> 
-	</servlet-mapping>
+	
 	
 	<filter>
 		<filter-name>sitemesh</filter-name>

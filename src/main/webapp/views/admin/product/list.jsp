@@ -78,7 +78,7 @@
 													<td>${item.productName}</td>
 													<td>${item.price}</td>
 													<td>
-													<c:url var="uploadURL" value="/admin-product">
+													<c:url var="uploadURL" value="/admin-upload">
 															<c:param name="type" value="upload" />
 															<c:param name="productId" value="${item.productId}" />
 													</c:url>
@@ -104,7 +104,7 @@
 														</span>
 														</a>
 													</td>
-													<td><c:url var="editURL" value="/admin-upload">
+													<td><c:url var="editURL" value="/admin-product">
 															<c:param name="type" value="edit" />
 															<c:param name="productId" value="${item.productId}" />
 														</c:url> <c:url var="importURL" value="/admin-product">

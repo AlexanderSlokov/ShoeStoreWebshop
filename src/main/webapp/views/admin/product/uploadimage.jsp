@@ -23,9 +23,8 @@
 					<li class="active">Edit product</li>
 				</ul>
 			</div>
-			<form action="<c:url value='/admin-upload'/>" method="POST" id="formSubmit" enctype="multipart/form-data">
-				<input type="file" id="productImage"
-					accept="image/jpeg, image/png, image/jpg" /> <img
+			<form  action="#" method="post" enctype="multipart/form-data">
+				<input type="file" accept="image/jpeg, image/png, image/jpg" name="photo" /> <img
 					id="display-image"
 					style="width: 400px; height: 225px; border: 1px solid black; background-position: center; background-size: cover;"
 					src="<c:url value="${model.productImage}"/>">

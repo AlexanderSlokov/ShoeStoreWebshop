@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -36,38 +35,52 @@ public class UploadImage extends HttpServlet {
 	private iProductsService productsService;
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
 		if (model.getType().equals(SystemConstant.UPLOAD)) {
-			if (model.getProductId() != null) {
-				model = productsService.findOne(model.getProductId());
+			RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/uploadimage.jsp");
+			rd.forward(request, response);
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if (!ServletFileUpload.isMultipartContent(request)) {
+			System.out.print(false);
+		}
+		String filename = null;
+		// Create a factory for disk-based file items
+		DiskFileItemFactory factory = new DiskFileItemFactory();
+
+		// Configure a repository (to ensure a secure temp location is used)
+		ServletContext servletContext = this.getServletConfig().getServletContext();
+		File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
+		factory.setRepository(repository);
+
+		// Create a new file upload handler
+		ServletFileUpload upload = new ServletFileUpload(factory);
+
+		// Parse the request
+		try {
+			List<FileItem> items = upload.parseRequest(request);
+			if (items.isEmpty()) {
+				System.out.print(0);
 			}
-			if (!ServletFileUpload.isMultipartContent(request)) {
-				System.out.print(false);
-			}
-			String filename = null;
-			// Create a factory for disk-based file items
-			DiskFileItemFactory factory = new DiskFileItemFactory();
 
-			// Configure a repository (to ensure a secure temp location is used)
-			ServletContext servletContext = this.getServletConfig().getServletContext();
-			File repository = (File) servletContext.getAttribute("javax.servlet.context.tempdir");
-			factory.setRepository(repository);
-
-			// Create a new file upload handler
-			ServletFileUpload upload = new ServletFileUpload(factory);
-
-			// Parse the request
-			try {
-				List<FileItem> items = upload.parseRequest(request);
-
-				Iterator<FileItem> iter = items.iterator();
-				HashMap<String, String> fields = new HashMap<>();
-				while (iter.hasNext()) {
-					FileItem item = iter.next();
+			Iterator<FileItem> iter = items.iterator();
+			// HashMap<String, String> fields = new HashMap<>();
+			while (iter.hasNext()) {
+				FileItem item = iter.next();
+				filename = item.getName();
+				if (item.isFormField()) {
+					String name = item.getFieldName();
+					String value = item.getString();
+					System.out.print("name: " + name);
+					System.out.print("value: " + value);
+				} else {
 					filename = item.getName();
-					System.out.println("filename: " + filename);
+					System.out.print("file name: " + filename);
 					if (filename == null || filename.equals("null")) {
 						break;
 					} else {
@@ -76,9 +89,15 @@ public class UploadImage extends HttpServlet {
 						File uploadFile = new File(storePath + "/" + path.getFileName());
 						try {
 							item.write(uploadFile);
-							model.setProductImage(storePath + "/" + path.getFileName());
-							System.out.print(storePath + "/" + path.getFileName());
+							ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
+							model.setProductImage("/imgShoes" + "/" + path.getFileName());
+							if (model.getProductId() != null) {
+								model = productsService.findOne(model.getProductId());
+							}
 							productsService.update(model);
+							response.sendRedirect(request.getContextPath() + "/admin-upload?type=upload" + model.getProductId());
+							System.out.print("/imgShoes" + "/" + path.getFileName());
+
 						} catch (Exception e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -86,18 +105,14 @@ public class UploadImage extends HttpServlet {
 
 					}
 				}
-
-			} catch (FileUploadException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
+
+		} catch (FileUploadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/uploadimage.jsp");
-		rd.forward(request, response);
+
+		
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
-	}
 }
