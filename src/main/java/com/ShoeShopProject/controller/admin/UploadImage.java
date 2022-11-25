@@ -103,7 +103,8 @@ public class UploadImage extends HttpServlet {
 				model = productsService.findOne(model.getProductId());
 			}
 			model.setProductImage(filename);
-			productsService.update(model);	
+			productsService.update(model);
+			
 
 		} catch (FileUploadException e) {
 			// TODO Auto-generated catch block

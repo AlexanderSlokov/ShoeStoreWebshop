@@ -27,7 +27,6 @@ public class ProductsService implements iProductsService{
 	public ProductsModel Insert(ProductsModel product) {
 		product.setCreated(new Timestamp(System.currentTimeMillis()));
 		product.setView(0);
-		product.setProductImage("/");
 		Integer productId=productsDAO.insert(product);
 		return productsDAO.findOne(productId);
 	}
@@ -37,7 +36,6 @@ public class ProductsService implements iProductsService{
 		ProductsModel oldproduct=productsDAO.findOne(product.getProductId());
 		product.setCreated(oldproduct.getCreated());
 		product.setView(oldproduct.getView());
-		product.setProductImage(oldproduct.getProductImage());
 		productsDAO.update(product);
 		return productsDAO.findOne(product.getProductId());
 	}

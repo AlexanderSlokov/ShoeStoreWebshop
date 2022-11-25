@@ -8,7 +8,7 @@ public class ProductsModel extends AbstractModel<ProductsModel> {
 	private String manufacturer;
 	private Integer view;
 	private Integer discount;
-	private String productImage;
+	private String productImage="";
 	private Timestamp created;
 	private String productName;
 	private Integer price;
