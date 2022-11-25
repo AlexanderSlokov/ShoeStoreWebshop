@@ -78,12 +78,12 @@
 													<td>${item.productName}</td>
 													<td>${item.price}</td>
 													<td>
-													<c:url var="uploadURL" value="/admin-upload">
+													<c:url var="uploadURL" value="/admin-product">
 															<c:param name="type" value="upload" />
 															<c:param name="productId" value="${item.productId}" />
 													</c:url>
 													<img id="display-image" style="width: 200px; height: 150px; border: 1px solid black; background-position: center; background-size: cover;"
-														src="<c:url value="${item.productImage}"/>">
+														src="<c:url value="/imgShoes/${item.productImage}"/>">
 														<script>    
 															const image_input = document.querySelector("#productImage");
 					 										image_input.addEventListener("change", function() {

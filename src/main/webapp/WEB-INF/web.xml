@@ -21,6 +21,16 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>UploadForm</servlet-name>
+		<servlet-class>com.ShoeShopProject.controller.admin.UploadImage</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>UploadForm</servlet-name>
+		<url-pattern>/views/admin/product/formSubmit</url-pattern> 
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>RegisterForm</servlet-name>
 		<servlet-class>com.ShoeShopProject.controller.web.RegisterController</servlet-class>
 	</servlet>
@@ -29,7 +39,6 @@
 		<servlet-name>RegisterForm</servlet-name>
 		<url-pattern>/views/web/re</url-pattern> 
 	</servlet-mapping>
-	
 	
 	
 	<filter>

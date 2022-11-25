@@ -89,15 +89,7 @@ public class UploadImage extends HttpServlet {
 						File uploadFile = new File(storePath + "/" + path.getFileName());
 						try {
 							item.write(uploadFile);
-							ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
-							model.setProductImage("/imgShoes" + "/" + path.getFileName());
-							if (model.getProductId() != null) {
-								model = productsService.findOne(model.getProductId());
-							}
-							productsService.update(model);
-							response.sendRedirect(request.getContextPath() + "/admin-upload?type=upload" + model.getProductId());
-							System.out.print("/imgShoes" + "/" + path.getFileName());
-
+							
 						} catch (Exception e) {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
@@ -106,12 +98,19 @@ public class UploadImage extends HttpServlet {
 					}
 				}
 			}
+			ProductsModel model = FormUtil.toModel(ProductsModel.class, request);							
+			if (model.getProductId() != null) {
+				model = productsService.findOne(model.getProductId());
+			}
+			model.setProductImage(filename);
+			productsService.update(model);	
 
 		} catch (FileUploadException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/product/uploadimage.jsp");
+		rd.forward(request, response);
 		
 	}
 

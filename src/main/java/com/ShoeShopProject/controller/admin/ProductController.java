@@ -63,6 +63,15 @@ public class ProductController extends HttpServlet {
 			}
 			view="/views/admin/product/stock.jsp";
 		}
+		else if(model.getType().equals(SystemConstant.UPLOAD))
+		{
+			if (model.getProductId()!=null)
+			{	
+				model=productsService.findOne(model.getProductId());
+			}
+			view="/views/admin/product/uploadimage.jsp";
+			view="/admin-upload?type=upload&productId="+model.getProductId();
+		}
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);

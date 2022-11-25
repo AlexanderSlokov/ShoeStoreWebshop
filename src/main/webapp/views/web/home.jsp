@@ -98,7 +98,7 @@
 										<c:param name="productId" value="${item.productId}" />
 									</c:url>
 									<a href="${detailURL}"> <img
-										src="<c:url value="${item.productImage}"/>">
+										src="<c:url value="/imgShoes/${item.productImage}"/>">
 										<p>${item.productName}</p>
 										<p style="color: red;">${item.price}</p>
 									</a>

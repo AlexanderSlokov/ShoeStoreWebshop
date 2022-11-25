@@ -53,7 +53,7 @@
 								<div>
 									<div class="product-top">
 										<a href="product.html" class="product-thumb"> <img
-											src="<c:url value="${item.productImage}"/>"
+											src="<c:url value="/imgShoes/${item.productImage}"/>"
 											alt="sp1">
 										</a>
 										<!--buy now-->

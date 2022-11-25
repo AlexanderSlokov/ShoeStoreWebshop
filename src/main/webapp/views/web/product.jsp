@@ -24,7 +24,7 @@
             <div class="container-con">
                 <div class="con-left">
                     <div class="content-img">
-                        <a href=""> <img src="<c:url value="${model.productImage}"/>"></a>
+                        <a href=""> <img src="<c:url value="/imgShoes/${model.productImage}"/>"></a>
                        
                     </div>                
                 </div>
