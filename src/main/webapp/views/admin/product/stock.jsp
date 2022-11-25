@@ -35,13 +35,13 @@
 											</tr>
 										</thead>
 										<tbody>
-
+										<c:forEach var="item" items="${list}">
 											<tr>
 												<td><input type="checkbox"
 													id="checkbox_${item.productId}" value="${item.productId}"></td>
-												<td>aaa</td>
-												<td>ssss</td>
-												<td>dddd</td>
+												<td>${item.productId}</td>
+												<td>${item.size}</td>
+												<td>${item.qty}</td>
 												<td>
 													<input name="Text1" placeholder="input value to update" style="width:50%;"></input>
 												</td>
@@ -53,22 +53,8 @@
 													href='${editURL}'><i class="fa fa-pencil-square-o"
 														aria-hidden="true"></i> </a></td>
 											</tr>
-											<c:forEach var="item" items="${model.list}">
-												<tr>
-													<td><input type="checkbox"
-														id="checkbox_${item.productId}" value="${item.productId}"></td>
-													<td>${item.productId}</td>
-													<td>${item.size}</td>
-													<td>${item.amount}</td>
-													<td><c:url var="editAmountURL" value="/admin-product">
-															<c:param name="type" value="import" />
-															<c:param name="productId" value="${item.productId}" />
-														</c:url> <a class="btn btn-sm btn-primary btn-edit"
-														data-toggle="tooltip" title="Edit products"
-														href='${editURL}'><i class="fa fa-pencil-square-o"
-															aria-hidden="true"></i> </a></td>
-												</tr>
 											</c:forEach>
+											
 										</tbody>
 									</table>
 								</div>

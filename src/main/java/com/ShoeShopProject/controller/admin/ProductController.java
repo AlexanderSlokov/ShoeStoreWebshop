@@ -14,6 +14,7 @@ import com.ShoeShopProject.constant.SystemConstant;
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.paging.PageRequest;
 import com.ShoeShopProject.paging.Pageble;
+import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.sort.Sorter;
 import com.ShoeShopProject.utils.FormUtil;
@@ -27,6 +28,8 @@ public class ProductController extends HttpServlet {
 	 */
 	@Inject
 	private iProductsService productsService;
+	@Inject
+	private iProductService productService;
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -60,6 +63,7 @@ public class ProductController extends HttpServlet {
 			{	
 				model=productsService.findOne(model.getProductId());
 				request.setAttribute("itemAmount",productsService.countItemEachProduct(model.getProductId()));
+				request.setAttribute(SystemConstant.LIST, productService.findProductByProductsId(model.getProductId()));
 			}
 			view="/views/admin/product/stock.jsp";
 		}
