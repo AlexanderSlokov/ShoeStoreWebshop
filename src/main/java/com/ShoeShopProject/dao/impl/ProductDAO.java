@@ -21,4 +21,32 @@ public class ProductDAO  extends AbstractDAO<ProductModel> implements iProductDA
 		return query(sql, new ProductMapper(), id);
 	}
 
+	@Override
+	public Integer insert(ProductModel product) {
+		String sql="Insert into product(idProducts, size, qty) values(?, ?, ?)";
+		return insert(sql,product.getProductsId(), product.getSize(), product.getQty());
+	}
+
+	
+
+	@Override
+	public void delete(Integer id) {
+		String sql="delete from product where idProduct=?";
+		update(sql, id);
+	}
+
+	@Override
+	public void updateAmount(Integer amount) {
+		String sql="Update product set qty=?";
+		update(sql, amount);
+		
+	}
+
+	@Override
+	public ProductModel findOne(Integer id) {
+		String sql = "Select * from product where idProduct =?";
+		List<ProductModel>products=query(sql,new ProductMapper(), id);
+		return products.isEmpty()? null: products.get(0);	
+	}
+
 }

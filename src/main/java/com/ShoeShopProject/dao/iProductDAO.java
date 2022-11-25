@@ -7,4 +7,8 @@ import com.ShoeShopProject.model.ProductModel;
 public interface iProductDAO extends GenericDAO<ProductModel> {
 	Integer countItemEachProduct(Integer id);
 	List<ProductModel> findProductByProductsId(Integer id);
+	Integer insert(ProductModel product);
+	void updateAmount(Integer amount);
+	void delete(Integer id);
+	ProductModel findOne(Integer id);
 }
