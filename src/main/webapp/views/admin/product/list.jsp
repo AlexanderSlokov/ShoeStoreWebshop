@@ -9,11 +9,14 @@
 <head>
 <meta charset="UTF-8">
 <title>List of products</title>
+
 <style>
 .list__check {
 	display: none;
 }
 </style>
+
+
 </head>
 <body>
 	<div class="main-content">
@@ -23,6 +26,7 @@
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 					<ul class="breadcrumb">
 						<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a></li>
+						<li><input id="myInput" type="text" placeholder="Search.."></li>
 					</ul>
 					<!-- /.breadcrumb -->
 				</div>
@@ -49,7 +53,7 @@
 												<span> <i class="fa fa-trash-o bigger-110 pink"></i>
 												</span>
 											</button>
-
+											
 										</div>
 									</div>
 								</div>
@@ -69,7 +73,7 @@
 												<th>Manipulation</th>
 											</tr>
 										</thead>
-										<tbody>
+										<tbody id="myTable">
 											<c:forEach var="item" items="${model.list}">
 												<tr>
 													<td><input type="checkbox"
@@ -127,6 +131,16 @@
 											</c:forEach>
 										</tbody>
 									</table>
+									<script>
+										$(document).ready(function(){
+ 												$("#myInput").on("keyup", function() {
+    											var value = $(this).val().toLowerCase();
+   												$("#myTable tr").filter(function() {
+      											$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    													});
+  												});
+											});
+									</script>
 									<ul class="pagination" id="pagination"></ul>
 									<input type="hidden" value="" id="page" name="page" /> <input
 										type="hidden" value="" id="maxPageItem" name="maxPageItem" />
@@ -187,6 +201,8 @@
 						}
 					});
 		}
+		
+		 
 	</script>
 </body>
 </html>
