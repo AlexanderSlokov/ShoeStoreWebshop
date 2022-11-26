@@ -26,19 +26,23 @@ public class StockController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
+		ProductModel model = FormUtil.toModel(ProductModel.class, request);
 		String view = "";
 		if (model.getType().equals(SystemConstant.INSERT)) {
-			
-				view = "/views/admin/stock/insert.jsp";
-				
-			
-		} else if (model.getType().equals(SystemConstant.EDIT)) {
+
+			view = "/views/admin/stock/insert.jsp";
+
+		} 
+		else if (model.getType().equals(SystemConstant.EDIT)) {
 			if (model.getProductId() != null) {
-				ProductModel model2 = FormUtil.toModel(ProductModel.class, request);
-				productService.update(Integer.parseInt(request.getParameter("amount")), model2.getProductsId());
+				if (request.getParameter("amount") != null) {
+					productService.update(Integer.parseInt(request.getParameter("amount")), model.getProductsId());
+				}
+				else {
+					System.out.print("null");
+				}
 			}
-			view="/views/admin/stock/stock.jsp";
+			view = "/views/admin/product/stock.jsp";
 		}
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
@@ -48,25 +52,27 @@ public class StockController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProductModel model = FormUtil.toModel(ProductModel.class, request);
-		String message="";
-		String alert="";
+		String message = "";
+		String alert = "";
+		String view = "";
 		if (model.getType().equals(SystemConstant.INSERT)) {
 			if (model.getProductsId() != null) {
-				if (request.getParameter("size")!=null) {
+				if (request.getParameter("size") != null) {
 					model.setSize(Integer.parseInt(request.getParameter("size")));
-					}
-				if (request.getParameter("qty")!=null){
-					model.setQty(Integer.parseInt(request.getParameter("qty")));	
+				}
+				if (request.getParameter("qty") != null) {
+					model.setQty(Integer.parseInt(request.getParameter("qty")));
 				}
 				productService.Insert(model);
-				message="Successfully";
-				alert="success";
+				message = "Successfully";
+				alert = "success";
+			} else {
+				System.out.print("null");
 			}
-			else {
-					System.out.print("null");
-				}
-			}
+		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/views/admin/stock/insert.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
-	}}
+	}
+	
+}
