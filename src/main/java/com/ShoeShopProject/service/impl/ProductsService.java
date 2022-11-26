@@ -7,7 +7,6 @@ import javax.inject.Inject;
 
 import com.ShoeShopProject.dao.iProductDAO;
 import com.ShoeShopProject.dao.iProductsDAO;
-import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.paging.Pageble;
 import com.ShoeShopProject.service.iProductsService;

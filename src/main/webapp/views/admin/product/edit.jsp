@@ -84,6 +84,7 @@
 										<option value="Indonesia">Indonesia</option>
 										<option value="India">India</option>
 										<option value="Korea">Korea</option>
+										<option value="Singapore">Singapore</option>
 									</c:if>
 									<c:if test="${not empty model.madeIn}">
 										<c:forEach var="item" items="${countries}">
