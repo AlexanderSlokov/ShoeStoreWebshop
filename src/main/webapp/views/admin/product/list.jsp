@@ -1,4 +1,3 @@
-
 <%@include file="/common/taglib.jsp"%>
 <c:url var="APIurl" value="/api-admin-product" />
 <c:url var="ProductURL" value="/admin-product" />
@@ -131,6 +130,7 @@
 											</c:forEach>
 										</tbody>
 									</table>
+									
 									<script>
 										$(document).ready(function(){
  												$("#myInput").on("keyup", function() {
