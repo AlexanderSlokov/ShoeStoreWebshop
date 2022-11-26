@@ -2,7 +2,6 @@ package com.ShoeShopProject.service;
 
 import java.util.List;
 
-import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.paging.Pageble;
 

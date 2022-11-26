@@ -9,8 +9,6 @@
 </head>
 <body>
 	<div class="main-content">
-		<form action="<c:url value='/admin-product'/>" id="formSubmit"
-			method="get">
 			<div class="main-content-inner">
 				<div class="breadcrumbs ace-save-state" id="breadcrumbs">
 					<ul class="breadcrumb">
@@ -65,18 +63,16 @@
 												<td>${item.productId}</td>
 												<td>${item.size}</td>
 												<td>${item.qty}</td>
+												<form action="<c:url value='/admin-stock'/>" id="formSubmit"
+												method="get"	>
 												<td>
 													<input name="amount" id="amount" placeholder="input value to update" style="width:50%;"></input>
+													<input name="productId" id="productId" value="${item.productId}" type="hidden"></input>
+													<input name="productsId" id="productsId" value="${model.productId}" type="hidden"></input>
+													<input name="type" id="type" value="edit" type="hidden"></input>
 												</td>
-												<td><c:url var="editAmountURL" value="/admin-stock">
-														<c:param name="type" value="edit" />
-														<c:param name="productId" value="${item.productId}" />
-														<c:param name="productsId" value="${model.productId}"/>
-													</c:url> <a class="btn btn-sm btn-primary btn-edit"
-													data-toggle="tooltip" title="Edit product"
-													href='${editAmountURL}'><i class="fa fa-pencil-square-o"
-														aria-hidden="true"></i> </a></td>
-												
+												<td><button type="submit" class="btn btn-primary">Upload</button></td>
+												</form>
 											</tr>
 											</c:forEach>
 											
