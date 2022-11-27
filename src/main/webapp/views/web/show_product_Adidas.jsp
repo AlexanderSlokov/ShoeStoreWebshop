@@ -1,5 +1,7 @@
 <%@ include file="header.jsp"%>
 <%@ include file="/common/taglib.jsp"%>
+<c:url var="APIurl" value="/api-web-orders" />
+<c:url var="ProductURL" value="/product" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +31,7 @@
 </head>
 <body>
 	<main class="container">
-	<form action="<c:url value='/product'/>" id="formSubmit" method="get">
+	<form  id="formSubmit" method="get">
 		<div class="container__main">
 			<div class="product_view">
 				<div class="show-top">
@@ -52,15 +54,19 @@
 							<li>
 								<div>
 									<div class="product-top">
-										<a href="product.html" class="product-thumb"> <img
+									<c:url var="detailURL" value="/product">
+										<c:param name="type" value="detail" />
+										<c:param name="productId" value="${item.productId}" />
+									</c:url>
+										<a href="${detailURL}" class="product-thumb"> <img
 											src="<c:url value="/imgShoes/${item.productImage}"/>"
 											alt="sp1">
 										</a>
 										<!--buy now-->
-										<a href="" class="buy-now"> Buy now </a>
+										<a href="${detailURL}" class="buy-now"> Buy now </a>
 									</div>
-									<a href="" class="product-name">${item.productName}</a>
-									<div class="product-price">${item.price}</div>
+									<div class="product-name">${item.productName}</div>
+									<div class="product-price" id="price">${item.price}</div>
 								</div>
 							</li>
 						</c:forEach>
@@ -72,7 +78,8 @@
 					type="hidden" value="" id="sortName" name="sortName" /> <input
 					type="hidden" value="" id="sortBy" name="sortBy" /> <input
 					type="hidden" value="" id="type" name="type" />
-					<input type="hidden" value="" id="manufacturer" name="manufacturer" />							
+					<input type="hidden" value="" id="manufacturer" name="manufacturer" />
+									
 			</div>
 		</div>
 		</form>
@@ -107,6 +114,7 @@
 					product_name : "name_in here"
 				});
 			}
+			
 </script>
 </body>
 <%@ include file="footer.jsp"%>

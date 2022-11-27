@@ -52,14 +52,18 @@
 							<li>
 								<div>
 									<div class="product-top">
-										<a href="product.html" class="product-thumb"> <img
+									<c:url var="detailURL" value="/product">
+										<c:param name="type" value="detail" />
+										<c:param name="productId" value="${item.productId}" />
+									</c:url>
+										<a href="${detailURL}" class="product-thumb"> <img
 											src="<c:url value="/imgShoes/${item.productImage}"/>"
 											alt="sp1">
 										</a>
 										<!--buy now-->
-										<a href="" class="buy-now"> Buy now </a>
+										<a href="${detailURL}" class="buy-now"> Buy now </a>
 									</div>
-									<a href="" class="product-name">${item.productName}</a>
+									<div class="product-name">${item.productName}</div>
 									<div class="product-price">${item.price}</div>
 								</div>
 							</li>
