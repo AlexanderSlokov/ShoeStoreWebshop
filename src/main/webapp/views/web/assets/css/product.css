@@ -248,7 +248,10 @@ nav ul li a:hover {
     font-size: 12px;
     margin-right: 6px;
 }
-
+.size-product {
+    display: flex;
+    justify-content: space-around;
+}
 
 /*footer*/
 

@@ -2,6 +2,8 @@
  <%@ include file="header.jsp" %>  
  <c:url var="APIurl" value="/api-web-orders" />
 <c:url var="ProductURL" value="/product" />
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,6 +54,12 @@
                     <h3>Product ID: ${model.productId}</h3>
                     <span>Price: ${model.price} VND</span>
                     <p>Made in ${model.madeIn}</p>
+                    <div class="size-product">
+	                   	<c:forTokens items = "X,XL,XXL,XXXL" delims = "," var = "name">
+	                   		<input type="radio" id="size" name="size" value="${name}">
+  							<label for="${name}"> <c:out value = "${name}"/></label><br>
+	     				</c:forTokens>
+                   	</div>
                     <div class="quality">
                         <p style="font-weight:bold; padding-right:20px;">Quantity</p>
                         <input name="qty" id="qty" class="w-25 pl-1" value="1" min ="0"type="number" style="width:50px">                        
