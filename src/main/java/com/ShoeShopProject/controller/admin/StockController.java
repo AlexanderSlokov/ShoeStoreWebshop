@@ -14,7 +14,9 @@ import com.ShoeShopProject.constant.SystemConstant;
 import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.utils.FormUtil;
+import com.ShoeShopProject.utils.HttpUtil;
 import com.ShoeShopProject.utils.MessageUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(urlPatterns = { "/admin-stock" })
 public class StockController extends HttpServlet {
@@ -34,17 +36,7 @@ public class StockController extends HttpServlet {
 			view = "/views/admin/stock/insert.jsp";
 
 		} 
-		else if (model.getType().equals(SystemConstant.EDIT)) {
-			if (model.getProductId() != null) {
-				if (request.getParameter("amount") != null) {
-					productService.update(Integer.parseInt(request.getParameter("amount")), model.getProductsId());
-				}
-				else {
-					System.out.print("null");
-				}
-			}
-			view = "/views/admin/product/stock.jsp";
-		}
+		
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
@@ -67,7 +59,27 @@ public class StockController extends HttpServlet {
 				System.out.print("null");
 			}
 		}
+		else if (model.getType().equals(SystemConstant.UPDATE_STOCK)) {
+			if (model.getProductId() != null) {
+				if (request.getParameter("qty") != null) {
+					productService.update(Integer.parseInt(request.getParameter("qty")), model.getProductId());
+					response.sendRedirect(request.getContextPath()+"/admin-product?type=import&productId="+model.getProductsId()+"&message=update_success");
+				}
+				else {
+					System.out.print("null");
+				}
+			}
+			
+		}
 		MessageUtil.showMessage(request);
 	}
-	
+	protected void doDelete(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException 
+	{	
+		ObjectMapper mapper = new ObjectMapper();
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		ProductModel productModel =  HttpUtil.of(request.getReader()).toModel(ProductModel.class);
+		productService.delete(productModel.getIds());
+		mapper.writeValue(response.getOutputStream(), "{}");
+	}
 }

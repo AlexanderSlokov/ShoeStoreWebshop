@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/taglib.jsp"%>
+<c:url var="APIurl" value="/admin-stock" />
+<c:url var="ProductURL" value="/admin-product" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +55,7 @@
 												<th>ID</th>
 												<th>Size</th>
 												<th>Amount</th>
-												<th>Update amount</th>
+											
 												<th>Update<th>
 											</tr>
 										</thead>
@@ -68,17 +70,21 @@
 												<td>${item.qty}</td>
 												<form action="<c:url value='/admin-stock'/>" id="formSubmit"
 												method="get"	>
+					
 												<td>
-													<input name="amount" id="amount" placeholder="input value to update" style="width:50%;"></input>
-													<input name="productId" id="productId" value="${item.productId}" type="hidden"></input>
-													<input name="productsId" id="productsId" value="${model.productId}" type="hidden"></input>
-													<input name="type" id="type" value="edit" type="hidden"></input>
+												<c:url var="editURL" value="/admin-product">
+														<c:param name="type" value="editStock"/>
+														<c:param name="productId" value="${item.productId}"/>
+														<c:param name="productsId" value="${model2.productId}"/>
+												</c:url>
+												<a class="btn btn-sm btn-primary btn-edit" data-toggle="tooltip"
+													 title="Update amount" href='${editURL}'><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+												</a>
 												</td>
-												<td><button type="submit" class="btn btn-primary">Upload</button></td>
 												</form>
 											</tr>
 											</c:forEach>
-											
+											</form>
 										</tbody>
 									</table>
 								</div>
@@ -87,7 +93,33 @@
 					</div>
 				</div>
 			</div>
-		</form>
+		
 	</div>
+	<script>
+		$("#btnDelete").click(function() {
+			var data = {};
+			var ids = $('tbody input[type=checkbox]:checked').map(function() {
+				return $(this).val();
+			}).get();
+			data['ids'] = ids;
+			deleteProduct(data);
+		});
+		function deleteProduct(data) {
+			$.ajax({
+						url : '${APIurl}',
+						type : 'DELETE',
+						contentType : 'application/json',
+						data : JSON.stringify(data),
+						success : function(result) {
+							window.location.href = "${ProductURL}?type=import&productId="+${model.productId}+"&message=delete_success";
+						},
+						error : function(error) {
+							window.location.href = "${ProductURL}?type=import&"+${model.productId}+"&message=error_system";
+						}
+					});
+		}
+		
+		 
+	</script>
 </body>
 </html>

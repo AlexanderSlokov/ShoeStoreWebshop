@@ -44,7 +44,7 @@ public class ProductDAO  extends AbstractDAO<ProductModel> implements iProductDA
 
 	@Override
 	public ProductModel findOne(Integer id) {
-		String sql = "Select * from product where idProduct =?";
+		String sql = "Select *, count(*) as SL from product where idProduct =? group by idProduct";
 		List<ProductModel>products=query(sql,new ProductMapper(), id);
 		return products.isEmpty()? null: products.get(0);	
 	}

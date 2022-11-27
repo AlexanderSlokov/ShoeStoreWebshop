@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ShoeShopProject.constant.SystemConstant;
+import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.paging.PageRequest;
 import com.ShoeShopProject.paging.Pageble;
@@ -78,6 +79,13 @@ public class ProductController extends HttpServlet {
 			}
 			view="/views/admin/product/uploadimage.jsp";
 			view="/admin-upload?type=upload&productId="+model.getProductId();
+		}
+		else if(model.getType().equals(SystemConstant.UPDATE_STOCK))
+		{	
+			ProductModel model2 = FormUtil.toModel(ProductModel.class, request);
+			model2=productService.findOne(model2.getProductId());
+			request.setAttribute("model2", model2);
+			view="/views/admin/stock/edit.jsp";
 		}
 		MessageUtil.showMessage(request);
 		request.setAttribute(SystemConstant.MODEL, model);

@@ -22,7 +22,7 @@
 				<ul class="breadcrumb">
 					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">Home</a>
 					</li>
-					<li class="active">Insert new size</li>
+					<li class="active">Edit amount</li>
 				</ul>
 				<!-- /.breadcrumb -->
 			</div>
@@ -33,12 +33,12 @@
 						<c:if test="${not empty messageResponse}">
 							<div class="alert alert-${alert}">${messageResponse}</div>
 						</c:if>
-						<form  action="<c:url value="/admin-stock?type=insert&productsId=${model.productId}"/>" id="formSubmit"  method="post">
+						<form  action="<c:url value="/admin-stock?type=editStock&productsId=${model2.productsId}&productId=${model2.productId}"/>" id="formSubmit"  method="post">
 							<div class="form-group">
 								<label class="col-sm-3 control-label no-padding-right">Size: </label>
 								<div class="col-sm-9">
 									<input type="number" class="form-control" id="size"
-										name="size" placeholder="New size" />
+										name="size" value="${model2.size}" />
 								</div>
 							</div>
 							<br /> <br /> 
@@ -46,12 +46,12 @@
 								<label class="col-sm-3 control-label no-padding-right">Amount</label>
 								<div class="col-sm-9">
 									<input type="number" class="form-control" id="qty"
-										name="qty" placeholder="Product's Amount" />
+										name="qty" value="${model2.qty}"/>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">									
-										<button type="submit" class="btn btn-primary">Add new</button>								
+										<button type="submit" class="btn btn-primary">EDIT</button>								
 								</div>
 							</div>
 						</form>
