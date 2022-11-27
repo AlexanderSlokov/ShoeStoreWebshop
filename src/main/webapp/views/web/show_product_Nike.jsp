@@ -72,6 +72,7 @@
 					type="hidden" value="" id="sortName" name="sortName" /> <input
 					type="hidden" value="" id="sortBy" name="sortBy" /> <input
 					type="hidden" value="" id="type" name="type" />
+					<input type="hidden" value="" id="manufacturer" name="manufacturer" />	
 									
 			</div>
 		</div>
@@ -81,7 +82,7 @@
 <script>
 			var totalPages = ${model.totalPage};
 			var currentPage = ${model.page};
-			var limit = 6;		
+			var limit = 20;		
 			$(function() {
 				window.pagObj = $('#pagination').twbsPagination({
 				totalPages : totalPages,
@@ -89,7 +90,6 @@
 				startPage : currentPage,
 			    onPageClick : function(event, page) {
 				if (currentPage != page) {
-					document.write(document.referrer);
 					$('#maxPageItem').val(limit);
 					$('#page').val(page);
 					$('#sortName').val('price');
