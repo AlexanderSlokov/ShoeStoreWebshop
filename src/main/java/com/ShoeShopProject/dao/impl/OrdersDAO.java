@@ -23,16 +23,16 @@ public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
 
 	@Override
 	public Integer insert(OrdersModel orders) {
-		String sql="insert into orders values(iduser, product_id, qty, amount, note. status) "
-				+ "values(?, ?, 0, ?, null, 0)" ;
+		String sql="insert into orders(iduser, product_id, qty, note, status) "
+				+ "values(?, ?, ?, null, 0)" ;
 		
-		return insert(sql, orders.getUserId(), orders.getProductId(), orders.getAmount());				
+		return insert(sql, orders.getUserId(), orders.getProductId(), orders.getQty());				
 	}
 
 	@Override
 	public void update(OrdersModel orders) {
 		String sql = "update orders set amount=?, status=? where id=?";
-		update(sql, orders.getAmount(), orders.getStatus(), orders.getOrderId());
+		update(sql, orders.getQty(), orders.getStatus(), orders.getOrderId());
 		
 	}
 

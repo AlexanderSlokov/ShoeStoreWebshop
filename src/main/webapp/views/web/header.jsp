@@ -22,6 +22,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <head class="header">
@@ -44,7 +47,7 @@
 								placeholder="search">
 						</div>
 				</a></li>
-				<li class="hover_icon"><a href="cart.html" title=""> <i
+				<li class="hover_icon"><a href="<c:url value="/views/web/cart.jsp"/>" title=""> <i
 						class="fa fa-shopping-cart" aria-hidden="true"></i>
 				</a>
 					<div class="header__qr cart_dasboard">
@@ -56,7 +59,7 @@
 				
 				<li><c:if test="${not empty USERMODEL}">
 					<li class="nav-item">
-						<a class="nav-link" href='#'>Welcome, ${USERMODEL.fullName}</a></li>
+						<a class="nav-link" href='#' >Welcome, ${USERMODEL.fullName}</a></li>
 					<li class="nav-item">
 						<a class="nav-link" href='<c:url value="/logout?action=logout"/>'>Logout</a></li>
 					</c:if>
@@ -68,7 +71,7 @@
 					<div class="header__qr menu_dasboard">
 						<ul>
 							<li><a href="shop.html">shop</a></li>
-							<li><a href="cart.html">cart</a></li>
+							<li><a href="<c:url value="/views/web/cart.jsp"/>">cart</a></li>
 							<li><a href="">about</a></li>
 							<li><a href="<c:url value="./views/web/contact.jsp"/>">contact</a></li>
 						</ul>

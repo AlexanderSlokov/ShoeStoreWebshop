@@ -194,10 +194,10 @@
 						contentType : 'application/json',
 						data : JSON.stringify(data),
 						success : function(result) {
-							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1";
+							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=delete_success";
 						},
 						error : function(error) {
-							console.log(error);
+							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=error_system";
 						}
 					});
 		}

@@ -1,7 +1,6 @@
 <%@ include file="header.jsp"%>
 <%@ include file="/common/taglib.jsp"%>
-<c:url var="APIurl" value="/api-web-orders" />
-<c:url var="ProductURL" value="/product" />
+
 <!DOCTYPE html>
 <html>
 <head>

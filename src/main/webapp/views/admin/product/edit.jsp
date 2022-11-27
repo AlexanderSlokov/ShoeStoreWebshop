@@ -174,10 +174,10 @@
 				data : JSON.stringify(data),
 				dataType : 'json',
 				success : function(result) {
-					console.log(result);
+					window.location.href = "${ProductURL}?type=edit&productId="+result.productId+"&message=insert_success";
 				},
 				error : function(error) {
-					console.log(error);
+					window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=error_system";
 				}
 			});
 		}
@@ -189,10 +189,10 @@
 				data : JSON.stringify(data),
 				dataType : 'json',
 				success : function(result) {
-					console.log(result);
+					window.location.href = "${ProductURL}?type=edit&productId="+result.productId+"&message=update_success";
 				},
 				error : function(error) {
-					console.log(error);
+					window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=error_system";
 				}
 			});
 		}

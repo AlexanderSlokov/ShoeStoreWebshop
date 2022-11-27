@@ -3,6 +3,7 @@ package com.ShoeShopProject.controller.web.api;
 import java.io.IOException;
 
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,6 +33,11 @@ public class OrdersAPI extends HttpServlet {
 		OrdersModel ordersModel = HttpUtil.of(request.getReader()).toModel(OrdersModel.class);
 		ordersModel = ordersService.insert(ordersModel);
 		mapper.writeValue(response.getOutputStream(), ordersModel);
+		String message="Add to your cart!";
+		String alert="success";
+		request.setAttribute("alert",alert);
+		request.setAttribute("message",message);
+		
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)

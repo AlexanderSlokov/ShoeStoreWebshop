@@ -167,22 +167,7 @@
 						</td>
 						<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
 					</tr>
-					<tr>
-						<td><a>1</a></td>
-						<td><img src="./assets/img/anya3.jpg" alt=""></td>
-						<td>
-							<h5>anya loli hop phap</h5>
-						</td>
-						<td>
-							<h5 class="price_pro">64</h5>
-						</td>
-						<td><input class="w-25 pl-1" value="1" min="0" type="number"
-							style="width: 50px" id="num_val"></td>
-						<td>
-							<h5 class="price"></h5>
-						</td>
-						<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
-					</tr>
+					
 				</tbody>
 			</table>
 		</div>

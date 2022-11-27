@@ -17,6 +17,9 @@
 					<div class="page-content">
 						<div class="row">
 							<div class="col-xs-12">
+							<c:if test="${not empty messageResponse}">
+							<div class="alert alert-${alert}">${messageResponse}</div>
+						</c:if>
 								<div class="row">
 									<p style="font-size: 20px">Product Name:
 										${model2.productName}</p>

@@ -5,7 +5,6 @@ public class OrdersModel {
 	private Integer userId;
 	private Integer productId;
 	private Integer qty;
-	private Integer amount;
 	private String note;
 	private Integer status;
 	
@@ -33,12 +32,7 @@ public class OrdersModel {
 	public void setQty(Integer qty) {
 		this.qty = qty;
 	}
-	public Integer getAmount() {
-		return amount;
-	}
-	public void setAmount(Integer amount) {
-		this.amount = amount;
-	}
+
 	public String getNote() {
 		return note;
 	}

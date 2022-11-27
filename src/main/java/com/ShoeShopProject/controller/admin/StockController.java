@@ -14,6 +14,7 @@ import com.ShoeShopProject.constant.SystemConstant;
 import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.utils.FormUtil;
+import com.ShoeShopProject.utils.MessageUtil;
 
 @WebServlet(urlPatterns = { "/admin-stock" })
 public class StockController extends HttpServlet {
@@ -51,10 +52,7 @@ public class StockController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		ProductModel model = FormUtil.toModel(ProductModel.class, request);
-		String message = "";
-		String alert = "";
-		String view = "";
+		ProductModel model = FormUtil.toModel(ProductModel.class, request);	
 		if (model.getType().equals(SystemConstant.INSERT)) {
 			if (model.getProductsId() != null) {
 				if (request.getParameter("size") != null) {
@@ -64,15 +62,12 @@ public class StockController extends HttpServlet {
 					model.setQty(Integer.parseInt(request.getParameter("qty")));
 				}
 				productService.Insert(model);
-				message = "Successfully";
-				alert = "success";
+				response.sendRedirect(request.getContextPath()+"/admin-product?type=import&productId="+model.getProductsId()+"&message=insert_success");
 			} else {
 				System.out.print("null");
 			}
 		}
-		
-		RequestDispatcher rd = request.getRequestDispatcher(view);
-		rd.forward(request, response);
+		MessageUtil.showMessage(request);
 	}
 	
 }

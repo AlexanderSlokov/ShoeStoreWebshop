@@ -18,6 +18,7 @@ import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.sort.Sorter;
 import com.ShoeShopProject.utils.FormUtil;
+import com.ShoeShopProject.utils.MessageUtil;
 
 
 @WebServlet(urlPatterns = { "/admin-product" })
@@ -42,7 +43,7 @@ public class ProductController extends HttpServlet {
 			model.setList(productsService.findAll(pageble));
 			model.setTotalItem(productsService.getTotalItem());
 			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));
-			request.setAttribute(SystemConstant.MODEL, model);
+			request.setAttribute(SystemConstant.MODEL, model);			
 			view="/views/admin/product/list.jsp";
 		}
 		else if(model.getType().equals(SystemConstant.EDIT)) {
@@ -50,6 +51,7 @@ public class ProductController extends HttpServlet {
 			{	
 				model=productsService.findOne(model.getProductId());
 			}
+			
 			String genders[]=model.getGenders();
 			String categories[]=model.getManufacturers();
 			String countries[]=model.getCountries();
@@ -77,6 +79,7 @@ public class ProductController extends HttpServlet {
 			view="/views/admin/product/uploadimage.jsp";
 			view="/admin-upload?type=upload&productId="+model.getProductId();
 		}
+		MessageUtil.showMessage(request);
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
