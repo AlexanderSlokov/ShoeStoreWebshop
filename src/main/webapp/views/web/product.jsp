@@ -31,9 +31,13 @@
     <body>
 	<form  id="formSubmit" >
         <main class="container">
-   				<c:if test="${not empty messageResponse}">
+        		
+			<div class="mesage-text">
+				<c:if test="${not empty messageResponse}">
 						<div class="alert alert-${alert}">${messageResponse}</div>
 			</c:if>
+			</div>
+   				
   	<div class="container-con">
                 <div class="con-left">
                     <div class="content-img">                   
