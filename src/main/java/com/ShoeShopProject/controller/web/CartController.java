@@ -32,7 +32,7 @@ public class CartController extends HttpServlet {
 		if (model.getType().equals(SystemConstant.SHOW)) {
 			List<OrdersModel> orders = ordersService.findOrderByUserId(model.getUserId());
 			request.setAttribute(SystemConstant.LIST, orders);
-			view = "/cart?type=show&userId=\"+model.getUserId()";
+			view = "views/web/cart.jsp";
 		}
 		else if (model.getType().equals(SystemConstant.EDIT))
 		{

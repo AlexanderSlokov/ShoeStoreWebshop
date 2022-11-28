@@ -66,9 +66,10 @@
                     	<!-- size -->
                     	<form action="#">
 						  <label for="size" style="margin-right: 54px;">Size :  </label>
-						  <select name="size" id="size" style="height: 28px;">
+						  <select name="productId" id="productId" style="height: 28px;">
 						  <c:forEach items = "${list}" var = "item">
-						  	<option id="size" name="size" value="${item.size}" ><c:out value = "${item.size}"/></option>	                   		
+						  	<option value="${item.productId}" ><c:out value = "${item.size}"/></option>	                   		
+	     					
 	     				</c:forEach>
 						  </select>
 						  <br><br>
