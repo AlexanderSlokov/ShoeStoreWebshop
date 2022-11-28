@@ -251,9 +251,7 @@ nav ul li a:hover {
 .size-product {
     display: flex;
 }
-.size-product label{
-    padding: 0 20px;
-}
+
 
 .mesage-text{
 	width: 70%;

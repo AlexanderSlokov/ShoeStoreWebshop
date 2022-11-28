@@ -62,11 +62,21 @@
                     <span>Price: ${model.price} VND</span>
                     <p>Made in ${model.madeIn}</p>
                     <div class="size-product">
-	                   	<c:forEach items = "${list}" var = "item">
-	                   		<input type="radio"  id="size" name="size" value="${item.size}" style="margin: -5px 0 0;">
-	                   		<input type="hidden" id="productId" name="productId" value="${item.productId}">
-  							<label for="${item.size}"> <c:out value = "${item.size}"/></label><br>
+                    
+                    	<!-- size -->
+                    	<form action="#">
+						  <label for="size" style="margin-right: 54px;">Size :  </label>
+						  <select name="size" id="size" style="height: 28px;">
+						  <c:forEach items = "${list}" var = "item">
+						  	<option id="size" name="size" value="${item.size}" ><c:out value = "${item.size}"/></option>	                   		
 	     				</c:forEach>
+						  </select>
+						  <br><br>
+						  <!-- <input type="submit" value="Submit"> -->
+						  
+						</form>
+                    	<!-- size -->
+	                  
                    	</div>
                     <div class="quality">
                         <p style="font-weight:bold; padding-right:20px;">Quantity</p>
