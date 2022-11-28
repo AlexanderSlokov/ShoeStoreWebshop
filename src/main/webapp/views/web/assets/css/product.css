@@ -250,9 +250,17 @@ nav ul li a:hover {
 }
 .size-product {
     display: flex;
-    justify-content: space-around;
+}
+.size-product label{
+    padding: 0 20px;
 }
 
+.mesage-text{
+	width: 70%;
+    position: absolute;
+    z-index: 99999;
+    top: 17%;
+}
 /*footer*/
 
 .footer {
