@@ -31,7 +31,7 @@ public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
 
 	@Override
 	public void update(OrdersModel orders) {
-		String sql = "update orders set amount=?, status=? where id=?";
+		String sql = "update orders set qty=?, status=? where id=?";
 		update(sql, orders.getQty(), orders.getStatus(), orders.getOrderId());
 		
 	}

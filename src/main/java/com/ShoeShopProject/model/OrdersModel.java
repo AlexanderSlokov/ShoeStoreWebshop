@@ -3,11 +3,25 @@ package com.ShoeShopProject.model;
 public class OrdersModel {
 	private Integer orderId;
 	private Integer userId;
+	private Integer productsId;
 	private Integer productId;
 	private Integer qty;
 	private String note;
 	private Integer status;
+	private Integer size;
 	
+	public Integer getSize() {
+		return size;
+	}
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+	public Integer getProductsId() {
+		return productsId;
+	}
+	public void setProductsId(Integer productsId) {
+		this.productsId = productsId;
+	}
 	public Integer getUserId() {
 		return userId;
 	}

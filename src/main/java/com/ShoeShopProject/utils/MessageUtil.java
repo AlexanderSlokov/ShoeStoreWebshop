@@ -21,9 +21,13 @@ public class MessageUtil {
 			} else if (message.equals("error_system")) {
 				messageResponse = "Error system";
 				alert = "danger";
-			} else if (message.equals("add_system")) {
+			} else if (message.equals("add_success")) {
 				messageResponse = "Add to your cart!";
 				alert = "success";
+			}
+			else if (message.equals("miss_size")) {
+				messageResponse = "Warning! Please choose a size!";
+				alert = "warning";
 			}
 			request.setAttribute("messageResponse", messageResponse);
 			request.setAttribute("alert", alert);

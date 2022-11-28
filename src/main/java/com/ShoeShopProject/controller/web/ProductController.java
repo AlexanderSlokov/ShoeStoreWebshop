@@ -20,6 +20,7 @@ import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.sort.Sorter;
 import com.ShoeShopProject.utils.FormUtil;
+import com.ShoeShopProject.utils.MessageUtil;
 @WebServlet(urlPatterns = { "/product" })
 public class ProductController extends HttpServlet {
 	/**
@@ -60,6 +61,7 @@ public class ProductController extends HttpServlet {
 			request.setAttribute(SystemConstant.LIST, listSize);
 			view="/views/web/product.jsp";
 		}
+		MessageUtil.showMessage(request);
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);

@@ -29,17 +29,14 @@
     </head>
     
     <body>
-    <c:if test="${not empty message}">
-				<div id="noti1" class="noti"
-				style="position: relative; left: -863px; top: 97px;">
-				<div class="alert alert-${alert}">${message}</div>
-				</div>
-	</c:if>
 	<form  id="formSubmit" >
-        <main class="container"> 
-            <div class="container-con">
+        <main class="container">
+   				<c:if test="${not empty messageResponse}">
+						<div class="alert alert-${alert}">${messageResponse}</div>
+			</c:if>
+  	<div class="container-con">
                 <div class="con-left">
-                    <div class="content-img">
+                    <div class="content-img">                   
                         <a href=""> <img src="<c:url value="/imgShoes/${model.productImage}"/>"></a>
                        
                     </div>                
@@ -56,7 +53,7 @@
                     <p>Made in ${model.madeIn}</p>
                     <div class="size-product">
 	                   	<c:forEach items = "${list}" var = "item">
-	                   		<input type="radio" id="size" name="size" value="${item.size}">
+	                   		<input type="radio"  id="size" name="size" value="${item.size}">
 	                   		<input type="hidden" id="productId" name="productId" value="${item.productId}">
   							<label for="${item.size}"> <c:out value = "${item.size}"/></label><br>
 	     				</c:forEach>
@@ -66,18 +63,11 @@
                         <input name="qty" id="qty" class="w-25 pl-1" value="1" min ="0"type="number" style="width:50px">                        
                     </div>
                     <div class="container_product-content-right_button">
-                    <c:if test="${not empty USERMODEL.userId}">
+                    
                        <input type="button"
 								class="btn btn-white btn-warning btn-bold"
 								value="Buy product" id="btnAddOrUpdateProduct" />
-					</c:if>	
-					<c:if test="${empty USERMODEL.userId}">
-						<a href="<c:url value="/login?action=login&message=not_login&alert=danger"/>">
-						 <input  type="button"
-								class="btn btn-white btn-warning btn-bold"
-								value="Buy product" id="btnAddOrUpdateProduct" />
-						</a>
-					</c:if>	
+						
                     </div>
                     <br></br> <br></br>
                      <br></br>  <br></br>
@@ -96,7 +86,7 @@
             <input type="hidden" value="${USERMODEL.userId}" id="userId" name="userId" />
             
            
-            <input type="hidden" value="${model.productId}" id="productId"	name="productId" />
+            <input type="hidden" value="${model.productId}" id="productsId"	name="productsId" />
             <script src="<c:url value="/views/web/assets/func/product.js"/>"></script>
         </main>
         </form>
@@ -119,10 +109,11 @@
 				data : JSON.stringify(data),
 				dataType : 'json',
 				success : function(result) {
-					window.location.href = "${ProductURL}?type=show&productId="+result.productId+"&message=add_success";
+					window.location.href = "${ProductURL}?type=detail&productId="+${model.productId}+"&message=add_success";
 				},
-				error : function(error) {
-					window.location.href = "${ProductURL}?type=show&maxPageItem=6&page=1&message=error_system";
+				error : function(error) {	
+					window.location.href = "${ProductURL}?type=detail&productId="+${model.productId}+"&message=error_system";
+			
 				}
 			});
 		}

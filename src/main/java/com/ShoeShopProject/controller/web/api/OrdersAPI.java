@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ShoeShopProject.model.OrdersModel;
 import com.ShoeShopProject.service.iOrdersService;
 import com.ShoeShopProject.utils.HttpUtil;
+import com.ShoeShopProject.utils.MessageUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @WebServlet(urlPatterns = { "/api-web-orders" })
@@ -31,12 +32,9 @@ public class OrdersAPI extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		OrdersModel ordersModel = HttpUtil.of(request.getReader()).toModel(OrdersModel.class);
-		ordersModel = ordersService.insert(ordersModel);
+		ordersModel = ordersService.insert(ordersModel);		
 		mapper.writeValue(response.getOutputStream(), ordersModel);
-		String message="Add to your cart!";
-		String alert="success";
-		request.setAttribute("alert",alert);
-		request.setAttribute("message",message);
+		
 		
 	}
 
