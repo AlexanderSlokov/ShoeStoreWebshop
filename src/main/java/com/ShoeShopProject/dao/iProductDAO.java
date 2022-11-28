@@ -11,4 +11,5 @@ public interface iProductDAO extends GenericDAO<ProductModel> {
 	void updateAmount(Integer amount, Integer id);
 	void delete(Integer id);
 	ProductModel findOne(Integer id);
+	
 }

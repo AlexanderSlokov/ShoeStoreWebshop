@@ -55,10 +55,11 @@
                     <span>Price: ${model.price} VND</span>
                     <p>Made in ${model.madeIn}</p>
                     <div class="size-product">
-	                   	<c:forTokens items = "X,XL,XXL,XXXL" delims = "," var = "name">
-	                   		<input type="radio" id="size" name="size" value="${name}">
-  							<label for="${name}"> <c:out value = "${name}"/></label><br>
-	     				</c:forTokens>
+	                   	<c:forEach items = "${list}" var = "item">
+	                   		<input type="radio" id="size" name="size" value="${item.size}">
+	                   		<input type="hidden" id="productId" name="productId" value="${item.productId}">
+  							<label for="${item.size}"> <c:out value = "${item.size}"/></label><br>
+	     				</c:forEach>
                    	</div>
                     <div class="quality">
                         <p style="font-weight:bold; padding-right:20px;">Quantity</p>

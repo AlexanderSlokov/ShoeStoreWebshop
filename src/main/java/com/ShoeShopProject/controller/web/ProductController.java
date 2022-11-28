@@ -1,6 +1,7 @@
 package com.ShoeShopProject.controller.web;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -11,9 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ShoeShopProject.constant.SystemConstant;
+import com.ShoeShopProject.model.ProductModel;
 import com.ShoeShopProject.model.ProductsModel;
 import com.ShoeShopProject.paging.PageRequest;
 import com.ShoeShopProject.paging.Pageble;
+import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.sort.Sorter;
 import com.ShoeShopProject.utils.FormUtil;
@@ -25,6 +28,8 @@ public class ProductController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private iProductsService productsService;
+	@Inject
+	private iProductService productService;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ProductsModel model = FormUtil.toModel(ProductsModel.class, request);
@@ -51,6 +56,8 @@ public class ProductController extends HttpServlet {
 		}
 		else if (model.getType().equals(SystemConstant.DETAIL)){
 			model=productsService.findOne(model.getProductId());
+			List<ProductModel>listSize=productService.findProductByProductsId(model.getProductId());
+			request.setAttribute(SystemConstant.LIST, listSize);
 			view="/views/web/product.jsp";
 		}
 		request.setAttribute(SystemConstant.MODEL, model);
