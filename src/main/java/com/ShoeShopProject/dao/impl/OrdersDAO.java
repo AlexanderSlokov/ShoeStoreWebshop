@@ -2,12 +2,17 @@ package com.ShoeShopProject.dao.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import com.ShoeShopProject.dao.iOrdersDAO;
 import com.ShoeShopProject.mapper.OrdersMapper;
 import com.ShoeShopProject.model.OrdersModel;
+import com.ShoeShopProject.model.ProductModel;
+import com.ShoeShopProject.service.iProductService;
 
 public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
-
+	@Inject
+	private iProductService productService;
 	@Override
 	public List<OrdersModel> findOrderByUserId(Integer id) {
 		String sql="Select * from orders where user_id=?";
@@ -25,8 +30,12 @@ public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
 	public Integer insert(OrdersModel orders) {
 		String sql="insert into orders(iduser, product_id, qty, note, status) "
 				+ "values(?, ?, ?, null, 0)" ;
-		
-		return insert(sql, orders.getUserId(), orders.getProductId(), orders.getQty());				
+		ProductModel productModel=productService.findOne(orders.getProductId());
+		if (productModel.getQty()>=orders.getQty())
+		{
+			return insert(sql, orders.getUserId(), orders.getProductId(), orders.getQty());			
+		}
+		else return null;
 	}
 
 	@Override

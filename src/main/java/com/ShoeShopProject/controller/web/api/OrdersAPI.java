@@ -34,8 +34,7 @@ public class OrdersAPI extends HttpServlet {
 		OrdersModel ordersModel = HttpUtil.of(request.getReader()).toModel(OrdersModel.class);
 		ordersModel = ordersService.insert(ordersModel);		
 		mapper.writeValue(response.getOutputStream(), ordersModel);
-		
-		
+			
 	}
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response)
