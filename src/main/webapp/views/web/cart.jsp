@@ -144,6 +144,7 @@
 						<td>Number</td>
 						<td>Image</td>
 						<td>Product</td>
+						<td>Size</td>
 						<td>Price</td>
 						<td>Quantity</td>
 						<td>Total</td>
@@ -156,6 +157,9 @@
 						<td><img src="./assets/img/anya3.jpg" alt=""></td>
 						<td>
 							<h5>anya loli hop phap</h5>
+						</td>
+						<td>
+							<h5>35</h5>
 						</td>
 						<td>
 							<h5 class="price_pro">65</h5>

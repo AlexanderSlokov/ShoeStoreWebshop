@@ -112,9 +112,9 @@
 					window.location.href = "${ProductURL}?type=detail&productId="+${model.productId}+"&message=add_success";
 				},
 				error : function(error) {
-					if ($('#userId')==null) {
+					
 					window.location.href = "${ProductURL}?type=detail&productId="+${model.productId}+"&message=error_system";
-					}
+					
 				}
 			});
 		}
