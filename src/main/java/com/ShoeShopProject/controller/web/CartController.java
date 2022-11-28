@@ -24,13 +24,22 @@ public class CartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Inject
 	private iOrdersService ordersService;
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		OrdersModel model = FormUtil.toModel(OrdersModel.class, request);
-		String view="";
-		List<OrdersModel>orders=ordersService.findOrderByUserId(model.getUserId());
-		request.setAttribute(SystemConstant.LIST, orders);
-		view="/views/web/cart.jsp";
+		String view = "";
+		if (model.getType().equals(SystemConstant.SHOW)) {
+			List<OrdersModel> orders = ordersService.findOrderByUserId(model.getUserId());
+			request.setAttribute(SystemConstant.LIST, orders);
+			view = "/cart?type=show&userId=\"+model.getUserId()";
+		}
+		else if (model.getType().equals(SystemConstant.EDIT))
+		{
+			String orderId=request.getParameter("orderId");
+			ordersService.delete(Integer.parseInt(orderId));
+			view="/cart?type=show&userId="+model.getUserId();
+		}
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}

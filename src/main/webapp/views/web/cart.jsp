@@ -171,7 +171,7 @@
 						<td>
 							<h5 class="price"></h5>
 						</td>
-						<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+						<td><a href="<c:url value="/cart?type=edit&userId=${USERMODEL.userId}&orderId=${item.orderId}"/>"><i class="fas fa-trash-alt"></i></a></td>
 						
 					</tr>
 					</c:forEach>

@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.ShoeShopProject.model.OrdersModel;
-import com.ShoeShopProject.model.ProductModel;
 
 
 public class OrdersMapper implements  RowMapper<OrdersModel> {
@@ -20,7 +19,8 @@ public class OrdersMapper implements  RowMapper<OrdersModel> {
 			order.setSize(rs.getInt("b.size"));
 			order.setPrice(rs.getInt("c.price"));
 			order.setProductsId(rs.getInt("b.idProducts"));
-			order.setProductImage(rs.getString("image_pd"));
+			order.setProductImage(rs.getString("c.image_pd"));
+			
 			return order;
 			}
 			catch (SQLException e)
