@@ -26,6 +26,11 @@
     	<!--ajax-->
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    	  <script type = "text/javascript">  
+			function myfunction() {   
+			alert("how are you");  
+         			}  
+			</script>  
     </head>
     
     <body>
@@ -35,6 +40,7 @@
 			<div class="mesage-text">
 				<c:if test="${not empty messageResponse}">
 						<div class="alert alert-${alert}">${messageResponse}</div>
+
 			</c:if>
 			</div>
    				
@@ -57,7 +63,7 @@
                     <p>Made in ${model.madeIn}</p>
                     <div class="size-product">
 	                   	<c:forEach items = "${list}" var = "item">
-	                   		<input type="radio"  id="size" name="size" value="${item.size}">
+	                   		<input type="radio"  id="size" name="size" value="${item.size}" style="margin: -5px 0 0;">
 	                   		<input type="hidden" id="productId" name="productId" value="${item.productId}">
   							<label for="${item.size}"> <c:out value = "${item.size}"/></label><br>
 	     				</c:forEach>
