@@ -47,7 +47,7 @@
 								placeholder="search">
 						</div>
 				</a></li>
-				<li class="hover_icon"><a href="<c:url value="/views/web/cart.jsp"/>" title=""> <i
+				<li class="hover_icon"><a href="<c:url value="/cart?userId=${USERMODEL.userId}"/>" title=""> <i
 						class="fa fa-shopping-cart" aria-hidden="true"></i>
 				</a>
 					<div class="header__qr cart_dasboard">
@@ -71,7 +71,7 @@
 					<div class="header__qr menu_dasboard">
 						<ul>
 							<li><a href="shop.html">shop</a></li>
-							<li><a href="<c:url value="/views/web/cart.jsp"/>">cart</a></li>
+							<li><a href="<c:url value="/cart?userId=${USERMODEL.userId}"/>">cart</a></li>
 							<li><a href="">about</a></li>
 							<li><a href="<c:url value="./views/web/contact.jsp"/>">contact</a></li>
 						</ul>

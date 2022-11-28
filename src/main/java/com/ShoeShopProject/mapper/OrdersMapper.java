@@ -13,12 +13,14 @@ public class OrdersMapper implements  RowMapper<OrdersModel> {
 	public OrdersModel mapRow(ResultSet rs) {
 		try {
 		    OrdersModel order = new OrdersModel();
-		    order.setQty(rs.getInt("qty"));
-		    order.setOrderId(rs.getInt("id"));
-			order.setProductId(rs.getInt("product_id"));
-			order.setStatus(rs.getInt("status"));
-			order.setUserId(rs.getInt("userId"));
-			
+		    order.setQty(rs.getInt("a.qty"));
+		    order.setOrderId(rs.getInt("a.id"));
+			order.setProductId(rs.getInt("a.product_id"));
+			order.setProductName(rs.getString("c.name"));
+			order.setSize(rs.getInt("b.size"));
+			order.setPrice(rs.getInt("c.price"));
+			order.setProductsId(rs.getInt("b.idProducts"));
+			order.setProductImage(rs.getString("image_pd"));
 			return order;
 			}
 			catch (SQLException e)

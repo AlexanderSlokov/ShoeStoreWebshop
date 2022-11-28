@@ -1,6 +1,6 @@
 package com.ShoeShopProject.model;
 
-public class OrdersModel {
+public class OrdersModel extends ProductsModel {
 	private Integer orderId;
 	private Integer userId;
 	private Integer productsId;

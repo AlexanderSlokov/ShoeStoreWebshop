@@ -51,7 +51,7 @@
 										t_price = parseFloat(value_price) ;
 									}
 							});
-                    $(this).find("#num_val").each(function(){
+                    $(this).find("#qty").each(function(){
                     	t_number = this.value;
                     	sum_price = t_price * t_number;                     	
                     	
@@ -84,7 +84,7 @@
 												t_price = parseFloat(value_price) ;
 											}
 									});
-		                    $(this).find("#num_val").each(function(){
+		                    $(this).find("#qty").each(function(){
 		                    	t_number = this.value;
 		                    	sum_price = t_price * t_number; 
 		                	}); 
@@ -152,26 +152,29 @@
 					</tr>
 				</thead>
 				<tbody>
+				<c:forEach var="item" items="${list}">
 					<tr>
-						<td><a>1</a></td>
-						<td><img src="./assets/img/anya3.jpg" alt=""></td>
+						
+						<td><a>${item.orderId}</a></td>
+						<td><img src="<c:url value="/imgShoes/${item.productImage}"/>" alt=""></td>
 						<td>
-							<h5>anya loli hop phap</h5>
+							<h5>${item.productName}</h5>
 						</td>
 						<td>
-							<h5>35</h5>
+							<h5>${item.size}</h5>
 						</td>
 						<td>
-							<h5 class="price_pro">65</h5>
+							<h5 class="price_pro">${item.price}</h5>
 						</td>
-						<td><input class="w-25 pl-1" value="1" min="0" type="number"
-							style="width: 50px" id="num_val"></td>
+						<td><input class="w-25 pl-1" value="${item.qty}" min="0" type="number"
+							style="width: 50px" id="qty"></td>
 						<td>
 							<h5 class="price"></h5>
 						</td>
 						<td><a href=""><i class="fas fa-trash-alt"></i></a></td>
+						
 					</tr>
-					
+					</c:forEach>
 				</tbody>
 			</table>
 		</div>
