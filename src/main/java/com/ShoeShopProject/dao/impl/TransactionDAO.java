@@ -20,7 +20,7 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> implements iTr
 		if (pageble.getOffset() != null && pageble.getLimit() != null) {
 			sql+=" LIMIT "+pageble.getOffset()+", "+pageble.getLimit()+"";
 		}
-		return query(sql.toString(), new TransactionMapper());
+		return query(sql, new TransactionMapper());
 	}
 
 	@Override
@@ -34,6 +34,12 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> implements iTr
 		String sql="delete from transactions where  id=?";
 		update(sql,id);
 		
+	}
+
+	@Override
+	public List<TransactionModel> listRevenueByDate() {
+		String sql="Select created, sum(totalBill) as totalBill from transactions group by created;";
+		return query(sql, new TransactionMapper());
 	}
 
 	

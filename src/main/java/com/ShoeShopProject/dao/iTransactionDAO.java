@@ -8,4 +8,5 @@ public interface iTransactionDAO extends GenericDAO<TransactionModel> {
 	List<TransactionModel> findAll(Pageble pageble);
 	Integer getTotalItem();
 	void delete(Integer id);
+	List<TransactionModel> listRevenueByDate();
 }

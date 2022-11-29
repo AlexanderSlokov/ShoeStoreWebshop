@@ -64,12 +64,12 @@
                 <li>
                     <a href='<c:url value="/admin-trans?type=list&page=1&maxPageItem=6"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
-                        List of transaction
+                        Transaction List
                     </a>
                     <b class="arrow"></b>
                 </li>
                 <li>
-                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>'>
+                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                        Revenue By Date
                     </a>

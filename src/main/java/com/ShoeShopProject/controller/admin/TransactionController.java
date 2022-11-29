@@ -53,8 +53,8 @@ public class TransactionController extends HttpServlet  {
 		ObjectMapper mapper = new ObjectMapper();
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
-		TransactionModel  productModel =  HttpUtil.of(request.getReader()).toModel(TransactionModel.class);
-		transService.delete(productModel.getIds());
+		TransactionModel transModel =  HttpUtil.of(request.getReader()).toModel(TransactionModel.class);
+		transService.delete(transModel.getIds());
 		mapper.writeValue(response.getOutputStream(), "{}");
 	}
 
