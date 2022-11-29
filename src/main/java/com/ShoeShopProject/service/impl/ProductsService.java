@@ -43,6 +43,7 @@ public class ProductsService implements iProductsService{
 	public void delete(Integer[] ids) {
 		for (Integer id: ids)
 		{
+			productDAO.deleteByProductsId(id);
 			productsDAO.delete(id);
 		}
 		

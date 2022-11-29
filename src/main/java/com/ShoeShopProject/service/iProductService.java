@@ -9,5 +9,6 @@ public interface iProductService {
 	ProductModel Insert(ProductModel product);
 	void update(Integer amount, Integer id);
 	void delete(Integer[] ids);
+	void deleteByProductsId(Integer id);
 	ProductModel findOne(Integer id);
 }

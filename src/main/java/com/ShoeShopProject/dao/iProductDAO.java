@@ -10,6 +10,7 @@ public interface iProductDAO extends GenericDAO<ProductModel> {
 	Integer insert(ProductModel product);
 	void updateAmount(Integer amount, Integer id);
 	void delete(Integer id);
+	void deleteByProductsId(Integer id);
 	ProductModel findOne(Integer id);
 	
 }

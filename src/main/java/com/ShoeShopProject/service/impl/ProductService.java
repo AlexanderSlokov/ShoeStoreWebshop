@@ -43,6 +43,11 @@ public class ProductService implements iProductService {
 	public ProductModel findOne(Integer id) {
 		return productDAO.findOne(id);
 	}
+
+	@Override
+	public void deleteByProductsId(Integer id) {
+		productDAO.deleteByProductsId(id);		
+	}
 	
 
 }

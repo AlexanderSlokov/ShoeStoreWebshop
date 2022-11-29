@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ShoeShopProject.model.ProductsModel;
+import com.ShoeShopProject.service.iProductService;
 import com.ShoeShopProject.service.iProductsService;
 import com.ShoeShopProject.utils.HttpUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,6 +24,7 @@ public class ProductAPI extends HttpServlet{
 	 */
 	@Inject
 	private iProductsService productsService;
+	
 	private static final long serialVersionUID = 1L;
 	protected void doPost(HttpServletRequest request,  HttpServletResponse response) throws ServletException, IOException 
 	{	
@@ -50,7 +52,7 @@ public class ProductAPI extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
-		ProductsModel productModel =  HttpUtil.of(request.getReader()).toModel(ProductsModel.class);
+		ProductsModel productModel =  HttpUtil.of(request.getReader()).toModel(ProductsModel.class);		
 		productsService.delete(productModel.getIds());
 		mapper.writeValue(response.getOutputStream(), "{}");
 	}

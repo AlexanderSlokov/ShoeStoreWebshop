@@ -49,4 +49,10 @@ public class ProductDAO  extends AbstractDAO<ProductModel> implements iProductDA
 		return products.isEmpty()? null: products.get(0);	
 	}
 
+	@Override
+	public void deleteByProductsId(Integer id) {
+		String sql="delete from product where idProducts=?";
+		update(sql, id);
+	}
+
 }
