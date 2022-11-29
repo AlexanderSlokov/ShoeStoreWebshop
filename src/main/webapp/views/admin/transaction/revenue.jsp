@@ -40,12 +40,6 @@
 									<div class="pull-right tableTools-container">
 										<div class="dt-buttons btn-overlap btn-group">
 							
-											<button id="btnDelete" type="button"
-												class="dt-button buttons-html5 btn btn-white btn-primary btn-bold"
-												data-toggle="tooltip" title='Delete product'>
-												<span> <i class="fa fa-trash-o bigger-110 pink"></i>
-												</span>
-											</button>
 											
 										</div>
 									</div>
@@ -58,37 +52,16 @@
 									<table class="table">
 										<thead>
 											<tr>
-												<th>Check</th>
-												<th>ID</th>
-												<th>OrderID</th>
-												<th>UserID</th>
-												<th>Name</th>
-												<th>Phone</th>
-												<th>Email</th>
-												<th>Amount</th>
-												<th>Payment</th>
-												<th>Payment Info</th>
-												<th>Created</th>
+												<th>Date</th>
 												<th>Total Bill</th>
 											</tr>
 										</thead>
 										<tbody id="myTable">
 											<c:forEach var="item" items="${model.list}">
-												<tr>
-													<td><input type="checkbox"
-														id="checkbox_${item.transId}" value="${item.transId}"></td>
-													<td>${item.transId}</td>
-													<td>${item.orderId}</td>
-													<td>${item.userId}</td>
-													<td>${item.userName}</td>
-													<td>${item.userPhone}</td>
-													<td>${item.userMail}</td>
-													<td>${item.amount}</td>
-													<td>${item.payment}</td>
-													<td>${item.paymentInfo}</td>
+												<tr>												
 													<td>${item.created}</td>
 													<td>${item.totalBill}</td>
-													
+																							
 												</tr>
 											</c:forEach>
 										</tbody>

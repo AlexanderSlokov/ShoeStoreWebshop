@@ -9,4 +9,5 @@ public interface iTransactionService {
 	List<TransactionModel> findAll(Pageble pageble);
 	Integer getTotalItem();
 	void delete(Integer[] ids);
+	List<TransactionModel> listRevenueByDate();
 }

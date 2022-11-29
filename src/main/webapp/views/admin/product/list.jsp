@@ -170,7 +170,7 @@
 					if (currentPage != page) {
 						$('#maxPageItem').val(limit);
 						$('#page').val(page);
-						$('#sortName').val('price');
+						$('#sortName').val('idProducts');
 						$('#sortBy').val('desc');
 						$('#type').val('list');
 						$('#formSubmit').submit();
@@ -194,10 +194,10 @@
 						contentType : 'application/json',
 						data : JSON.stringify(data),
 						success : function(result) {
-							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=delete_success";
+							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&sortName=idProducts&sortBy=desc&message=delete_success";
 						},
 						error : function(error) {
-							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&message=error_system";
+							window.location.href = "${ProductURL}?type=list&maxPageItem=6&page=1&sortName=idProducts&sortBy=desc&message=error_system";
 						}
 					});
 		}

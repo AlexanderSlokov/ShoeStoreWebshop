@@ -32,6 +32,11 @@ public class TransactionService implements iTransactionService{
 			}
 			
 	}
+
+	@Override
+	public List<TransactionModel> listRevenueByDate() {
+		return transDAO.listRevenueByDate();
+	}
 		
 
 }

@@ -104,10 +104,7 @@
   												});
 											});
 									</script>
-									<ul class="pagination" id="pagination"></ul>
-									<input type="hidden" value="" id="page" name="page" /> <input
-										type="hidden" value="" id="maxPageItem" name="maxPageItem" />
-									<input type="hidden" value="" id="type" name="type" />
+									
 								</div>
 							</div>
 						</div>
@@ -119,25 +116,6 @@
 
 	<!-- /.main-content -->
 	<script>
-		var totalPages = ${model.totalPage};
-		var currentPage = ${model.page};
-		var limit = 6;
-		$(function() {
-			window.pagObj = $('#pagination').twbsPagination({
-				totalPages : totalPages,
-				visiblePages : 6,
-				startPage : currentPage,
-				onPageClick : function(event, page) {
-					if (currentPage != page) {
-						$('#maxPageItem').val(limit);
-						$('#page').val(page);
-						$('#type').val('list');
-						$('#formSubmit').submit();
-					}
-				}
-			});
-		});
-
 		$("#btnDelete").click(function() {
 			var data = {};
 			var ids = $('tbody input[type=checkbox]:checked').map(function() {

@@ -43,6 +43,10 @@ public class TransactionController extends HttpServlet  {
 			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));
 			view="/views/admin/transaction/list.jsp";
 		}
+		if (model.getType().equals(SystemConstant.DETAIL)) {
+			model.setList(transService.listRevenueByDate());
+			view="/views/admin/transaction/revenue.jsp";
+		}
 		MessageUtil.showMessage(request);
 		request.setAttribute(SystemConstant.MODEL, model);
 		RequestDispatcher rd = request.getRequestDispatcher(view);

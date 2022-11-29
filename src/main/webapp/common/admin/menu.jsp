@@ -44,7 +44,7 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>'>
+                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6&sortName=idProducts&sortBy=desc"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                         List of products
                     </a>
@@ -62,14 +62,14 @@
             <b class="arrow"></b>
             <ul class="submenu">
                 <li>
-                    <a href='<c:url value="/admin-trans?type=list&page=1&maxPageItem=6"/>'>
+                    <a href='<c:url value="/admin-trans?type=list"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                         Transaction List
                     </a>
                     <b class="arrow"></b>
                 </li>
                 <li>
-                    <a href='<c:url value="/admin-product?type=list&page=1&maxPageItem=6"/>'>
+                    <a href='<c:url value="/admin-trans?type=detail"/>'>
                         <i class="menu-icon fa fa-caret-right"></i>
                        Revenue By Date
                     </a>

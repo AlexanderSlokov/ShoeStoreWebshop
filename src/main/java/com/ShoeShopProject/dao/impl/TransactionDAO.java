@@ -38,7 +38,7 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> implements iTr
 
 	@Override
 	public List<TransactionModel> listRevenueByDate() {
-		String sql="Select created, sum(totalBill) as totalBill from transactions group by created;";
+		String sql="Select *, created, sum(totalBill) as totalBill from transactions group by created;";
 		return query(sql, new TransactionMapper());
 	}
 
