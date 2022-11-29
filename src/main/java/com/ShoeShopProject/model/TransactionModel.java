@@ -1,8 +1,8 @@
 package com.ShoeShopProject.model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
-public class TransactionModel {
+public class TransactionModel  extends AbstractModel<TransactionModel>{
 	private Integer transId;
 	private Integer orderId;
 	private Integer userId;

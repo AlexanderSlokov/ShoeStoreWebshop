@@ -1,5 +1,6 @@
 package com.ShoeShopProject.dao.impl;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -191,5 +192,40 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 			}
 		}
 	}
-	
+
+	@Override
+	public <T> List<T> callFunction(String sql, RowMapper<T> rowMapper, Object... parameters) {
+		List<T> result = new ArrayList<>();
+		Connection connection = null;
+		CallableStatement statement = null;
+		ResultSet resultSet = null;
+		try {
+			connection = getConnection();
+			statement = connection.prepareCall(sql);
+			setParameter(statement, parameters);
+			resultSet = statement.executeQuery();
+			while (resultSet.next()) {
+				result.add(rowMapper.mapRow(resultSet));
+			}
+
+			return result;
+		} catch (SQLException e) {
+			return null;
+		} finally {
+			try {
+				if (connection != null) {
+					connection.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
+				if (resultSet != null) {
+					resultSet.close();
+				}
+			} catch (SQLException e) {
+				return null;
+			}
+		}
+	}
+
 }
