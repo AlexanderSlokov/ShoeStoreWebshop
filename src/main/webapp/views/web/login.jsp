@@ -60,7 +60,7 @@
 							<button class="inputlogin" style="color: red;"
 								onclick="registerfun()">Register</button>
 							<input type="hidden" value="login" name="action" /> <a
-								class="textfoget" href="">Forget Password</a>
+								class="textfoget" href="<c:url value='/views/web/forgot.jsp'/>">Forget Password</a>
 							<p>OR</p>
 							<div class="login3">
 								<ul>
