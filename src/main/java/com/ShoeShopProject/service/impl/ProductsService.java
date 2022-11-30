@@ -79,4 +79,9 @@ public class ProductsService implements iProductsService{
 		return productsDAO.getTotalItemByCategory(cate);
 	}
 
+	@Override
+	public List<ProductsModel> SearchByName(String name) {
+		return productsDAO.SearchByName(name);
+	}
+
 }

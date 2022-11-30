@@ -55,6 +55,16 @@ public class ProductController extends HttpServlet {
 			request.setAttribute(SystemConstant.MODEL, model);
 			view="/views/web/show_product_Adidas.jsp";
 		}
+		else if (model.getType().equals(SystemConstant.SHOW))
+		{
+			Pageble pageble = new PageRequest(model.getPage(), model.getMaxPageItem(),
+					new Sorter(model.getSortName(), model.getSortBy()));
+			model.setList(productsService.findAll(pageble));
+			model.setTotalItem(productsService.getTotalItemByCategory(model.getManufacturer()));
+			model.setTotalPage((int) Math.ceil((double) model.getTotalItem() / model.getMaxPageItem()));	
+			request.setAttribute(SystemConstant.MODEL, model);
+			view="/views/web/shop.jsp";
+		}
 		else if (model.getType().equals(SystemConstant.DETAIL)){
 			model=productsService.findOne(model.getProductId());
 			List<ProductModel>listSize=productService.findProductByProductsId(model.getProductId());

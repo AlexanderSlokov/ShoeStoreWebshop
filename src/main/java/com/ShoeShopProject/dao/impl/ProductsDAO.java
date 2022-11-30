@@ -89,5 +89,13 @@ public class ProductsDAO extends AbstractDAO<ProductsModel> implements iProducts
 		String sql="Select count(*) from products where manufacturer=? ";
 		return count(sql, cate);
 	}
+
+	@Override
+	public List<ProductsModel> SearchByName(String name) {
+		String sql="select * from products where name like ? ";
+		return query(sql, new ProductsMapper(), "%"+name+"%");
+	}
+
+	
 	
 }

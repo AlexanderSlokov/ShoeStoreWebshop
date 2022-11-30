@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 </head>
 <body>
 <head class="header">
@@ -36,26 +38,22 @@
 				<li><a href="<c:url value="/home"/>" title=""
 					>Home</a></li>
 				<li><a href="<c:url value="/views/web/about.jsp"/>" title="">About</a></li>
-				<li><a href="intro.html" title="">shop</a></li>
-				<li><a href="<c:url value="/product?type=show&manufacturer=Adidas&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>" title="">ADIDAS</a></li>
-				<li><a href="<c:url value="/product?type=show&manufacturer=Nike&page=1&maxPageItem=6&sortName=price&sortBy=desc"/>" title="">NIKE</a></li>
+				<li><a href="<c:url value="/product?type=show&manufacturer=All&page=1&maxPageItem=20&sortName=idProducts&sortBy=desc"/>" title="">shop</a></li>
+				<li><a href="<c:url value="/product?type=show&manufacturer=Adidas&page=1&maxPageItem=20&sortName=idProducts&sortBy=desc"/>" title="">ADIDAS</a></li>
+				<li><a href="<c:url value="/product?type=show&manufacturer=Nike&page=1&maxPageItem=20&sortName=idProducts&sortBy=desc"/>" title="">NIKE</a></li>
 				<li><a href="" title="">Sale</a></li>
 				<li class="hover_icon"><a> <i class="fa fa-search"
 						style="color: yelow"></i>
-						<div class="header__qr hover-search">
-							<i class="fa fa-search" style="color: yelow"></i> <input
-								placeholder="search">
+					<div class="header__qr hover-search">
+							<i class="fa fa-search" style="color: yelow"></i> 
+							<input oninput="searchByName(this)" name="txt"	placeholder="search">
 						</div>
+						
 				</a></li>
 				<li class="hover_icon"><a href="<c:url value="/cart?type=show&userId=${USERMODEL.userId}"/>" title=""> <i
 						class="fa fa-shopping-cart" aria-hidden="true"></i>
 				</a>
-					<div class="header__qr cart_dasboard">
-						<ul>
-							<li>no product</li>
-							<li><i class="fa fa-frown-o" aria-hidden="true"></i></li>
-						</ul>
-					</div>
+					
 				
 				<li><c:if test="${not empty USERMODEL}">
 					<li class="nav-item">
@@ -83,6 +81,7 @@
 
 </div>
 </head>
+
 </body>
 
 </html>

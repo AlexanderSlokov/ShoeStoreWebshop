@@ -1,5 +1,6 @@
 <%@ include file="header.jsp"%>
 <%@ include file="/common/taglib.jsp"%>
+<c:url var="searchAPI" value="/search"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,10 +47,10 @@
 				
 				<div class="show_product">
 					<ul id="shooo" class="product">
+					<c:forEach var="item" items="${model.list}">
 						<h1 id="output"></h1>
 						<script src="functem.js"></script>
-						<c:forEach var="item" items="${model.list}">
-							<li>
+													<li>
 								<div>
 									<div class="product-top">
 									<c:url var="detailURL" value="/product">
@@ -67,8 +68,8 @@
 									<div class="product-price">${item.price}</div>
 								</div>
 							</li>
-						</c:forEach>
-					</ul>				
+						</c:forEach>	
+					</ul>							
 				</div>			
 				<ul class="pagination" id="pagination"></ul>
 				<input type="hidden" value="" id="page" name="page" /> <input
@@ -96,7 +97,7 @@
 				if (currentPage != page) {
 					$('#maxPageItem').val(limit);
 					$('#page').val(page);
-					$('#sortName').val('price');
+					$('#sortName').val('idProducts');
 					$('#sortBy').val('desc');
 					$('#type').val('show');
 					$('#manufacturer').val('Nike');
@@ -112,6 +113,25 @@
 					product_name : "name_in here"
 				});
 			}
+</script>
+<script>
+function searchByName(param){
+    var txtSearch = param.value;
+    $.ajax({
+        url: "${searchAPI}",
+        type: "get", //send it through get method
+        data: {
+            txt: txtSearch
+        },
+        success: function (data) {
+            var row = document.getElementById("shooo");
+            row.innerHTML = data;
+        },
+        error: function (xhr) {
+            //Do Something to handle error
+        }
+    });
+}
 </script>
 </body>
 <%@ include file="footer.jsp"%>

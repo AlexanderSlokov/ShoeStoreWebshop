@@ -1,6 +1,6 @@
 <%@ include file="header.jsp"%>
 <%@ include file="/common/taglib.jsp"%>
-
+<c:url var="searchAPI" value="/search"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,12 +44,12 @@
 						</ul>
 					</div>
 				</div>
-				
-				<div class="show_product">
-					<ul id="shooo" class="product">
+			
+				<div class="show_product" >	
+				<ul id="shooo" class="product">
+				<c:forEach var="item" items="${model.list}">																			
 						<h1 id="output"></h1>
 						<script src="functem.js"></script>
-						<c:forEach var="item" items="${model.list}">
 							<li>
 								<div>
 									<div class="product-top">
@@ -68,23 +68,24 @@
 									<div class="product-price" id="price">${item.price}</div>
 								</div>
 							</li>
-						</c:forEach>
-					</ul>				
-				</div>			
+						</c:forEach>		
+					</ul>									
+				</div>
+				
 				<ul class="pagination" id="pagination"></ul>
 				<input type="hidden" value="" id="page" name="page" /> <input
 					type="hidden" value="" id="maxPageItem" name="maxPageItem" /> <input
 					type="hidden" value="" id="sortName" name="sortName" /> <input
 					type="hidden" value="" id="sortBy" name="sortBy" /> <input
 					type="hidden" value="" id="type" name="type" />
-					<input type="hidden" value="" id="manufacturer" name="manufacturer" />
-									
+					<input type="hidden" value="" id="manufacturer" name="manufacturer" />									
 			</div>
-		</div>
+			</div>
 		</form>
 	</main>
-	
+
 <script>
+		
 			var totalPages = ${model.totalPage};
 			var currentPage = ${model.page};
 			var limit = 20;		
@@ -97,7 +98,7 @@
 				if (currentPage != page) {
 					$('#maxPageItem').val(limit);
 					$('#page').val(page);
-					$('#sortName').val('price');
+					$('#sortName').val('idProducts');
 					$('#sortBy').val('desc');
 					$('#type').val('show');
 					$('#manufacturer').val('Adidas');
@@ -114,6 +115,27 @@
 				});
 			}
 			
+			
+</script>
+
+<script>
+function searchByName(param){
+    var txtSearch = param.value;
+    $.ajax({
+        url: "${searchAPI}",
+        type: "get", //send it through get method
+        data: {
+            txt: txtSearch
+        },
+        success: function (data) {
+            var row = document.getElementById("shooo");
+            row.innerHTML = data;
+        },
+        error: function (xhr) {
+            //Do Something to handle error
+        }
+    });
+}
 </script>
 </body>
 <%@ include file="footer.jsp"%>
