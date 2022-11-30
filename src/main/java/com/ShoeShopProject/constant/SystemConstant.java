@@ -12,4 +12,5 @@ public class SystemConstant {
 	public static final String UPLOAD = "upload";
 	public static final String INSERT = "insert";
 	public static final String UPDATE_STOCK = "editStock";
+	public static final String PAY = "pay";
 }

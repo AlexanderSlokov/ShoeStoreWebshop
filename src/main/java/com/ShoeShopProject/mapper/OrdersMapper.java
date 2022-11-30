@@ -20,7 +20,7 @@ public class OrdersMapper implements  RowMapper<OrdersModel> {
 			order.setPrice(rs.getInt("c.price"));
 			order.setProductsId(rs.getInt("b.idProducts"));
 			order.setProductImage(rs.getString("c.image_pd"));
-			
+			order.setTotalPrice(rs.getInt("TT"));
 			return order;
 			}
 			catch (SQLException e)

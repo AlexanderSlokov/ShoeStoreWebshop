@@ -201,7 +201,9 @@
 					<h6>total</h6>
 					<p id="total_price">100</p>
 				</div>
-				<button class="input_cart">Process to checkout</button>
+				
+				<button  "class="input_cart">Process to checkout</button>
+				
 
 			</div>
 		</div>

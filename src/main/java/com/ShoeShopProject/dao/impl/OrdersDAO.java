@@ -15,7 +15,7 @@ public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
 	private iProductService productService;
 	@Override
 	public List<OrdersModel> findOrderByUserId(Integer id) {
-		String sql="SELECT a.id, c.image_pd, c.name, b.size, c.price, a.qty, b.idProducts, a.product_id"
+		String sql="SELECT a.id, c.image_pd, c.name, b.size, c.price, a.qty, b.idProducts, a.product_id, c.price*a.qty as TT"
 				+ "  FROM orders a inner join product b "
 				+ "inner join products c "
 				+ "where iduser=? and a.product_id=b.idProduct and b.idProducts=c.idProducts and status=0";

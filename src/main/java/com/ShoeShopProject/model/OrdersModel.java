@@ -9,7 +9,13 @@ public class OrdersModel extends ProductsModel {
 	private String note;
 	private Integer status;
 	private Integer size;
-	
+	private Integer totalPrice;
+	public Integer getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(Integer totalPrice) {
+		this.totalPrice = totalPrice;
+	}
 	public Integer getSize() {
 		return size;
 	}

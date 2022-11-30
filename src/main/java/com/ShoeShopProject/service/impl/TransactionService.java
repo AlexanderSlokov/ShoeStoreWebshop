@@ -1,10 +1,12 @@
 package com.ShoeShopProject.service.impl;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import com.ShoeShopProject.dao.iTransactionDAO;
+import com.ShoeShopProject.model.OrdersModel;
 import com.ShoeShopProject.model.TransactionModel;
 import com.ShoeShopProject.paging.Pageble;
 import com.ShoeShopProject.service.iTransactionService;
@@ -36,6 +38,16 @@ public class TransactionService implements iTransactionService{
 	@Override
 	public List<TransactionModel> listRevenueByDate() {
 		return transDAO.listRevenueByDate();
+	}
+
+	@Override
+	public void insert(List<OrdersModel> list, TransactionModel transModel) {
+		for (OrdersModel model: list) {
+			transModel.setOrderId(model.getOrderId());
+			transModel.setCreated(new Timestamp(System.currentTimeMillis()));
+			transDAO.insert(transModel);
+		}
+		
 	}
 		
 
