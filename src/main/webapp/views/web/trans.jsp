@@ -291,9 +291,7 @@
 								nhà, tên đường</label>
 						</div>
 					</div>
-					
-					 <% String message = "Hssss!"; %>
-    				<% out.print(message); %>
+
 					
 				</form>
 			</div>
@@ -356,8 +354,8 @@
                                       const transaction = orderData.purchase_units[0].payments.captures[0];
                                       alert(`Transaction ${transaction.status}: ${transaction.id}\n\nSee console for all available details`);
                                       // When ready to go live, remove the alert and show a success message within this page. For example:
-                                      // const element = document.getElementById('paypal-button-container');
-                                      // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                      const element = document.getElementById('paypal-button-container');
+                                      element.innerHTML = '<h3>Thank you for your payment!</h3>';
                                       // Or go to another URL:  actions.redirect('thank_you.html');
                                     });
                                   }
