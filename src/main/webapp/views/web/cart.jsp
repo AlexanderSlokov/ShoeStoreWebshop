@@ -481,12 +481,20 @@ function applycoupon({ valueee = "" })
 						<script>			
 							$(document).ready(function()
 									{
-										var data = document.getElementById("total_price");
-										var text = document.getElementById("total_price").innerHTML;
-										console.log(data);
-										console.log(text)
-										var v1 = parseFloat(text);
-										console.log(v1)
+										$(".bot-cart").find('#total_price').change(function(){
+											var data = document.getElementById("total_price");
+											var text = document.getElementById("total_price").innerHTML;
+											console.log(data);
+											console.log(text)
+											var v1 = parseFloat(text);
+											console.log(v1)
+										});
+											var data = document.getElementById("total_price");
+											var text = document.getElementById("total_price").innerHTML;
+											console.log(data);
+											console.log(text)
+											var v1 = parseFloat(text);
+											console.log(v1)
 									});
                                 paypal.Buttons({
                                   // Sets up the transaction when a payment button is clicked
