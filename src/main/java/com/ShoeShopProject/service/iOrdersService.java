@@ -11,4 +11,5 @@ public interface iOrdersService  {
 	 OrdersModel update(OrdersModel orders);
 	 void delete(Integer id);
 	 List<OrdersModel> findAll();
+	 Integer getTotalBill(Integer userId);
 }

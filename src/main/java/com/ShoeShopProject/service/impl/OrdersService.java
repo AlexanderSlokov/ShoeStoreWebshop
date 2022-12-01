@@ -43,6 +43,12 @@ public class OrdersService implements  iOrdersService{
 	public List<OrdersModel> findAll() {
 		return ordersDAO.findAll();
 	}
+
+	@Override
+	public Integer getTotalBill(Integer userId) {
+		List<OrdersModel>list=ordersDAO.getTotalBill(userId);
+		return list.isEmpty()? null: list.get(0).getTotalPrice();
+	}
 	
 
 }

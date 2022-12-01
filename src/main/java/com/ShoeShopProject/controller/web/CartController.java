@@ -40,6 +40,7 @@ public class CartController extends HttpServlet {
 			ordersService.delete(Integer.parseInt(orderId));
 			view="/cart?type=show&userId="+model.getUserId();
 		}
+		
 		RequestDispatcher rd = request.getRequestDispatcher(view);
 		rd.forward(request, response);
 	}

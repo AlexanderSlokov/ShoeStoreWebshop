@@ -155,7 +155,7 @@
 				<c:forEach var="item" items="${list}">
 					<tr>
 						
-						<td><a>${item.orderId}</a></td>
+						<td ><a >${item.orderId}</a></td>
 						<td><img src="<c:url value="/imgShoes/${item.productImage}"/>" alt=""></td>
 						<td>
 							<h5>${item.productName}</h5>
@@ -202,7 +202,7 @@
 					<p id="total_price">100</p>
 				</div>
 				
-				<button  "class="input_cart">Process to checkout</button>
+				<button href="<c:url value="/authorize_payment?userId=${USERMODEL.userId}"/>" "class="input_cart">Process to checkout</button>
 				
 
 			</div>

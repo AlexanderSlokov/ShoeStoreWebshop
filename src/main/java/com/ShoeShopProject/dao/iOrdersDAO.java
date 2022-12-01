@@ -13,4 +13,5 @@ public interface iOrdersDAO extends GenericDAO<OrdersModel> {
 	void update(OrdersModel orders);
 	void delete(Integer id);
 	List<OrdersModel>findAll();
+	List<OrdersModel> getTotalBill(Integer userid);
 }
