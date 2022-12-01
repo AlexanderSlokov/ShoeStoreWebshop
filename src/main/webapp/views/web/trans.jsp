@@ -327,7 +327,7 @@
 						<p style="font-weight: bold; text-align: center;">Pay with
 							Paypal</p>
 						<script
-							src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+							src="https://www.paypal.com/sdk/js?client-id=AUWfXUeBuIo-uiW1c-nYdbCoT77iWdyx93uB08lv0Xikfx3qANnIZLlTEVRCSscSpLGH6n1jHXBeY46X&currency=USD"></script>
 						<!-- Set up a container element for the button -->
 						<div id="paypal-button-container"></div>
 
