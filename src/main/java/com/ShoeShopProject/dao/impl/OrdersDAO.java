@@ -65,8 +65,8 @@ public class OrdersDAO extends AbstractDAO<OrdersModel> implements iOrdersDAO {
 	@Override
 	public List<OrdersModel> getTotalBill(Integer userid) {
 		String sql="SELECT a.id, c.image_pd, c.name, b.size, a.qty, b.idProducts, a.product_id, c.price*a.qty as price, sum(c.price*a.qty) as TT"
-				+ "		FROM orders a inner join product "
-				+ "		inner join products "
+				+ "		FROM orders a inner join product b "
+				+ "		inner join products c "
 				+ "		where iduser=? and a.product_id=b.idProduct and b.idProducts=c.idProducts and status=0";
 		return query(sql, new OrdersMapper(), userid);
 	}

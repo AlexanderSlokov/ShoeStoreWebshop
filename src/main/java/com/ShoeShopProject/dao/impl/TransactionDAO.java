@@ -45,9 +45,9 @@ public class TransactionDAO extends AbstractDAO<TransactionModel> implements iTr
 	@Override
 	public Integer insert(TransactionModel trans) {
 		String sql="insert into transactions(idorder, user_id, user_name, user_phone, "
-				+ "user_email, amount, payment, payment_infor, totalBill) values(?,?,?,?,?,?,?,?,?)";
+				+ "user_email, amount, payment, payment_infor, created, totalBill) values(?,?,?,?,?,?,?,?,?,?)";
 		return insert(sql,trans.getOrderId(), trans.getUserId(), trans.getUserName(), trans.getUserPhone(), 
-				trans.getUserMail(), trans.getAmount(), trans.getPayment(), trans.getPaymentInfo(), trans.getTotalBill());
+				trans.getUserMail(), trans.getAmount(), trans.getPayment(), trans.getPaymentInfo(), trans.getCreated(), trans.getTotalBill());
 
 	}
 

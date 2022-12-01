@@ -17,7 +17,7 @@ public class OrdersMapper implements  RowMapper<OrdersModel> {
 			order.setProductId(rs.getInt("a.product_id"));
 			order.setProductName(rs.getString("c.name"));
 			order.setSize(rs.getInt("b.size"));
-			order.setPrice(rs.getInt("c.price"));
+			order.setPrice(rs.getInt("price"));
 			order.setProductsId(rs.getInt("b.idProducts"));
 			order.setProductImage(rs.getString("c.image_pd"));
 			order.setTotalPrice(rs.getInt("TT"));

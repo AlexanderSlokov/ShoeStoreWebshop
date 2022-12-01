@@ -1,6 +1,7 @@
 <%@ include file="header.jsp"%>
 <%@ include file="/common/taglib.jsp"%>
 <%@ page contentType="text/html; charset=UTF-8" %>
+<c:url var="APIurl" value="/api-web-trans" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -217,6 +218,7 @@ function applycoupon({ valueee = "" })
 
 			</div>
 		</div>
+		<form  id="formSubmit">
 		<div id="process_to_check" class="checkout">
 		<div id="conttt" class="container" style="margin-top:0;">
 			<div class="p-4" style="width: 96%; text-align: center;">
@@ -226,7 +228,8 @@ function applycoupon({ valueee = "" })
 						<div class="relative w-full">
 							<input label="Họ và Tên"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-								name="customerName" value="" /><label
+								id="userName"
+								name="userName" value="" /><label
 								class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Họ
 								và Tên</label>
 						</div>
@@ -234,20 +237,20 @@ function applycoupon({ valueee = "" })
 					<div class="relative w-full">
 						<input label="Email"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-							name="customerEmail" /><label
+							name="userMail" id="userMail"/><label
 							class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Email</label>
 					</div>
 					<div>
 						<div class="relative w-full">
 							<input label="Số điện thoại"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-								name="customerPhone" /><label
+								name="userPhone" id="userPhone"/><label
 								class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Số
 								điện thoại</label>
 						</div>
 					</div>
 					<div class="relative w-full">
-						<select name="city"
+						<select 
 							class="py-3 px-4 border w-full rounded-md placeholder-transparent focus:outline-none peer">
 							<option value="default" disabled="" hidden="" selected=""></option>
 							<option value='{"id":254,"name":"Hà Nội","jntName":"Hà Nội"}'>
@@ -413,14 +416,14 @@ function applycoupon({ valueee = "" })
 					<div class="relative w-full">
 						<input label="Số nhà, tên đường"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-							name="address" /><label
+							 /><label
 							class="absolute capitalize left-2 -top-3 text-base text-gray-400 bg-secondary transition-all peer-placeholder-shown:top-2.5 peer-focus:-top-3 peer-focus:text-sm">Quận/
 							Huyện</label>
 					</div>
 					<div class="relative w-full">
 						<input label="Số nhà, tên đường"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-							name="address" /><label
+							/><label
 							class="absolute capitalize left-2 -top-3 text-base text-gray-400 bg-secondary transition-all peer-placeholder-shown:top-2.5 peer-focus:-top-3 peer-focus:text-sm">Phường/
 							Xã</label>
 					</div>
@@ -428,7 +431,7 @@ function applycoupon({ valueee = "" })
 						<div class="relative w-full">
 							<input label="Số nhà, tên đường"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
-								name="address" /><label
+								 /><label
 								class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Số
 								nhà, tên đường</label>
 						</div>
@@ -441,10 +444,12 @@ function applycoupon({ valueee = "" })
 								Confirm
 							</button>
 						</div>
-					</div>
-				
+					</div>				
 			</div>
 		</div>
+		<input type="hidden" value="${USERMODEL.userId}" id="userId"
+								name="userId" />
+		</form>
 		<div id="btnconfirm" class="row-left">
 					<div class="method-delivery">
 						<p style="font-weight: bold;">Method to delivery</p>
@@ -476,10 +481,12 @@ function applycoupon({ valueee = "" })
 						<script
 							src="https://www.paypal.com/sdk/js?client-id=AUWfXUeBuIo-uiW1c-nYdbCoT77iWdyx93uB08lv0Xikfx3qANnIZLlTEVRCSscSpLGH6n1jHXBeY46X&currency=USD"></script>
 						<!-- Set up a container element for the button -->
-						<div id="paypal-button-container"></div>
-
+						
+						<div  id="paypal-button-container"></div>
+						
 						<!--scrip paypal-->
-						<script>			
+						<script>
+						var v1 
 							$(document).ready(function()
 									{
 										$(".bot-cart").find('#total_price').change(function(){
@@ -487,14 +494,14 @@ function applycoupon({ valueee = "" })
 											var text = document.getElementById("total_price").innerHTML;
 											console.log(data);
 											console.log(text)
-											var v1 = parseFloat(text);
+											v1 = parseFloat(text);
 											console.log(v1)
 										});
 											var data = document.getElementById("total_price");
 											var text = document.getElementById("total_price").innerHTML;
 											console.log(data);
 											console.log(text)
-											var v1 = parseFloat(text);
+											v1 = parseFloat(text);
 											console.log(v1)
 									});
                                 paypal.Buttons({
@@ -559,6 +566,32 @@ function applycoupon({ valueee = "" })
 				</div>
 		</div>
 	</main>
+	<script>
+	$('#btn_tempp').click(function(e) {
+		e.preventDefault();
+		var data = {};
+		var formData = $('#formSubmit').serializeArray();
+		$.each(formData, function(i, v) {
+			data["" + v.name + ""] = v.value;
+		});
+			addProduct(data);		
+	});
+	function addProduct(data) {
+		$.ajax({
+			url : '${APIurl}',
+			type : 'POST',
+			contentType : 'application/json',
+			data : JSON.stringify(data),
+			dataType : 'json',
+			success : function(result) {
+				
+			},
+			error : function(error) {
+				
+			}
+		});
+	}
+	</script>
 </body>
 <%@ include file="footer.jsp"%>
 </html>

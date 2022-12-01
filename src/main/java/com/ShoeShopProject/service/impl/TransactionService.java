@@ -44,6 +44,9 @@ public class TransactionService implements iTransactionService{
 	public void insert(List<OrdersModel> list, TransactionModel transModel) {
 		for (OrdersModel model: list) {
 			transModel.setOrderId(model.getOrderId());
+			transModel.setAmount(model.getQty());
+			transModel.setPayment("PayPal");
+			transModel.setPaymentInfo("sb-dv8zd22183004@personal.example.com");			
 			transModel.setCreated(new Timestamp(System.currentTimeMillis()));
 			transDAO.insert(transModel);
 		}
