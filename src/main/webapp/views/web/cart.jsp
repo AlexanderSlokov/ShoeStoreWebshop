@@ -225,7 +225,7 @@ function applycoupon({ valueee = "" })
 				<h1>SHIPMENT DETAILS</h1>
 				<form action="" class="flex flex-col gap-5 sm:gap-10 mt-4 py-2">
 					<div>
-						<div class="relative w-full">
+						<div class="relative w-full m-10">
 							<input label="Họ và Tên"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 								id="userName"
@@ -234,14 +234,14 @@ function applycoupon({ valueee = "" })
 								và Tên</label>
 						</div>
 					</div>
-					<div class="relative w-full">
+					<div class="relative w-full m-10">
 						<input label="Email"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 							name="userMail" id="userMail"/><label
 							class="absolute capitalize left-2 -top-2.5 text-sm text-gray-400 transition-all bg-transparent peer-placeholder-shown:top-2.5 peer-focus:-top-2.5 peer-focus:text-sm">Email</label>
 					</div>
 					<div>
-						<div class="relative w-full">
+						<div class="relative w-full m-10">
 							<input label="Số điện thoại"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 								name="userPhone" id="userPhone"/><label
@@ -249,7 +249,7 @@ function applycoupon({ valueee = "" })
 								điện thoại</label>
 						</div>
 					</div>
-					<div class="relative w-full">
+					<div class="relative w-full m-10">
 						<select 
 							class="py-3 px-4 border w-full rounded-md placeholder-transparent focus:outline-none peer">
 							<option value="default" disabled="" hidden="" selected=""></option>
@@ -413,14 +413,14 @@ function applycoupon({ valueee = "" })
 							class="absolute capitalize left-2 -top-3 text-base text-gray-400 bg-secondary transition-all peer-placeholder-shown:top-2.5 peer-focus:-top-3 peer-focus:text-sm">Chọn
 							tỉnh/ Thành phố</label>
 					</div>
-					<div class="relative w-full">
+					<div class="relative w-full m-10">
 						<input label="Số nhà, tên đường"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 							 /><label
 							class="absolute capitalize left-2 -top-3 text-base text-gray-400 bg-secondary transition-all peer-placeholder-shown:top-2.5 peer-focus:-top-3 peer-focus:text-sm">Quận/
 							Huyện</label>
 					</div>
-					<div class="relative w-full">
+					<div class="relative w-full m-10">
 						<input label="Số nhà, tên đường"
 							class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 							/><label
@@ -428,7 +428,7 @@ function applycoupon({ valueee = "" })
 							Xã</label>
 					</div>
 					<div>
-						<div class="relative w-full">
+						<div class="relative w-full m-10">
 							<input label="Số nhà, tên đường"
 								class="py-3 px-4 border-b w-full focus:bg-none placeholder-transparent focus:outline-none peer relative"
 								 /><label
@@ -439,7 +439,7 @@ function applycoupon({ valueee = "" })
 					
 				</form>
 				<div id="btn_tempp">
-						<div class="confim">
+						<div class="confim m-10">
 							<button class=" py-3 px-4 border-b w-full relative upcate" onclick="confirmInf()">
 								Confirm
 							</button>
