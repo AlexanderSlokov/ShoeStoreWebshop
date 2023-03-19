@@ -93,7 +93,7 @@ Step 6: Testing
 
 # II. TASK ASSIGNMENT
 
-![task assignment 1](https://user-images.githubusercontent.com/105335833/226157912-bae13af0-808c-4dd5-a9d1-3ba0f413c3a9.png)
+![task assignment 1](https://user-images.githubusercontent.com/105335833/226175094-1495a2b3-4488-4afc-9cb1-533f6c0498a7.png)
 
 ![task assignment 2](https://user-images.githubusercontent.com/105335833/226157915-e574fe18-0a5c-4174-8802-15d6c34318dd.png)
 
