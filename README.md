@@ -21,6 +21,7 @@ We Vietnamese, from children to adults, who goes out on the street without weari
 Through the discussion and comments of the members, our team has chosen the topic "Shoe Web" as a Web programming topic, the project will help product management, employees, easy control of orders. goods and available stock, contributing to the expansion of the Vietnamese-branded footwear market on the e-commerce platform.
 
 ## 1.2.Objectives
+
 After discussing, we want to make business management more convenient and easy, we analyzed and implemented a project called “Shoe Store”.
 “Shoe Store” is a management website with full basic functions, eye-catching interface, easy to manipulate, and user-friendly that will be suitable for small and medium businesses.
 Building a management website will help businesses manage business activities effectively, have a clear process, improve the efficiency and productivity of employees, avoid target errors, information loss, easily monitor and track business activities, along with that, the application will allow users to quickly view shoe models, order shoes when they do not need to go to the store in the traditional way.
