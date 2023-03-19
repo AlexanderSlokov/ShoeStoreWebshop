@@ -1,4 +1,4 @@
-#Introduction
+# Introduction
 
 As online shopping via social media messages becomes a habit of many consumers during and after the pandemic, messages exchanged when purchasing (conversational business) are becoming the main method for users to reach out to customers. learn information, experience products, services, brands. Instead of calling or emailing, customers tend to text and expect a quick response.
 This is a new demand of consumers and a trend that brings many opportunities for businesses of all sizes to connect and develop their online business.
@@ -12,8 +12,9 @@ The report includes the following sections:
 5.	Design Website
 6.	Conclusion
 
-#I. PROJECT DESCRIPTION
-##1.1.Project Reason
+# I. PROJECT DESCRIPTION
+
+## 1.1.Project Reason
 
 In recent years, a series of large and small e-commerce platforms have appeared and their scale is increasingly expanding, which proves that the shopping needs of Vietnamese people are increasing, especially During the Covid-19 pandemic, people can't go out but still buy what they want. Mr. Minh Thanh said: "Vietnam currently accounts for 15% of the total online shopping market in Southeast Asia, second only to Thailand with 16% and on par with the Philippines". Through the above parameters, we can know the importance of e-commerce for Vietnamese people, they can buy anything without having to go to the store and save time and money. because it is cheaper to buy. And shoes are also one of the indispensable items in every person's daily life, so expanding their scale on e-commerce platforms is necessary.
 We Vietnamese, from children to adults, who goes out on the street without wearing shoes and sandals? It is an indispensable item for Vietnamese people. Therefore, shoes and sandals occupy a very large market in Vietnam. However, the online footwear business model is not as popular in Vietnam as other brands.
