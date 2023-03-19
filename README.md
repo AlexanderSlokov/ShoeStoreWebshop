@@ -17,6 +17,7 @@ The report includes the following sections:
 ## 1.1.Project Reason
 
 In recent years, a series of large and small e-commerce platforms have appeared and their scale is increasingly expanding, which proves that the shopping needs of Vietnamese people are increasing, especially During the Covid-19 pandemic, people can't go out but still buy what they want. Mr. Minh Thanh said: "Vietnam currently accounts for 15% of the total online shopping market in Southeast Asia, second only to Thailand with 16% and on par with the Philippines". Through the above parameters, we can know the importance of e-commerce for Vietnamese people, they can buy anything without having to go to the store and save time and money. because it is cheaper to buy. And shoes are also one of the indispensable items in every person's daily life, so expanding their scale on e-commerce platforms is necessary.
+
 We Vietnamese, from children to adults, who goes out on the street without wearing shoes and sandals? It is an indispensable item for Vietnamese people. Therefore, shoes and sandals occupy a very large market in Vietnam. However, the online footwear business model is not as popular in Vietnam as other brands.
 Through the discussion and comments of the members, our team has chosen the topic "Shoe Web" as a Web programming topic, the project will help product management, employees, easy control of orders. goods and available stock, contributing to the expansion of the Vietnamese-branded footwear market on the e-commerce platform.
 
