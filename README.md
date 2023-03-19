@@ -47,28 +47,52 @@ Part 4: System requirements specification: specification of functional and non-f
 ## 1.5.Project implementation plan
 
 Step 1: Identify the requirements:
+
 -Define the scope and requirements of an online shoe store
+
 -Collect information about shoe model, price, type, ...
+
 -Review the shoe stores that have appeared on the internet, study how the website works, the advantages to follow, the disadvantages to improve
+
 -Survey around see people's need for a website that sells shoes
+
 -Meeting and evaluating the feasibility of the project
+
 Step 2: Design the system:
+
 -Draw Use-case diagram: overview business analysis.
+
 -Draw Activity Diagram.
+
 Step 3: Design the data:
+
 -Design data corresponding to each type of software requirements to ensure correctness and evolution with the software, efficient in terms of retrieval and storage
+
 -Identify and list the data sheets needed for the software requirements
+
 -Build the specific logic diagram of the software
+
 Step 4: Design the interface
+
 -Make a list of interfaces when users interact with the software
+
 -Description of objects on each screen
+
 -Defines which functions are displayed on each screen
+
 Step 5: Design the back-end:
+
 -The code is presented according to the MVC pattern and is divided according to
+
 -Apply other APIs and check for security.
+
 Step 6: Testing
+
 -Fix bugs
+
 -Clear testcase to check the effectiveness of the system.
 
 # II. TASK ASSIGNMENT
+
+![task assignment 1](https://user-images.githubusercontent.com/105335833/226157912-bae13af0-808c-4dd5-a9d1-3ba0f413c3a9.png)
 
