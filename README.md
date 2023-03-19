@@ -10,7 +10,6 @@ The report includes the following sections:
 3.	Determination and Modeling Requirments
 4. 	Database Design
 5.	Design Website
-6.	Conclusion
 
 # I. PROJECT DESCRIPTION
 
@@ -95,4 +94,178 @@ Step 6: Testing
 # II. TASK ASSIGNMENT
 
 ![task assignment 1](https://user-images.githubusercontent.com/105335833/226157912-bae13af0-808c-4dd5-a9d1-3ba0f413c3a9.png)
+
+![task assignment 2](https://user-images.githubusercontent.com/105335833/226157915-e574fe18-0a5c-4174-8802-15d6c34318dd.png)
+
+![task assignment 3](https://user-images.githubusercontent.com/105335833/226157918-cd4de7d8-97ac-45d1-ae8a-a6cca2893e0f.png)
+
+# III. DETERMINATION AND MODELING REQUIRMENTS
+
+## 3.1. Website requirements
+
+### 3.1.1. User case
+Admin: 
+
+-Add products
+
+-Update products
+
+-Delete products
+
+-Find products
+
+-Add transaction
+
+-Find transactions
+
+-Update information
+
+-Change password users
+
+Users:
+
+-	Update information
+
+- Registration
+   
+- Buy product
+
+- Rate
+ 
+### 3.1.2. Professional requirements
+
+The main activities of in-store purchasing activities include:
+
+-Employees log into the system to record sales transactions.
+
+-Employees enter goods into the warehouse.
+
+-Information management staff for customers
+
+-Store budget manager
+
+### 3.1.3. System Requirements
+
+Table 1. List of security requirements
+
+![System requirement 1](https://user-images.githubusercontent.com/105335833/226157895-2f31f197-734e-4e7a-8c97-d1e9087acf52.png)
+
+Table 2. Responsibility table for security claim
+![System requirement 2](https://user-images.githubusercontent.com/105335833/226157899-55dcd422-327b-4608-9392-557dd344f9c2.png)
+
+Table 3. List of safety requirements
+![System requirement 3](https://user-images.githubusercontent.com/105335833/226157903-7faa8e1d-410c-4027-9ccc-f3b5f04c350a.png)
+
+Table 4. Responsibility table for safety requirements
+![System requirement 4](https://user-images.githubusercontent.com/105335833/226157907-72175d82-278f-4072-88b6-e039ad5a53c3.png)
+
+## 3.2. Functions review
+
+### 3.2.1. Search product
+
+![Search product](https://user-images.githubusercontent.com/105335833/226157887-44095ce9-4730-46d8-a570-1e3d9725f2d4.png)
+
+### 3.2.2. Login
+
+![Login](https://user-images.githubusercontent.com/105335833/226158161-e2098356-6e1f-4b01-ad87-2dedb5555b81.png)
+
+### 3.2.3 Forgot password
+
+![forgot pass](https://user-images.githubusercontent.com/105335833/226158160-cff462e5-d682-4c00-a80c-202ecc373ff7.png)
+
+### 3.2.4. Buy product
+
+![Buy product](https://user-images.githubusercontent.com/105335833/226157977-f4892032-2a5f-4d8f-b54c-b342f4686841.png)
+
+### 3.2.5. Add invoice
+
+![add invoice](https://user-images.githubusercontent.com/105335833/226158058-80f765c3-a503-4f85-9119-e17662337ea0.png)
+
+### 3.2.6, Add product
+
+![add product](https://user-images.githubusercontent.com/105335833/226158061-1ad94378-ff51-46cd-bc82-882d5bf2afc9.png)
+
+### 3.2.7. Delete product
+
+![delete product](https://user-images.githubusercontent.com/105335833/226157987-25194a12-6a75-499a-852f-77529fc9431c.png)
+
+### 3.2.8. Add customers
+
+![add customer](https://user-images.githubusercontent.com/105335833/226158054-5030eed1-5315-4dd2-98f7-742bdd67b61e.png)
+
+# IV. DATABASE DESIGN
+
+##  4.1. Database Overview
+
+![database overview](https://user-images.githubusercontent.com/105335833/226157984-325f6a4e-d3ba-45fc-81a1-23b1b433c39c.png)
+
+## 4.2. Describe the properties of each feature class
+
+### 4.2.1. Products
+
+![4 2 1](https://user-images.githubusercontent.com/105335833/226157994-831bdc1c-601f-47e7-ac04-6b91479887f9.png)
+
+![4 2 1 (2)](https://user-images.githubusercontent.com/105335833/226157991-e665070c-ff86-415c-a9bc-888afad4de67.png)
+
+### 4.2.2. Product
+
+![4 2 2](https://user-images.githubusercontent.com/105335833/226157998-afe69d93-c66b-4137-94f0-e23147d4880d.png)
+
+### 4.2.3. Users
+
+![4 2 3](https://user-images.githubusercontent.com/105335833/226158001-2e79ba56-2e51-4856-960d-99d054090c4a.png)
+
+
+### 4.2.4. Orders
+
+![4 2 4](https://user-images.githubusercontent.com/105335833/226158005-da348056-993f-40b9-ad3d-53558eac74e3.png)
+
+### 4.2.5. Transactions
+
+![4 2 5](https://user-images.githubusercontent.com/105335833/226158009-bb14d1de-d392-4634-ae20-2bd24a83f328.png)
+
+## 4.3. ERD Diagram
+
+![4 3](https://user-images.githubusercontent.com/105335833/226158013-cafcafa3-5742-4d2f-9525-f2f5d67dd81c.png)
+
+# V. DESIGN WEBSITE
+
+![5 1](https://user-images.githubusercontent.com/105335833/226158153-294f083c-ee79-4077-9d8a-d7e47ad80182.png)
+
+![5 1 (2)](https://user-images.githubusercontent.com/105335833/226158023-26299e69-4581-409a-a8be-e578c0053a2e.png)
+
+![5 1(3)](https://user-images.githubusercontent.com/105335833/226158027-e052c62e-dc75-4197-a2fa-9f85835fcd60.png)
+
+![5 1(4)](https://user-images.githubusercontent.com/105335833/226158030-a19ed823-38c3-4530-9783-e2994367674b.png)
+
+![5 1(5)](https://user-images.githubusercontent.com/105335833/226158033-8ef453c3-a225-4eff-b2b2-bc34265c3393.png)
+
+![5 1(7)](https://user-images.githubusercontent.com/105335833/226158036-fd2b604d-b7d3-44ad-882a-561f2951244e.png)
+
+![5 1(8)](https://user-images.githubusercontent.com/105335833/226158039-75ffcaae-e091-4e6a-a5fa-4c2da327789a.png)
+
+![5 1(9)](https://user-images.githubusercontent.com/105335833/226158043-08aa32f5-141f-43b7-ae0b-a650f241f24c.png)
+
+![5 1(10)](https://user-images.githubusercontent.com/105335833/226158046-c50dedea-61d0-4bf4-9999-79cb4dc9d752.png)
+
+![5 1(11)](https://user-images.githubusercontent.com/105335833/226158434-783ee7b4-44ec-418f-8e45-2e706b262e4c.png)
+
+![5 1(12)](https://user-images.githubusercontent.com/105335833/226158435-3c0b689e-efcf-4bd1-b8fd-cac568a4a184.png)
+
+![5 1(13)](https://user-images.githubusercontent.com/105335833/226158439-34992067-bfed-4ff3-9833-ca02f763320c.png)
+
+![5 1(14](https://user-images.githubusercontent.com/105335833/226158424-8ab492b4-786e-40e9-9e33-6df13a3cd024.png)
+
+![5 1(15)](https://user-images.githubusercontent.com/105335833/226158428-d9812bec-5e0f-4d7c-96a6-87ab3f5a00e4.png)
+
+![5 1(16)](https://user-images.githubusercontent.com/105335833/226158430-f80360f4-4a70-4ebb-a62a-d6de37c04148.png)
+
+![5 1(17)](https://user-images.githubusercontent.com/105335833/226158432-090c1507-b882-44b4-b2bc-a0b4f02b7f6e.png)
+
+
+
+
+
+
+
 
